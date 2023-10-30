@@ -17,7 +17,7 @@
 				<view class="bgWhite  px30 br20 mb10" v-for="item in formList" :key="item.prop" >
 
 					<view v-if="item.type=='input'" class="flex flex-between align-center" :key="item.prop || item.placeholder">
-						<u-form-item class="flex1" :labelWidth="item.labelWidth || 90" :required="item.hasOwnProperty('rule')" :prop="item.prop"
+						<u-form-item class="flex1" :labelWidth="item.labelWidth || 190" :required="item.hasOwnProperty('rule')" :prop="item.prop"
 							:label="item.label">
 							<u-input border="false" input-align="right" placeholder-style="text-align:right"
 								:placeholder="item.placeholder" v-model="form[item.prop]" />
@@ -32,7 +32,7 @@
 					</view>
 
 					<view class="flex flex-between align-center" @click="showDate(item.prop)" v-if="item.type==='date'" :key="item.prop || item.placeholder">
-						<u-form-item class="flex1 " :labelWidth="item.labelWidth || 90" :required="item.hasOwnProperty('rule')" :prop="item.prop"
+						<u-form-item class="flex1 " :labelWidth="item.labelWidth || 190" :required="item.hasOwnProperty('rule')" :prop="item.prop"
 							:label="item.label">
 							<u-input input-align="right" placeholder-style="text-align:right" border="false"
 								v-model="form[item.prop]" :placeholder="item.placeholder" type="select" disabled />
@@ -43,7 +43,7 @@
 					
 					<view class="flex flex-between align-center"  @click="showSelect(item)"  v-if="item.type==='select'" :key="item.prop || item.placeholder">
 						{{item.prop}}
-						<u-form-item class="flex1 " :labelWidth="item.labelWidth || 90" :required="item.hasOwnProperty('rule')" :prop="item.prop"
+						<u-form-item class="flex1 " :labelWidth="item.labelWidth || 190" :required="item.hasOwnProperty('rule')" :prop="item.prop"
 							:label="item.label">
 							<u-input input-align="right" placeholder-style="text-align:right" border="false"
 								v-model="form[item.prop]" :placeholder="item.placeholder" type="select" disabled />
@@ -55,7 +55,7 @@
 
 
 					<view class="flex  flex-between align-center" v-if="item.type=='textarea'" :key="item.prop || item.placeholder">
-						<u-form-item labelPosition="top" :labelWidth="item.labelWidth || 90" class="flex1 "
+						<u-form-item labelPosition="top" :labelWidth="item.labelWidth || 190" class="flex1 "
 							:prop="item.prop" :label="item.label">
 
 							<u--textarea class="" :required="item.hasOwnProperty('rule')" style="width:100%;"
@@ -69,7 +69,7 @@
 
 					<view class="" v-if="item.type=='redio'" :key="item.prop || item.placeholder">
 						<u-form-item labelPosition="left" :required="item.hasOwnProperty('rule')"
-							:labelWidth="item.labelWidth || 90" class="flex1" :prop="item.prop" :label="item.label">
+							:labelWidth="item.labelWidth || 190" class="flex1" :prop="item.prop" :label="item.label">
 							<u-radio-group v-model="form[item.prop]" @change="radioGroupChange(e,item)">
 								<u-radio @change="radioChange" class="" active-color="#21A068"
 									v-for="(redioItem, index) in item.redioList" :key="index" :name="redioItem.name"
