@@ -21,6 +21,9 @@ html { font-size:28rpx; color:#222222; }
 	padding-top: 30rpx;
 	padding-bottom: 30rpx;
 }
+.btnBg{
+	background-color: #ECFFF7;
+}
 .mt165{
 	margin-top: 165rpx;
 }
