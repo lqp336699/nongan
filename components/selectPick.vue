@@ -12,7 +12,7 @@
 				<view class="flex mt10  flex-wrap flex-between  px40 " style="height:600rpx;">
 					<picker-view :indicator-style="indicatorStyle" :value="value" @change="bindChange"
 						class="picker-view">
-						<!--渲染类型 [[0,1,2,3],[4,5,6,7],[8,1,6,9]] -->
+						<!--渲染类型 [[{value: '1',label: '江'},{value: '1',label: '江'}],[{value: '1',label: '江'},{value: '1',label: '江'}] -->
 						<picker-view-column v-for="(selectListItem,index) in selectList" :key="index">
 							<view class="item" v-for="(item,index2) in selectListItem" :key="index2">{{item.label}}</view>
 						</picker-view-column>
@@ -55,18 +55,24 @@
 		data() {
 			return {
 				indicatorStyle: `height: 50px;`,
-				value: ''
+				value: []
 			};
 		},
 		methods: {
 			bindChange(e) {
-				let val = e.detail.value
-				
+				this.value =  e.detail.value
 				
 			},
 			selsetSubmit(){
 				this.$nextTick(() => {
-					this.$emit("close",'000')
+					if(this.value.length>0){
+						for(let i=0; i++; i<this.value.length){
+							this.selectList[i]
+						}
+					}
+					
+					
+					this.$emit("close",this.value)
 				})
 			},
 			close(){

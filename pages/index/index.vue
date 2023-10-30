@@ -23,7 +23,7 @@
 					
 					{type:'input', placeholder:"请输入", value:'',  rule:[{required: true,message: '请输入姓名',trigger: [ 'change']}], slot:"m²", prop:'666', label:"名称"},
 					
-					{type:'select', selectTitle:"主体类型", placeholder:"请输入select", value:'', selectList:[[{prop: '1',label: '江'},{prop: '1',label: '江'}],[{value: '2',label: 'cv'},{value: '2',label: 'cv'}]], rule:[{required: true,message: '请输入姓名',trigger: [ 'change']}],  prop:'543', label:"select"},
+					{type:'select', selectTitle:"主体类型", placeholder:"请输入select", value:'', class:"mt20, btnBg", selectList:[[{value: '1',label: '江'},{value: '1',label: '江'}],[{value: '2',label: 'cv'},{value: '2',label: 'cv'}]], rule:[{required: true,message: '请输入姓名',trigger: [ 'change']}],  prop:'543', label:"select"},
 					
 					{type:'textarea', placeholder:"请输入活动内容", labelWidth:"300", height:"300", value:'', slot:"m²", prop:'bbb', label:"农事活动内容"},
 					

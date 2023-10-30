@@ -4,7 +4,7 @@
 			<DatePick @close="close" v-if="popupType=='Date'"></DatePick>
 			<!-- <u-select v-model="from[selectProp]" v-if="popupType=='Select'" :list="selectList"></u-select> -->
 			
-			<SelectPick  @close="close" v-model="from[selectProp]" :selectTitle="selectTitle" v-if="popupType=='Select'" :selectList="selectList"></SelectPick>
+			<SelectPick  @close="close"  :selectTitle="selectTitle" v-if="popupType=='Select'" :selectList="selectList"></SelectPick>
 			
 		</uni-popup>
 
@@ -16,7 +16,7 @@
 
 				<view class="bgWhite  px30 br20 mb10" v-for="item in formList" :key="item.prop" >
 
-					<view v-if="item.type=='input'" class="flex flex-between align-center" :key="item.prop || item.placeholder">
+					<view v-if="item.type=='input'" :class="['flex',  'flex-between', 'align-center', item.class ? item.class : '']" :key="item.prop || item.placeholder">
 						<u-form-item class="flex1" :labelWidth="item.labelWidth || 190" :required="item.hasOwnProperty('rule')" :prop="item.prop"
 							:label="item.label">
 							<u-input border="false" input-align="right" placeholder-style="text-align:right"
@@ -31,7 +31,7 @@
 
 					</view>
 
-					<view class="flex flex-between align-center" @click="showDate(item.prop)" v-if="item.type==='date'" :key="item.prop || item.placeholder">
+					<view :class="['flex',  'flex-between', 'align-center', item.class ? item.class : '']" @click="showDate(item.prop)" v-if="item.type==='date'" :key="item.prop || item.placeholder">
 						<u-form-item class="flex1 " :labelWidth="item.labelWidth || 190" :required="item.hasOwnProperty('rule')" :prop="item.prop"
 							:label="item.label">
 							<u-input input-align="right" placeholder-style="text-align:right" border="false"
@@ -41,7 +41,7 @@
 					</view>
 					
 					
-					<view class="flex flex-between align-center"  @click="showSelect(item)"  v-if="item.type==='select'" :key="item.prop || item.placeholder">
+					<view :class="['flex',  'flex-between', 'align-center', item.class ? item.class : '']"  @click="showSelect(item)"  v-if="item.type==='select'" :key="item.prop || item.placeholder">
 						{{item.prop}}
 						<u-form-item class="flex1 " :labelWidth="item.labelWidth || 190" :required="item.hasOwnProperty('rule')" :prop="item.prop"
 							:label="item.label">
@@ -54,7 +54,7 @@
 
 
 
-					<view class="flex  flex-between align-center" v-if="item.type=='textarea'" :key="item.prop || item.placeholder">
+					<view :class="['flex',  'flex-between', 'align-center', item.class ? item.class : '']" v-if="item.type=='textarea'" :key="item.prop || item.placeholder">
 						<u-form-item labelPosition="top" :labelWidth="item.labelWidth || 190" class="flex1 "
 							:prop="item.prop" :label="item.label">
 
@@ -67,7 +67,7 @@
 					</view>
 
 
-					<view class="" v-if="item.type=='redio'" :key="item.prop || item.placeholder">
+					<view :class="['flex',  'flex-between', 'align-center', item.class ? item.class : '']" v-if="item.type=='redio'" :key="item.prop || item.placeholder">
 						<u-form-item labelPosition="left" :required="item.hasOwnProperty('rule')"
 							:labelWidth="item.labelWidth || 190" class="flex1" :prop="item.prop" :label="item.label">
 							<u-radio-group v-model="form[item.prop]" @change="radioGroupChange(e,item)">
@@ -123,7 +123,7 @@
 				popupType:false,
 				selectList:[],
 				selectProp:"",
-				selectTite:""
+				selectTitle:""
 			}
 		},
 
@@ -149,7 +149,7 @@
 
 					})
 
-					this.$emit('setFormData', newValCopy)
+					this.$emit('setFormData', newValCopy)//页面接收newValCopy
 				},
 				deep: true
 			}
@@ -164,7 +164,6 @@
 				this.$refs.popup.open('bottom')
 			},
 			showSelect(item){
-				console.log(item,"pppppppppppppppppppp")
 				this.selectList = item.selectList
 				this.selectTitle=item.selectTitle
 				this.selectProp = item.prop
@@ -180,6 +179,9 @@
 				
 				this.popupType = ''
 				this.$refs.popup.close()
+			},
+			setSelectProp(val){
+				console.log(val,"bbcvvvcxcccx")
 			},
 			radioChange() {
 
