@@ -19,11 +19,11 @@
 				formList:[
 					{type:'input', placeholder:"请输入", rule:[{required: true,message: '请输入地块名称',trigger: [ 'change']}], value:'', prop:'name', label:"地块名称"},
 					
-					{type:'date', placeholder:"请选择", value:'', prop:'date', label:"日期"},
+					{type:'date', placeholder:"请选择", value:'', class:"mt20", prop:'date', label:"日期"},
 					
 					{type:'input', placeholder:"请输入", value:'',  rule:[{required: true,message: '请输入姓名',trigger: [ 'change']}], slot:"m²", prop:'666', label:"名称"},
 					
-					{type:'select', selectTitle:"主体类型", placeholder:"请输入select", value:'', class:"mt20, btnBg", selectList:[[{value: '1',label: '江'},{value: '1',label: '江'}],[{value: '2',label: 'cv'},{value: '2',label: 'cv'}]], rule:[{required: true,message: '请输入姓名',trigger: [ 'change']}],  prop:'543', label:"select"},
+					{type:'select', selectTitle:"主体类型", placeholder:"请输入select", value:'', class:"mt20, btnBg", selectList:[[{value: '1',label: '李'},{value: '1',label: '江'}],[{value: '2',label: '清平'},{value: '2',label: '来了'}]], rule:[{required: true,message: '请输入姓名',trigger: [ 'change']}],  prop:'543', label:"select"},
 					
 					{type:'textarea', placeholder:"请输入活动内容", labelWidth:"300", height:"300", value:'', slot:"m²", prop:'bbb', label:"农事活动内容"},
 					

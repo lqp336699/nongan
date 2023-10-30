@@ -7,28 +7,29 @@
 				<text class="col2 font32 font600">{{selectTitle}}</text>
 				<image @click="close" src="@/static/form/close.png" mode="" style="width:40rpx; height:40rpx;"></image>
 			</view>
-			
+
 			<view class="flex flex-between flex-column  " style="height:600rpx;">
 				<view class="flex mt10  flex-wrap flex-between  px40 " style="height:600rpx;">
 					<picker-view :indicator-style="indicatorStyle" :value="value" @change="bindChange"
-						class="picker-view">
+						@pickstart="bindStart" @pickend="bindPickend" class="picker-view">
 						<!--渲染类型 [[{value: '1',label: '江'},{value: '1',label: '江'}],[{value: '1',label: '江'},{value: '1',label: '江'}] -->
 						<picker-view-column v-for="(selectListItem,index) in selectList" :key="index">
-							<view class="item" v-for="(item,index2) in selectListItem" :key="index2">{{item.label}}</view>
+							<view class="item" v-for="(item,index2) in selectListItem" :key="index2">{{item.label}}
+							</view>
 						</picker-view-column>
 					</picker-view>
 
 				</view>
-				
-				
+
+
 				<view class=" flex mb20  flex-center">
 					<view @click="selsetSubmit" class=" br44  flex flex-center align-center"
 						style="width:690rpx; height:88rpx; background:#1F9A64;">
 						<text class="colf">确定</text>
 					</view>
 				</view>
-				
-				
+
+
 			</view>
 		</view>
 
@@ -47,35 +48,67 @@
 					[8, 1, 6, 9]
 				]
 			},
-			selectTitle:{
+			selectTitle: {
 				type: String,
-				default:"未填写"
+				default: "未填写"
 			}
 		},
 		data() {
 			return {
 				indicatorStyle: `height: 50px;`,
-				value: []
+				value: [],
+				formVal: [],
+				loading:false
 			};
 		},
+		mounted(){
+			this.selectList.forEach(()=>{
+				this.value.push(0)
+			})
+			let string = ""
+			if (this.value) {
+				for (let i = 0; i <= this.value.length - 1; i++) {
+					string += this.selectList[i][this.value[i]]['label'] + ''
+				}
+			
+				this.formVal = string
+			}
+			
+			
+		},
 		methods: {
+			bindStart(){
+				this.loading=true
+			},
 			bindChange(e) {
-				this.value =  e.detail.value
-				
-			},
-			selsetSubmit(){
+				this.loading=true
 				this.$nextTick(() => {
-					if(this.value.length>0){
-						for(let i=0; i++; i<this.value.length){
-							this.selectList[i]
+					let val = e.detail.value
+					let string = ""
+					if (val) {
+						for (let i = 0; i <= val.length - 1; i++) {
+							string += this.selectList[i][val[i]]['label'] + ''
 						}
+
+						this.formVal = string
 					}
-					
-					
-					this.$emit("close",this.value)
 				})
+
+
 			},
-			close(){
+			bindPickend(){
+				this.loading=false
+			},
+			selsetSubmit() {
+				// console.log(this.valueCopy)
+				// this.$nextTick(() => {
+
+				// })
+				if(!this.loading){
+					this.$emit("close", this.formVal)
+				}
+			},
+			close() {
 				this.$emit("close")
 			}
 		}

@@ -42,7 +42,6 @@
 					
 					
 					<view :class="['flex',  'flex-between', 'align-center', item.class ? item.class : '']"  @click="showSelect(item)"  v-if="item.type==='select'" :key="item.prop || item.placeholder">
-						{{item.prop}}
 						<u-form-item class="flex1 " :labelWidth="item.labelWidth || 190" :required="item.hasOwnProperty('rule')" :prop="item.prop"
 							:label="item.label">
 							<u-input input-align="right" placeholder-style="text-align:right" border="false"
@@ -171,6 +170,7 @@
 				this.$refs.popup.open('bottom')
 			},
 			close(value) {
+				console.log(value)
 				if(this.popupType == 'Date'){
 					this.form[this.dateProp] = value
 				}else{
