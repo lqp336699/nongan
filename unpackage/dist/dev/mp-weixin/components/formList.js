@@ -257,7 +257,8 @@ var _default = {
       //此时this.form[item.prop]为name值
       console.log(item, "lfkdsfslfsad");
     },
-    validate: function validate() {
+    formValidate: function formValidate() {
+      console.log("nnbnbnbnbnb");
       this.$refs.uForm.validate(function (valid) {
         if (valid) {
           console.log('验证通过');

@@ -1,8 +1,8 @@
 <template>
 	<view class="page  px22 ">
-		<from-list class="" :formList="formList" @setFormData="setFormData"></from-list>
+		<from-list ref="formList" class="" :formList="formList" @setFormData="setFormData"></from-list>
 		
-		<view class="flex  mt94 flex-center align-center" style="background: #ECFFF7; height:90rpx;">
+		<view @click="submit" class="flex  mt94 flex-center align-center" style="background: #ECFFF7; height:90rpx;">
 			<text style="color:#1F9A64">提交</text>
 		</view>
 	</view>
@@ -17,7 +17,7 @@
 		data() {
 			return {
 				formList:[
-					{type:'input', placeholder:"请输入", rule:[{}], value:'', prop:'name', label:"地块名称"},
+					{type:'input', placeholder:"请输入", rule:[{required: true,message: '地块名称',trigger: ['blur', 'change']}], value:'', prop:'name', label:"地块名称"},
 					{type:'date', placeholder:"请选择", value:'', prop:'date', label:"日期"},
 					{type:'input', placeholder:"请输入", value:'',  rule:[{required: true,message: '请输入姓名',trigger: ['blur', 'change']}], slot:"m²", prop:'aaa', label:"名称"},
 					{type:'textarea', placeholder:"请输入活动内容", labelWidth:"300", height:"300", value:'', slot:"m²", prop:'bbb', label:"农事活动内容"},
@@ -33,6 +33,10 @@
 			setFormData(formData){
 				this.formData = formData
 				console.log(this.formData,"this.formDatathis.formDatathis.formDatathis.formDatathis.formDatathis.formData")
+			},
+			submit(){
+				this.$refs.formList.formValidate()
+				
 			}
 		}
 	}

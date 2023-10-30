@@ -12,7 +12,7 @@
 		<view class="">
 
 
-			<u-form :model="form" ref="uForm" label-width="180" :label-style="{color:'#555'}">
+			<u-form :model="form" ref="uForm" label-width="180" :rules="rules" :label-style="{color:'#555'}">
 
 
 
@@ -156,7 +156,8 @@
 				//此时this.form[item.prop]为name值
 				console.log(item,"lfkdsfslfsad")
 			},
-			validate(){
+			formValidate(){
+				console.log("nnbnbnbnbnb")
 				this.$refs.uForm.validate(valid =>{
 					if(valid){
 						console.log('验证通过');

@@ -155,7 +155,11 @@ var _default = {
       formList: [{
         type: 'input',
         placeholder: "请输入",
-        rule: [{}],
+        rule: [{
+          required: true,
+          message: '地块名称',
+          trigger: ['blur', 'change']
+        }],
         value: '',
         prop: 'name',
         label: "地块名称"
@@ -209,6 +213,9 @@ var _default = {
     setFormData: function setFormData(formData) {
       this.formData = formData;
       console.log(this.formData, "this.formDatathis.formDatathis.formDatathis.formDatathis.formDatathis.formData");
+    },
+    submit: function submit() {
+      this.$refs.formList.formValidate();
     }
   }
 };
