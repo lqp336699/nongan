@@ -3,7 +3,8 @@
 		<form-list ref="formList" :formList="formList" @setFormData="setFormData"></form-list>
 
 
-		<view @click="submit" class="flex mt94 flex-center align-center br83" style="background: #ECFFF7; height:90rpx;">
+		<view @click="submit" class="flex mt94 flex-center align-center br83"
+			style="background: #ECFFF7; height:90rpx;">
 			<text style="color:#1F9A64">提交</text>
 		</view>
 	</view>
@@ -50,54 +51,35 @@
 					value: '',
 					prop: 'zuowu',
 					label: '本季作物名称',
+				}, { //前茬作物名称
+					type: 'input',
+					placeholder: '请输入作物名称',
+					rule: [{
+						required: true,
+						message: '请输入作物名称',
+						trigger: ['change']
+					}],
+					value: '',
+					prop: 'previousCrop',
+					label: '前茬作物名称',
 				}, { //日期
 					type: 'date',
 					placeholder: '请选择',
 					value: '',
 					prop: 'data',
 					label: '日期',
-					class:"mt30"
-				}, { //肥料名称
-					type: 'input',
-					placeholder: '请输入名称',
-					rule: [{
-						required: true,
-						message: '请输入肥料名称',
-						trigger: ['change']
-					}],
+					class: "mt30"
+				}, {
+					type: 'textarea',
+					placeholder: "请输入活动内容",
+					labelWidth: "300",
+					height: "300",
 					value: '',
-					prop: 'manureName',
-					label: '肥料名称'
-				}, { //每亩用量
-					type: 'input',
-					placeholder: '请输入用量',
-					rule: [{
-						required: true,
-						message: '请输入用量',
-						trigger: ['change']
-					}],
-					value: '',
-					prop: 'useNum',
-					label: '每亩用量'
-				}, { //施肥方式
-					type: 'input',
-					placeholder: '请输入方式',
-					rule: [{
-						required: true,
-						message: '请输入方式',
-						trigger: ['change']
-					}],
-					value: '',
-					prop: 'way',
-					label: '施肥方式'
-				}, { //备注
-					type: 'input',
-					placeholder: '选填',
-					value: '',
-					prop: 'remark',
-					label: '备注'
-				}, ]
-			};
+					prop: 'content',
+					label: "农事活动内容"
+				}],
+				formData: {}
+			}
 		},
 		methods: {
 			setFormData(formData) {
