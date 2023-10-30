@@ -20,7 +20,7 @@
 			}
 		},
 		{
-			"path" : "pages/productRecord/productRecord",
+			"path" : "pages/productMarketRecord/productMarketRecord",
 			"style" : 
 			{
 				"navigationBarTitleText" : "产品收货、销售记录",
@@ -40,6 +40,30 @@
 			"style" : 
 			{
 				"navigationBarTitleText" : "肥料使用记录",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/BuyPesticideRecord/BuyPesticideRecord",
+			"style" : 
+			{
+				"navigationBarTitleText" : "农药购买及出入库记录",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/UsePesticideRecord/UsePesticideRecord",
+			"style" : 
+			{
+				"navigationBarTitleText" : "",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/yieldFarmRecord/yieldFarmRecord",
+			"style" : 
+			{
+				"navigationBarTitleText" : "生产农事记录",
 				"enablePullDownRefresh" : false
 			}
 		}

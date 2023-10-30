@@ -1,9 +1,9 @@
 <template>
-	<view class="page px22">
+	<view class="page px22 flex flex-column flex-between border-box pb60">
 		<form-list ref="formList" :formList="formList" @setFormData="setFormData"></form-list>
 
 
-		<view @click="submit" class="flex mt94 flex-center align-center" style="background: #ECFFF7; height:90rpx;">
+		<view @click="submit" class="flex mt94 flex-center align-center br83" style="background: #ECFFF7; height:90rpx;">
 			<text style="color:#1F9A64">提交</text>
 		</view>
 	</view>
@@ -57,58 +57,80 @@
 					prop: 'data',
 					label: '日期',
 					class:"mt30"
-				}, { //收获面积
+				}, { //农药名称
 					type: 'input',
-					placeholder: '请输入',
+					placeholder: '请输入名称',
 					rule: [{
 						required: true,
-						message: '请输入收获面积',
-						trigger: ['change']
-					}],
-					slot: 'm²',
-					prop: 'area',
-					label: '收获面积'
-				}, { //销售数量
-					type: 'input',
-					placeholder: '请输入',
-					rule: [{
-						required: true,
-						message: '请输入销售数量',
-						trigger: ['change']
-					}],
-					slot: 'm²',
-					prop: 'num',
-					label: '销售数量'
-				}, { //销售对象
-					type: 'input',
-					placeholder: '请输入作物名称',
-					rule: [{
-						required: true,
-						message: '请输入销售对象',
+						message: '请输入农药名称',
 						trigger: ['change']
 					}],
 					value: '',
-					prop: 'obj',
-					label: '销售对象'
-				}, { //库存数量
+					prop: 'pesticideName',
+					label: '农药名称'
+				}, { //防治对象
 					type: 'input',
-					placeholder: '请输入数量',
+					placeholder: '请输入名称',
 					rule: [{
 						required: true,
-						message: '请输入库存数量',
+						message: '请输入防治对象',
 						trigger: ['change']
 					}],
-					prop: 'stock',
-					label: '库存数量'
+					value: '',
+					prop: 'FzObject',
+					label: '防治对象'
+				}, { //每亩用量
+					type: 'input',
+					placeholder: '请输入用量',
+					rule: [{
+						required: true,
+						message: '请输入用量',
+						trigger: ['change']
+					}],
+					value: '',
+					prop: 'useNum',
+					label: '每亩用量'
+				}, { //稀释倍数
+					type: 'input',
+					placeholder: '请输入稀释倍数',
+					rule: [{
+						required: true,
+						message: '请输入稀释倍数',
+						trigger: ['change']
+					}],
+					value: '',
+					prop: 'attenuation',
+					label: '稀释倍数'
+				}, { //施用方法
+					type: 'input',
+					placeholder: '请输入剂型',
+					rule: [{
+						required: true,
+						message: '请输入施用方法',
+						trigger: ['change']
+					}],
+					value: '',
+					prop: 'useWay',
+					label: '施用方法'
+				}, { //安全间隔期
+					type: 'input',
+					placeholder: '请输入间隔期',
+					rule: [{
+						required: true,
+						message: '请输入安全间隔期',
+						trigger: ['change']
+					}],
+					value: '',
+					prop: 'interval',
+					label: '安全间隔期'
 				}, { //备注
 					type: 'input',
 					placeholder: '选填',
 					value: '',
 					prop: 'remark',
 					label: '备注'
-				}, ],
-				formData: {}
-			}
+				}, ]
+			};
 		},
 		methods: {
 			setFormData(formData) {

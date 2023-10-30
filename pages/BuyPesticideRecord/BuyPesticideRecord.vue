@@ -3,7 +3,8 @@
 		<form-list ref="formList" :formList="formList" @setFormData="setFormData"></form-list>
 
 
-		<view @click="submit" class="flex mt94 flex-center align-center br83" style="background: #ECFFF7; height:90rpx;">
+		<view @click="submit" class="flex mt94 flex-center align-center br83"
+			style="background: #ECFFF7; height:90rpx;">
 			<text style="color:#1F9A64">提交</text>
 		</view>
 	</view>
@@ -23,28 +24,29 @@
 					value: '',
 					prop: 'data',
 					label: '日期',
-				}, { //肥料名称
+				}, { //农药名称
 					type: 'input',
 					placeholder: '请输入名称',
 					rule: [{
 						required: true,
-						message: '请输入肥料名称',
+						message: '请输入农药名称',
 						trigger: ['change']
 					}],
 					value: '',
-					prop: 'manureName',
-					label: '肥料名称'
-				}, { //有效成分
+					prop: 'pesticideName',
+					label: '农药名称'
+				}, { //有效成份种类及含量
 					type: 'input',
-					placeholder: '请输入成分名称',
+					placeholder: '请输入种类及含量',
 					rule: [{
 						required: true,
-						message: '请输入成分名称',
+						message: '请输入种类及含量',
 						trigger: ['change']
 					}],
 					value: '',
-					prop: 'chengfen',
-					label: '有效成分'
+					prop: 'vaildChengfen',
+					label: '有效成份种类及含量',
+					labelWidth: '300'
 				}, { //登记证号
 					type: 'input',
 					placeholder: '请输入证号',
@@ -67,6 +69,17 @@
 					value: '',
 					prop: 'unitName',
 					label: '销售单位'
+				}, { //农药剂型
+					type: 'input',
+					placeholder: '请输入剂型',
+					rule: [{
+						required: true,
+						message: '请输入剂型',
+						trigger: ['change']
+					}],
+					value: '',
+					prop: 'pesticide',
+					label: '农药剂型'
 				}, { //包装规格
 					type: 'input',
 					placeholder: '请输入规格',

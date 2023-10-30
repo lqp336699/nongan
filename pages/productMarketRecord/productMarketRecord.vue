@@ -17,103 +17,98 @@
 		},
 		data() {
 			return {
-				formList: [{ //日期
+				formList: [{ //地块名称
+					type: 'input',
+					placeholder: '请输入名称',
+					rule: [{
+						required: true,
+						message: '请输入地块名称',
+						trigger: ['change']
+					}],
+					value: '',
+					prop: 'name',
+					label: '地块名称'
+				}, { //地块面积
+					type: 'input',
+					placeholder: '请输入',
+					rule: [{
+						required: true,
+						message: '请输入地块面积',
+						trigger: ['change']
+					}],
+					slot: 'm²',
+					prop: 'abc',
+					label: '地块面积'
+				}, { //本季作物名称
+					type: 'input',
+					placeholder: '请输入作物名称',
+					rule: [{
+						required: true,
+						message: '请输入作物名称',
+						trigger: ['change']
+					}],
+					value: '',
+					prop: 'zuowu',
+					label: '本季作物名称',
+				}, { //日期
 					type: 'date',
 					placeholder: '请选择',
 					value: '',
 					prop: 'data',
 					label: '日期',
-				}, { //肥料名称
+					class:"mt30"
+				}, { //收获面积
 					type: 'input',
-					placeholder: '请输入名称',
+					placeholder: '请输入',
 					rule: [{
 						required: true,
-						message: '请输入肥料名称',
+						message: '请输入收获面积',
+						trigger: ['change']
+					}],
+					slot: 'm²',
+					prop: 'area',
+					label: '收获面积'
+				}, { //销售数量
+					type: 'input',
+					placeholder: '请输入',
+					rule: [{
+						required: true,
+						message: '请输入销售数量',
+						trigger: ['change']
+					}],
+					slot: 'm²',
+					prop: 'num',
+					label: '销售数量'
+				}, { //销售对象
+					type: 'input',
+					placeholder: '请输入作物名称',
+					rule: [{
+						required: true,
+						message: '请输入销售对象',
 						trigger: ['change']
 					}],
 					value: '',
-					prop: 'manureName',
-					label: '肥料名称'
-				}, { //有效成分
-					type: 'input',
-					placeholder: '请输入成分名称',
-					rule: [{
-						required: true,
-						message: '请输入成分名称',
-						trigger: ['change']
-					}],
-					value: '',
-					prop: 'chengfen',
-					label: '有效成分'
-				}, { //登记证号
-					type: 'input',
-					placeholder: '请输入证号',
-					rule: [{
-						required: true,
-						message: '请输入证号',
-						trigger: ['change']
-					}],
-					value: '',
-					prop: 'register',
-					label: '登记证号'
-				}, { //销售单位
-					type: 'input',
-					placeholder: '请输入单位名称',
-					rule: [{
-						required: true,
-						message: '请输入单位名称',
-						trigger: ['change']
-					}],
-					value: '',
-					prop: 'unitName',
-					label: '销售单位'
-				}, { //包装规格
-					type: 'input',
-					placeholder: '请输入规格',
-					rule: [{
-						required: true,
-						message: '请输入规格',
-						trigger: ['change']
-					}],
-					value: '',
-					prop: 'packSize',
-					label: '包装规格'
-				}, { //购买数量
-					type: 'input',
-					placeholder: '请输入数量',
-					rule: [{
-						required: true,
-						message: '请输入数量',
-						trigger: ['change']
-					}],
-					value: '',
-					prop: 'buyNum',
-					label: '购买数量'
-				}, { //出库数量
-					type: 'input',
-					placeholder: '请输入数量',
-					rule: [{
-						required: true,
-						message: '请输入数量',
-						trigger: ['change']
-					}],
-					value: '',
-					prop: 'outNum',
-					label: '出库数量'
+					prop: 'obj',
+					label: '销售对象'
 				}, { //库存数量
 					type: 'input',
 					placeholder: '请输入数量',
 					rule: [{
 						required: true,
-						message: '请输入数量',
+						message: '请输入库存数量',
 						trigger: ['change']
 					}],
-					value: '',
-					prop: 'stockNum',
+					prop: 'stock',
 					label: '库存数量'
-				}, ]
-
-			};
+				}, { //备注
+					type: 'input',
+					placeholder: '选填',
+					value: '',
+					prop: 'remark',
+					label: '备注'
+				}, ],
+				formData: {}
+			}
 		},
 		methods: {
 			setFormData(formData) {
