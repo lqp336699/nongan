@@ -4,7 +4,7 @@
 			<DatePick @close="close" v-if="popupType=='Date'"></DatePick>
 			<!-- <u-select v-model="from[selectProp]" v-if="popupType=='Select'" :list="selectList"></u-select> -->
 			
-			<SelectPick  @close="close" v-model="from[selectProp]" :selectTite="selectTite" v-if="popupType=='Select'" :selectList="selectList"></SelectPick>
+			<SelectPick  @close="close" v-model="from[selectProp]" :selectTitle="selectTitle" v-if="popupType=='Select'" :selectList="selectList"></SelectPick>
 			
 		</uni-popup>
 
@@ -14,10 +14,10 @@
 
 			<u-form :model="form" ref="uForm" label-width="180" :rules="rules" :label-style="{color:'#555'}">
 
-				<view class="bgWhite  px30 br20 mb10" v-for="item in formList" :key="item.prop">
+				<view class="bgWhite  px30 br20 mb10" v-for="item in formList" :key="item.prop" >
 
-					<view v-if="item.type=='input'" class="flex flex-between align-center">
-						<u-form-item class="flex1" :required="item.hasOwnProperty('rule')" :prop="item.prop"
+					<view v-if="item.type=='input'" class="flex flex-between align-center" :key="item.prop || item.placeholder">
+						<u-form-item class="flex1" :labelWidth="item.labelWidth || 90" :required="item.hasOwnProperty('rule')" :prop="item.prop"
 							:label="item.label">
 							<u-input border="false" input-align="right" placeholder-style="text-align:right"
 								:placeholder="item.placeholder" v-model="form[item.prop]" />
@@ -31,8 +31,8 @@
 
 					</view>
 
-					<view class="flex flex-between align-center" @click="showDate(item.prop)" v-if="item.type=='date'">
-						<u-form-item class="flex1 " :required="item.hasOwnProperty('rule')" :prop="item.prop"
+					<view class="flex flex-between align-center" @click="showDate(item.prop)" v-if="item.type==='date'" :key="item.prop || item.placeholder">
+						<u-form-item class="flex1 " :labelWidth="item.labelWidth || 90" :required="item.hasOwnProperty('rule')" :prop="item.prop"
 							:label="item.label">
 							<u-input input-align="right" placeholder-style="text-align:right" border="false"
 								v-model="form[item.prop]" :placeholder="item.placeholder" type="select" disabled />
@@ -41,8 +41,9 @@
 					</view>
 					
 					
-					<view class="flex flex-between align-center" @click="showSelect(item)" v-if="item.type=='select'">
-						<u-form-item class="flex1 " :required="item.hasOwnProperty('rule')" :prop="item.prop"
+					<view class="flex flex-between align-center"  @click="showSelect(item)"  v-if="item.type==='select'" :key="item.prop || item.placeholder">
+						{{item.prop}}
+						<u-form-item class="flex1 " :labelWidth="item.labelWidth || 90" :required="item.hasOwnProperty('rule')" :prop="item.prop"
 							:label="item.label">
 							<u-input input-align="right" placeholder-style="text-align:right" border="false"
 								v-model="form[item.prop]" :placeholder="item.placeholder" type="select" disabled />
@@ -53,7 +54,7 @@
 
 
 
-					<view class="flex  flex-between align-center" v-if="item.type=='textarea'">
+					<view class="flex  flex-between align-center" v-if="item.type=='textarea'" :key="item.prop || item.placeholder">
 						<u-form-item labelPosition="top" :labelWidth="item.labelWidth || 90" class="flex1 "
 							:prop="item.prop" :label="item.label">
 
@@ -66,7 +67,7 @@
 					</view>
 
 
-					<view class="" v-if="item.type=='redio'">
+					<view class="" v-if="item.type=='redio'" :key="item.prop || item.placeholder">
 						<u-form-item labelPosition="left" :required="item.hasOwnProperty('rule')"
 							:labelWidth="item.labelWidth || 90" class="flex1" :prop="item.prop" :label="item.label">
 							<u-radio-group v-model="form[item.prop]" @change="radioGroupChange(e,item)">
@@ -163,9 +164,9 @@
 				this.$refs.popup.open('bottom')
 			},
 			showSelect(item){
-				console.log(item, item.selectList,"pppppppppppppppppppp")
+				console.log(item,"pppppppppppppppppppp")
 				this.selectList = item.selectList
-				this.selectTite=item.selectTite
+				this.selectTitle=item.selectTitle
 				this.selectProp = item.prop
 				this.popupType = 'Select'
 				this.$refs.popup.open('bottom')

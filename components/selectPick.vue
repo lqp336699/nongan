@@ -1,12 +1,13 @@
 <template>
 	<view>
-		<view style="height:780rpx;" class="br20 bgWhite">
+		<view style="height:780rpx;" class="br20 flex flex-between  flex-column bgWhite">
 
 			<view class="px30 flex bbe flex-between align-center" style="height:117rpx;">
 				<text></text>
-				<text class="col2 font32 font600">{{selectTite}}</text>
+				<text class="col2 font32 font600">{{selectTitle}}</text>
 				<image @click="close" src="@/static/form/close.png" mode="" style="width:40rpx; height:40rpx;"></image>
 			</view>
+			
 			<view class="flex flex-between flex-column  " style="height:600rpx;">
 				<view class="flex mt10  flex-wrap flex-between  px40 " style="height:600rpx;">
 					<picker-view :indicator-style="indicatorStyle" :value="value" @change="bindChange"
@@ -20,7 +21,7 @@
 				</view>
 				
 				
-				<view class=" flex mt50 flex-center">
+				<view class=" flex mb20  flex-center">
 					<view @click="selsetSubmit" class=" br44  flex flex-center align-center"
 						style="width:690rpx; height:88rpx; background:#1F9A64;">
 						<text class="colf">确定</text>
@@ -46,7 +47,7 @@
 					[8, 1, 6, 9]
 				]
 			},
-			selectTite:{
+			selectTitle:{
 				type: String,
 				default:"未填写"
 			}
@@ -78,7 +79,7 @@
 <style scoped lang="scss">
 	.picker-view {
 		width: 750rpx;
-		height: 600rpx;
+		height: 300rpx;
 		margin-top: 20rpx;
 	}
 
