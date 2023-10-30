@@ -14,6 +14,7 @@
 
 <style lang="scss">
 	@import url('asset/asset.css');
+	@import url('asset/yzf.css');
 	@import "@/uni_modules/uview-ui/index.scss";
 	/*每个页面公共css */
 </style>

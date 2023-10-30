@@ -16,6 +16,22 @@
 				"navigationBarTitleText" : "产品收货、销售记录",
 				"enablePullDownRefresh" : false
 			}
+		},
+		{
+			"path" : "pages/BuyManureRecord/BuyManureRecord",
+			"style" : 
+			{
+				"navigationBarTitleText" : "肥料购买及出入库记录",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/UseManureRecord/UseManureRecord",
+			"style" : 
+			{
+				"navigationBarTitleText" : "肥料使用记录",
+				"enablePullDownRefresh" : false
+			}
 		}
 	],
 	"globalStyle": {
