@@ -8,7 +8,7 @@
 			</view>
 			<view class="flex flex-between flex-column  " style="height:600rpx;">
 				<view class="flex mt10  flex-wrap flex-between  px40 " style="height:600rpx;">
-					<picker-view :immediate-change="false" v-if="true" :indicator-style="indicatorStyle"
+					<picker-view :immediate-change="false"  :indicator-style="indicatorStyle"
 						:value="dateTime" @change="bindChange" @pickstart="bindChange" @pickend="bindChange" class="picker-view">
 						<picker-view-column>
 							<view class="item" v-for="(item,index) in years" :key="index">{{item}}年</view>

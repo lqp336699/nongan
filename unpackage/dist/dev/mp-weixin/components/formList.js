@@ -124,14 +124,16 @@ var render = function () {
     var $orig = _vm.__get_orig(item)
     var g0 = item.type == "input" ? item.hasOwnProperty("rule") : null
     var g1 = item.type == "date" ? item.hasOwnProperty("rule") : null
-    var g2 = item.type == "textarea" ? item.hasOwnProperty("rule") : null
-    var g3 = item.type == "redio" ? item.hasOwnProperty("rule") : null
+    var g2 = item.type == "select" ? item.hasOwnProperty("rule") : null
+    var g3 = item.type == "textarea" ? item.hasOwnProperty("rule") : null
+    var g4 = item.type == "redio" ? item.hasOwnProperty("rule") : null
     return {
       $orig: $orig,
       g0: g0,
       g1: g1,
       g2: g2,
       g3: g3,
+      g4: g4,
     }
   })
   _vm.$mp.data = Object.assign(
@@ -190,10 +192,16 @@ var DatePick = function DatePick() {
     return resolve(__webpack_require__(/*! @/components/datePick.vue */ 210));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
+var SelectPick = function SelectPick() {
+  __webpack_require__.e(/*! require.ensure | components/selectPick */ "components/selectPick").then((function () {
+    return resolve(__webpack_require__(/*! @/components/selectPick.vue */ 274));
+  }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
+};
 var _default = {
   name: "formList",
   components: {
-    DatePick: DatePick
+    DatePick: DatePick,
+    SelectPick: SelectPick
   },
   props: {
     formList: {
@@ -216,7 +224,11 @@ var _default = {
     return {
       form: form,
       dateProp: "",
-      rules: _objectSpread({}, rules)
+      rules: _objectSpread({}, rules),
+      popupType: false,
+      selectList: [],
+      selectProp: "",
+      selectTite: ""
     };
   },
   watch: {
@@ -243,16 +255,28 @@ var _default = {
       deep: true
     }
   },
-  mounted: function mounted() {
-    console.log(this.rules, "nnnnnnnnnnn");
-  },
+  mounted: function mounted() {},
   methods: {
     showDate: function showDate(prop) {
       this.dateProp = prop;
+      this.popupType = 'Date';
+      this.$refs.popup.open('bottom');
+    },
+    showSelect: function showSelect(item) {
+      console.log(item, item.selectList, "pppppppppppppppppppp");
+      this.selectList = item.selectList;
+      this.selectTite = item.selectTite;
+      this.selectProp = item.prop;
+      this.popupType = 'Select';
       this.$refs.popup.open('bottom');
     },
     close: function close(value) {
-      this.form[this.dateProp] = value;
+      if (this.popupType == 'Date') {
+        this.form[this.dateProp] = value;
+      } else {
+        this.form[this.selectProp] = value;
+      }
+      this.popupType = '';
       this.$refs.popup.close();
     },
     radioChange: function radioChange() {},
@@ -260,7 +284,6 @@ var _default = {
       //此时this.form[item.prop]为name值
     },
     formValidate: function formValidate(callBack) {
-      console.log(this.$refs.uForm.validate, "mmmmmmmmmmmmmmm");
       this.$refs.uForm.validate().then(function (res) {
         callBack(res);
       }).catch(function (errors) {

@@ -1,7 +1,11 @@
 <template>
 	<view class="pb20  flex  border-box flex-between flex-column">
 		<uni-popup ref="popup" type="bottom">
-			<DatePick @close="close"></DatePick>
+			<DatePick @close="close" v-if="popupType=='Date'"></DatePick>
+			<!-- <u-select v-model="from[selectProp]" v-if="popupType=='Select'" :list="selectList"></u-select> -->
+			
+			<SelectPick  @close="close" v-model="from[selectProp]" :selectTite="selectTite" v-if="popupType=='Select'" :selectList="selectList"></SelectPick>
+			
 		</uni-popup>
 
 
@@ -22,12 +26,22 @@
 						<slot v-if="item.slot">
 							{{item.slot}}
 						</slot>
-						<image v-if="item.type=='select'" style="width:15rpx; height:27rpx;"
-							src="@/static/form/left.png" mode=""></image>
+					<!-- 	<image v-if="item.type=='select'" style="width:15rpx; height:27rpx;"
+							src="@/static/form/left.png" mode=""></image> -->
 
 					</view>
 
 					<view class="flex flex-between align-center" @click="showDate(item.prop)" v-if="item.type=='date'">
+						<u-form-item class="flex1 " :required="item.hasOwnProperty('rule')" :prop="item.prop"
+							:label="item.label">
+							<u-input input-align="right" placeholder-style="text-align:right" border="false"
+								v-model="form[item.prop]" :placeholder="item.placeholder" type="select" disabled />
+						</u-form-item>
+						<image style="width:15rpx; height:27rpx;" src="@/static/form/left.png" mode=""></image>
+					</view>
+					
+					
+					<view class="flex flex-between align-center" @click="showSelect(item)" v-if="item.type=='select'">
 						<u-form-item class="flex1 " :required="item.hasOwnProperty('rule')" :prop="item.prop"
 							:label="item.label">
 							<u-input input-align="right" placeholder-style="text-align:right" border="false"
@@ -75,10 +89,11 @@
 
 <script>
 	import DatePick from '@/components/datePick.vue'
+	import SelectPick from  '@/components/selectPick.vue'
 	export default {
 		name: "formList",
 		components: {
-			DatePick
+			DatePick,SelectPick
 		},
 		props: {
 			formList: {
@@ -93,7 +108,7 @@
 				if (!form[item.prop]) {
 					this.$set(form, item.prop, '')
 				}
-
+				
 				if (item.rule) {
 					this.$set(rules, item.prop, item.rule)
 				}
@@ -103,7 +118,11 @@
 				dateProp: "",
 				rules: {
 					...rules
-				}
+				},
+				popupType:false,
+				selectList:[],
+				selectProp:"",
+				selectTite:""
 			}
 		},
 
@@ -136,15 +155,29 @@
 		},
 		mounted() {
 
-			console.log(this.rules, "nnnnnnnnnnn")
 		},
 		methods: {
 			showDate(prop) {
 				this.dateProp = prop
+				this.popupType = 'Date'
+				this.$refs.popup.open('bottom')
+			},
+			showSelect(item){
+				console.log(item, item.selectList,"pppppppppppppppppppp")
+				this.selectList = item.selectList
+				this.selectTite=item.selectTite
+				this.selectProp = item.prop
+				this.popupType = 'Select'
 				this.$refs.popup.open('bottom')
 			},
 			close(value) {
-				this.form[this.dateProp] = value
+				if(this.popupType == 'Date'){
+					this.form[this.dateProp] = value
+				}else{
+					this.form[this.selectProp] = value
+				}
+				
+				this.popupType = ''
 				this.$refs.popup.close()
 			},
 			radioChange() {
@@ -154,7 +187,6 @@
 				//此时this.form[item.prop]为name值
 			},
 			formValidate(callBack) {
-				console.log(this.$refs.uForm.validate, "mmmmmmmmmmmmmmm")
 				this.$refs.uForm.validate().then(res => {
 					callBack(res)
 				}).catch(errors => {
