@@ -12,7 +12,7 @@
 
 		<view class="">
 
-			<u-form :model="form" ref="uForm" label-width="180" :rules="rules" :label-style="{color:'#555'}">
+			<u-form :model="form" ref="uForm" error-type="toast" label-width="180" :rules="rules" :label-style="{color:'#555'}">
 
 				<view class="bgWhite  px30 br20 mb10" v-for="item in formList" :key="item.prop" >
 
