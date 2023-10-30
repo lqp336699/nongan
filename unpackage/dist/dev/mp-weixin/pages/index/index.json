@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText": "uni-app",
-  "usingComponents": {
-    "from-list": "/components/formList"
-  }
-}
