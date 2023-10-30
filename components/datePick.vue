@@ -86,11 +86,14 @@
 			},
 			bindChange(e) {
 				let val = e.detail.value
-				this.year = this.years[val[0]]
-				this.month = this.months[val[1]]
-				this.day = this.days[val[2]]
-				let time1 = this.year + '-' + this.month + '-' + this.day
-				let time = new Date(time1).getTime() / 1000
+				if(val){
+					this.year = this.years[val[0]]
+					this.month = this.months[val[1]]
+					this.day = this.days[val[2]]
+					let time1 = this.year + '-' + this.month + '-' + this.day
+					let time = new Date(time1).getTime() / 1000
+				}
+			
 
 			},
 			/*获取一个月的天数 */

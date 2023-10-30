@@ -177,10 +177,14 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 
 
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ 4);
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+var _defineProperty2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/defineProperty */ 11));
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0, _defineProperty2.default)(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 var DatePick = function DatePick() {
   __webpack_require__.e(/*! require.ensure | components/datePick */ "components/datePick").then((function () {
     return resolve(__webpack_require__(/*! @/components/datePick.vue */ 210));
@@ -205,14 +209,14 @@ var _default = {
       if (!form[item.prop]) {
         _this.$set(form, item.prop, '');
       }
-      if (!rules[item.rule]) {
+      if (item.rule) {
         _this.$set(rules, item.prop, item.rule);
       }
     });
     return {
       form: form,
       dateProp: "",
-      rules: rules
+      rules: _objectSpread({}, rules)
     };
   },
   watch: {
@@ -226,7 +230,6 @@ var _default = {
           return item.type == "redio";
         });
         redioLists.forEach(function (item2) {
-          console.log(item2.redioList.length);
           if (item2.redioList.length > 0) {
             item2.redioList.forEach(function (redioListItem) {
               if (newValCopy[item2['prop']] == redioListItem.name) {
@@ -241,7 +244,7 @@ var _default = {
     }
   },
   mounted: function mounted() {
-    console.log(this.form, this.rules);
+    console.log(this.rules, "nnnnnnnnnnn");
   },
   methods: {
     showDate: function showDate(prop) {
@@ -253,18 +256,15 @@ var _default = {
       this.$refs.popup.close();
     },
     radioChange: function radioChange() {},
-    radioGroupChange: function radioGroupChange(e, item) {
+    radioGroupChange: function radioGroupChange() {
       //此时this.form[item.prop]为name值
-      console.log(item, "lfkdsfslfsad");
     },
-    formValidate: function formValidate() {
-      console.log("nnbnbnbnbnb");
-      this.$refs.uForm.validate(function (valid) {
-        if (valid) {
-          console.log('验证通过');
-        } else {
-          console.log('验证失败');
-        }
+    formValidate: function formValidate(callBack) {
+      console.log(this.$refs.uForm.validate, "mmmmmmmmmmmmmmm");
+      this.$refs.uForm.validate().then(function (res) {
+        callBack(res);
+      }).catch(function (errors) {
+        callBack(errors);
       });
     }
   }

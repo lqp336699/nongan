@@ -157,8 +157,8 @@ var _default = {
         placeholder: "请输入",
         rule: [{
           required: true,
-          message: '地块名称',
-          trigger: ['blur', 'change']
+          message: '请输入地块名称',
+          trigger: ['change']
         }],
         value: '',
         prop: 'name',
@@ -176,7 +176,7 @@ var _default = {
         rule: [{
           required: true,
           message: '请输入姓名',
-          trigger: ['blur', 'change']
+          trigger: ['change']
         }],
         slot: "m²",
         prop: 'aaa',
@@ -193,7 +193,7 @@ var _default = {
       }, {
         type: 'redio',
         placeholder: "请输入活动内容",
-        labelWidth: "350",
+        labelWidth: "380",
         value: '',
         prop: 'kkk',
         label: "是否为合格证开具主体",
@@ -215,7 +215,11 @@ var _default = {
       console.log(this.formData, "this.formDatathis.formDatathis.formDatathis.formDatathis.formDatathis.formData");
     },
     submit: function submit() {
-      this.$refs.formList.formValidate();
+      this.$refs.formList.formValidate(function (res) {
+        if (res instanceof Array) {
+          return;
+        }
+      });
     }
   }
 };

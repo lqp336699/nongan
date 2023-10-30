@@ -207,11 +207,13 @@ var _default = {
     },
     bindChange: function bindChange(e) {
       var val = e.detail.value;
-      this.year = this.years[val[0]];
-      this.month = this.months[val[1]];
-      this.day = this.days[val[2]];
-      var time1 = this.year + '-' + this.month + '-' + this.day;
-      var time = new Date(time1).getTime() / 1000;
+      if (val) {
+        this.year = this.years[val[0]];
+        this.month = this.months[val[1]];
+        this.day = this.days[val[2]];
+        var time1 = this.year + '-' + this.month + '-' + this.day;
+        var time = new Date(time1).getTime() / 1000;
+      }
     },
     /*获取一个月的天数 */getCountDays: function getCountDays(year, month) {
       var curDate = new Date();
