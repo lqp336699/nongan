@@ -24,6 +24,9 @@ html { font-size:28rpx; color:#222222; }
 .btnBg{
 	background-color: #ECFFF7;
 }
+.mt6{
+	margin-top: 6rpx;
+}
 .mt165{
 	margin-top: 165rpx;
 }
