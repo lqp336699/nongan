@@ -780,8 +780,8 @@ function populateParameters(result) {
     appVersion: "1.0.0",
     appVersionCode: "100",
     appLanguage: getAppLanguage(hostLanguage),
-    uniCompileVersion: "3.8.12",
-    uniRuntimeVersion: "3.8.12",
+    uniCompileVersion: "3.95",
+    uniRuntimeVersion: "3.95",
     uniPlatform: undefined || "mp-weixin",
     deviceBrand: deviceBrand,
     deviceModel: model,
@@ -9477,9 +9477,9 @@ internalMixin(Vue);
 
 /***/ }),
 /* 26 */
-/*!*********************************!*\
-  !*** E:/work/nongan/pages.json ***!
-  \*********************************/
+/*!****************************************!*\
+  !*** E:/workProgram/nongan/pages.json ***!
+  \****************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -9623,9 +9623,9 @@ function normalizeComponent (
 
 /***/ }),
 /* 33 */
-/*!***********************************************!*\
-  !*** E:/work/nongan/uni.promisify.adaptor.js ***!
-  \***********************************************/
+/*!******************************************************!*\
+  !*** E:/workProgram/nongan/uni.promisify.adaptor.js ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9646,9 +9646,9 @@ uni.addInterceptor({
 
 /***/ }),
 /* 34 */
-/*!****************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/index.js ***!
-  \****************************************************/
+/*!***********************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/index.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9735,9 +9735,9 @@ exports.default = _default;
 
 /***/ }),
 /* 35 */
-/*!***************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/mixin/mixin.js ***!
-  \***************************************************************/
+/*!**********************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/mixin/mixin.js ***!
+  \**********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9903,9 +9903,9 @@ exports.default = _default;
 
 /***/ }),
 /* 36 */
-/*!*****************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/mixin/mpMixin.js ***!
-  \*****************************************************************/
+/*!************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/mixin/mpMixin.js ***!
+  \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9926,9 +9926,9 @@ exports.default = _default;
 
 /***/ }),
 /* 37 */
-/*!**********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/luch-request/index.js ***!
-  \**********************************************************************/
+/*!*****************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/luch-request/index.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9946,9 +9946,9 @@ exports.default = _default;
 
 /***/ }),
 /* 38 */
-/*!*****************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/luch-request/core/Request.js ***!
-  \*****************************************************************************/
+/*!************************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/luch-request/core/Request.js ***!
+  \************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10152,9 +10152,9 @@ exports.default = Request;
 
 /***/ }),
 /* 39 */
-/*!*************************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/luch-request/core/dispatchRequest.js ***!
-  \*************************************************************************************/
+/*!********************************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/luch-request/core/dispatchRequest.js ***!
+  \********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10174,9 +10174,9 @@ exports.default = _default;
 
 /***/ }),
 /* 40 */
-/*!*******************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/luch-request/adapters/index.js ***!
-  \*******************************************************************************/
+/*!**************************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/luch-request/adapters/index.js ***!
+  \**************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10255,9 +10255,9 @@ exports.default = _default;
 
 /***/ }),
 /* 41 */
-/*!*********************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/luch-request/helpers/buildURL.js ***!
-  \*********************************************************************************/
+/*!****************************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/luch-request/helpers/buildURL.js ***!
+  \****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10325,9 +10325,9 @@ function buildURL(url, params) {
 
 /***/ }),
 /* 42 */
-/*!**********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/luch-request/utils.js ***!
-  \**********************************************************************/
+/*!*****************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/luch-request/utils.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10478,9 +10478,9 @@ function isUndefined(val) {
 
 /***/ }),
 /* 43 */
-/*!***********************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/luch-request/core/buildFullPath.js ***!
-  \***********************************************************************************/
+/*!******************************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/luch-request/core/buildFullPath.js ***!
+  \******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10512,9 +10512,9 @@ function buildFullPath(baseURL, requestedURL) {
 
 /***/ }),
 /* 44 */
-/*!**************************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/luch-request/helpers/isAbsoluteURL.js ***!
-  \**************************************************************************************/
+/*!*********************************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/luch-request/helpers/isAbsoluteURL.js ***!
+  \*********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10540,9 +10540,9 @@ function isAbsoluteURL(url) {
 
 /***/ }),
 /* 45 */
-/*!************************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/luch-request/helpers/combineURLs.js ***!
-  \************************************************************************************/
+/*!*******************************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/luch-request/helpers/combineURLs.js ***!
+  \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10566,9 +10566,9 @@ function combineURLs(baseURL, relativeURL) {
 
 /***/ }),
 /* 46 */
-/*!****************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/luch-request/core/settle.js ***!
-  \****************************************************************************/
+/*!***********************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/luch-request/core/settle.js ***!
+  \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10598,9 +10598,9 @@ function settle(resolve, reject, response) {
 
 /***/ }),
 /* 47 */
-/*!****************************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/luch-request/core/InterceptorManager.js ***!
-  \****************************************************************************************/
+/*!***********************************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/luch-request/core/InterceptorManager.js ***!
+  \***********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10662,9 +10662,9 @@ exports.default = _default;
 
 /***/ }),
 /* 48 */
-/*!*********************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/luch-request/core/mergeConfig.js ***!
-  \*********************************************************************************/
+/*!****************************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/luch-request/core/mergeConfig.js ***!
+  \****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10738,9 +10738,9 @@ exports.default = _default;
 
 /***/ }),
 /* 49 */
-/*!******************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/luch-request/core/defaults.js ***!
-  \******************************************************************************/
+/*!*************************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/luch-request/core/defaults.js ***!
+  \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10770,9 +10770,9 @@ exports.default = _default;
 
 /***/ }),
 /* 50 */
-/*!****************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/luch-request/utils/clone.js ***!
-  \****************************************************************************/
+/*!***********************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/luch-request/utils/clone.js ***!
+  \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11018,7 +11018,7 @@ var clone = function () {
 }();
 var _default = clone;
 exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/buffer/index.js */ 51).Buffer))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../../../迅雷下载/HBuilderX.3.7.11.20230427/HBuilderX/plugins/uniapp-cli/node_modules/buffer/index.js */ 51).Buffer))
 
 /***/ }),
 /* 51 */
@@ -13094,9 +13094,9 @@ module.exports = Array.isArray || function (arr) {
 
 /***/ }),
 /* 55 */
-/*!**************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/util/route.js ***!
-  \**************************************************************/
+/*!*********************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/util/route.js ***!
+  \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -13656,9 +13656,9 @@ module.exports = _asyncToGenerator, module.exports.__esModule = true, module.exp
 
 /***/ }),
 /* 59 */
-/*!**************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/function/colorGradient.js ***!
-  \**************************************************************************/
+/*!*********************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/function/colorGradient.js ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -13811,9 +13811,9 @@ exports.default = _default;
 
 /***/ }),
 /* 60 */
-/*!*****************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/function/test.js ***!
-  \*****************************************************************/
+/*!************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/function/test.js ***!
+  \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -14116,9 +14116,9 @@ exports.default = _default;
 
 /***/ }),
 /* 61 */
-/*!*********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/function/debounce.js ***!
-  \*********************************************************************/
+/*!****************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/function/debounce.js ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -14163,9 +14163,9 @@ exports.default = _default;
 
 /***/ }),
 /* 62 */
-/*!*********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/function/throttle.js ***!
-  \*********************************************************************/
+/*!****************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/function/throttle.js ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -14212,9 +14212,9 @@ exports.default = _default;
 
 /***/ }),
 /* 63 */
-/*!******************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/function/index.js ***!
-  \******************************************************************/
+/*!*************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/function/index.js ***!
+  \*************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15013,9 +15013,9 @@ exports.default = _default;
 
 /***/ }),
 /* 64 */
-/*!******************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/function/digit.js ***!
-  \******************************************************************/
+/*!*************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/function/digit.js ***!
+  \*************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15232,9 +15232,9 @@ module.exports = _toArray, module.exports.__esModule = true, module.exports["def
 
 /***/ }),
 /* 66 */
-/*!*****************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/config.js ***!
-  \*****************************************************************/
+/*!************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/config.js ***!
+  \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15276,9 +15276,9 @@ exports.default = _default;
 
 /***/ }),
 /* 67 */
-/*!****************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props.js ***!
-  \****************************************************************/
+/*!***********************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props.js ***!
+  \***********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15388,9 +15388,9 @@ exports.default = _default;
 
 /***/ }),
 /* 68 */
-/*!****************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/actionSheet.js ***!
-  \****************************************************************************/
+/*!***********************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/actionSheet.js ***!
+  \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15432,9 +15432,9 @@ exports.default = _default;
 
 /***/ }),
 /* 69 */
-/*!**********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/album.js ***!
-  \**********************************************************************/
+/*!*****************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/album.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15476,9 +15476,9 @@ exports.default = _default;
 
 /***/ }),
 /* 70 */
-/*!**********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/alert.js ***!
-  \**********************************************************************/
+/*!*****************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/alert.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15515,9 +15515,9 @@ exports.default = _default;
 
 /***/ }),
 /* 71 */
-/*!***********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/avatar.js ***!
-  \***********************************************************************/
+/*!******************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/avatar.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15560,9 +15560,9 @@ exports.default = _default;
 
 /***/ }),
 /* 72 */
-/*!****************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/avatarGroup.js ***!
-  \****************************************************************************/
+/*!***********************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/avatarGroup.js ***!
+  \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15602,9 +15602,9 @@ exports.default = _default;
 
 /***/ }),
 /* 73 */
-/*!************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/backtop.js ***!
-  \************************************************************************/
+/*!*******************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/backtop.js ***!
+  \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15648,9 +15648,9 @@ exports.default = _default;
 
 /***/ }),
 /* 74 */
-/*!**********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/badge.js ***!
-  \**********************************************************************/
+/*!*****************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/badge.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15694,9 +15694,9 @@ exports.default = _default;
 
 /***/ }),
 /* 75 */
-/*!***********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/button.js ***!
-  \***********************************************************************/
+/*!******************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/button.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15753,9 +15753,9 @@ exports.default = _default;
 
 /***/ }),
 /* 76 */
-/*!*************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/calendar.js ***!
-  \*************************************************************************/
+/*!********************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/calendar.js ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15816,9 +15816,9 @@ exports.default = _default;
 
 /***/ }),
 /* 77 */
-/*!****************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/carKeyboard.js ***!
-  \****************************************************************************/
+/*!***********************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/carKeyboard.js ***!
+  \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15848,9 +15848,9 @@ exports.default = _default;
 
 /***/ }),
 /* 78 */
-/*!*********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/cell.js ***!
-  \*********************************************************************/
+/*!****************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/cell.js ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15900,9 +15900,9 @@ exports.default = _default;
 
 /***/ }),
 /* 79 */
-/*!**************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/cellGroup.js ***!
-  \**************************************************************************/
+/*!*********************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/cellGroup.js ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15934,9 +15934,9 @@ exports.default = _default;
 
 /***/ }),
 /* 80 */
-/*!*************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/checkbox.js ***!
-  \*************************************************************************/
+/*!********************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/checkbox.js ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15978,9 +15978,9 @@ exports.default = _default;
 
 /***/ }),
 /* 81 */
-/*!******************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/checkboxGroup.js ***!
-  \******************************************************************************/
+/*!*************************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/checkboxGroup.js ***!
+  \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16026,9 +16026,9 @@ exports.default = _default;
 
 /***/ }),
 /* 82 */
-/*!*******************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/circleProgress.js ***!
-  \*******************************************************************************/
+/*!**************************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/circleProgress.js ***!
+  \**************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16058,9 +16058,9 @@ exports.default = _default;
 
 /***/ }),
 /* 83 */
-/*!*********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/code.js ***!
-  \*********************************************************************/
+/*!****************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/code.js ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16095,9 +16095,9 @@ exports.default = _default;
 
 /***/ }),
 /* 84 */
-/*!**************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/codeInput.js ***!
-  \**************************************************************************/
+/*!*********************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/codeInput.js ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16141,9 +16141,9 @@ exports.default = _default;
 
 /***/ }),
 /* 85 */
-/*!********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/col.js ***!
-  \********************************************************************/
+/*!***************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/col.js ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16177,9 +16177,9 @@ exports.default = _default;
 
 /***/ }),
 /* 86 */
-/*!*************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/collapse.js ***!
-  \*************************************************************************/
+/*!********************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/collapse.js ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16211,9 +16211,9 @@ exports.default = _default;
 
 /***/ }),
 /* 87 */
-/*!*****************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/collapseItem.js ***!
-  \*****************************************************************************/
+/*!************************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/collapseItem.js ***!
+  \************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16253,9 +16253,9 @@ exports.default = _default;
 
 /***/ }),
 /* 88 */
-/*!*****************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/columnNotice.js ***!
-  \*****************************************************************************/
+/*!************************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/columnNotice.js ***!
+  \************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16294,9 +16294,9 @@ exports.default = _default;
 
 /***/ }),
 /* 89 */
-/*!**************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/countDown.js ***!
-  \**************************************************************************/
+/*!*********************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/countDown.js ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16329,9 +16329,9 @@ exports.default = _default;
 
 /***/ }),
 /* 90 */
-/*!************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/countTo.js ***!
-  \************************************************************************/
+/*!*******************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/countTo.js ***!
+  \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16371,9 +16371,9 @@ exports.default = _default;
 
 /***/ }),
 /* 91 */
-/*!*******************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/datetimePicker.js ***!
-  \*******************************************************************************/
+/*!**************************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/datetimePicker.js ***!
+  \**************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16426,9 +16426,9 @@ exports.default = _default;
 
 /***/ }),
 /* 92 */
-/*!************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/divider.js ***!
-  \************************************************************************/
+/*!*******************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/divider.js ***!
+  \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16465,9 +16465,9 @@ exports.default = _default;
 
 /***/ }),
 /* 93 */
-/*!**********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/empty.js ***!
-  \**********************************************************************/
+/*!*****************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/empty.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16507,9 +16507,9 @@ exports.default = _default;
 
 /***/ }),
 /* 94 */
-/*!*********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/form.js ***!
-  \*********************************************************************/
+/*!****************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/form.js ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16552,9 +16552,9 @@ exports.default = _default;
 
 /***/ }),
 /* 95 */
-/*!*************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/formItem.js ***!
-  \*************************************************************************/
+/*!********************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/formItem.js ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16592,9 +16592,9 @@ exports.default = _default;
 
 /***/ }),
 /* 96 */
-/*!********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/gap.js ***!
-  \********************************************************************/
+/*!***************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/gap.js ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16628,9 +16628,9 @@ exports.default = _default;
 
 /***/ }),
 /* 97 */
-/*!*********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/grid.js ***!
-  \*********************************************************************/
+/*!****************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/grid.js ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16662,9 +16662,9 @@ exports.default = _default;
 
 /***/ }),
 /* 98 */
-/*!*************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/gridItem.js ***!
-  \*************************************************************************/
+/*!********************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/gridItem.js ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16695,9 +16695,9 @@ exports.default = _default;
 
 /***/ }),
 /* 99 */
-/*!*********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/icon.js ***!
-  \*********************************************************************/
+/*!****************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/icon.js ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16747,9 +16747,9 @@ exports.default = _default;
 
 /***/ }),
 /* 100 */
-/*!**********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/image.js ***!
-  \**********************************************************************/
+/*!*****************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/image.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16794,9 +16794,9 @@ exports.default = _default;
 
 /***/ }),
 /* 101 */
-/*!****************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/indexAnchor.js ***!
-  \****************************************************************************/
+/*!***********************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/indexAnchor.js ***!
+  \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16830,9 +16830,9 @@ exports.default = _default;
 
 /***/ }),
 /* 102 */
-/*!**************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/indexList.js ***!
-  \**************************************************************************/
+/*!*********************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/indexList.js ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16868,9 +16868,9 @@ exports.default = _default;
 
 /***/ }),
 /* 103 */
-/*!**********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/input.js ***!
-  \**********************************************************************/
+/*!*****************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/input.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16933,9 +16933,9 @@ exports.default = _default;
 
 /***/ }),
 /* 104 */
-/*!*************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/keyboard.js ***!
-  \*************************************************************************/
+/*!********************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/keyboard.js ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16980,9 +16980,9 @@ exports.default = _default;
 
 /***/ }),
 /* 105 */
-/*!*********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/line.js ***!
-  \*********************************************************************/
+/*!****************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/line.js ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17017,9 +17017,9 @@ exports.default = _default;
 
 /***/ }),
 /* 106 */
-/*!*****************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/lineProgress.js ***!
-  \*****************************************************************************/
+/*!************************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/lineProgress.js ***!
+  \************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17053,9 +17053,9 @@ exports.default = _default;
 
 /***/ }),
 /* 107 */
-/*!*********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/link.js ***!
-  \*********************************************************************/
+/*!****************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/link.js ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17095,9 +17095,9 @@ exports.default = _default;
 
 /***/ }),
 /* 108 */
-/*!*********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/list.js ***!
-  \*********************************************************************/
+/*!****************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/list.js ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17140,9 +17140,9 @@ exports.default = _default;
 
 /***/ }),
 /* 109 */
-/*!*************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/listItem.js ***!
-  \*************************************************************************/
+/*!********************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/listItem.js ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17172,9 +17172,9 @@ exports.default = _default;
 
 /***/ }),
 /* 110 */
-/*!****************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/loadingIcon.js ***!
-  \****************************************************************************/
+/*!***********************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/loadingIcon.js ***!
+  \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17218,9 +17218,9 @@ exports.default = _default;
 
 /***/ }),
 /* 111 */
-/*!****************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/loadingPage.js ***!
-  \****************************************************************************/
+/*!***********************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/loadingPage.js ***!
+  \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17258,9 +17258,9 @@ exports.default = _default;
 
 /***/ }),
 /* 112 */
-/*!*************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/loadmore.js ***!
-  \*************************************************************************/
+/*!********************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/loadmore.js ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17307,9 +17307,9 @@ exports.default = _default;
 
 /***/ }),
 /* 113 */
-/*!**********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/modal.js ***!
-  \**********************************************************************/
+/*!*****************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/modal.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17354,9 +17354,9 @@ exports.default = _default;
 
 /***/ }),
 /* 114 */
-/*!***********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/navbar.js ***!
-  \***********************************************************************/
+/*!******************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/navbar.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17403,9 +17403,9 @@ exports.default = _default;
 
 /***/ }),
 /* 115 */
-/*!****************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/color.js ***!
-  \****************************************************************/
+/*!***********************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/color.js ***!
+  \***********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17436,9 +17436,9 @@ exports.default = _default;
 
 /***/ }),
 /* 116 */
-/*!**************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/noNetwork.js ***!
-  \**************************************************************************/
+/*!*********************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/noNetwork.js ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17470,9 +17470,9 @@ exports.default = _default;
 
 /***/ }),
 /* 117 */
-/*!**************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/noticeBar.js ***!
-  \**************************************************************************/
+/*!*********************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/noticeBar.js ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17516,9 +17516,9 @@ exports.default = _default;
 
 /***/ }),
 /* 118 */
-/*!***********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/notify.js ***!
-  \***********************************************************************/
+/*!******************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/notify.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17555,9 +17555,9 @@ exports.default = _default;
 
 /***/ }),
 /* 119 */
-/*!**************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/numberBox.js ***!
-  \**************************************************************************/
+/*!*********************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/numberBox.js ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17607,9 +17607,9 @@ exports.default = _default;
 
 /***/ }),
 /* 120 */
-/*!*******************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/numberKeyboard.js ***!
-  \*******************************************************************************/
+/*!**************************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/numberKeyboard.js ***!
+  \**************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17641,9 +17641,9 @@ exports.default = _default;
 
 /***/ }),
 /* 121 */
-/*!************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/overlay.js ***!
-  \************************************************************************/
+/*!*******************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/overlay.js ***!
+  \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17676,9 +17676,9 @@ exports.default = _default;
 
 /***/ }),
 /* 122 */
-/*!**********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/parse.js ***!
-  \**********************************************************************/
+/*!*****************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/parse.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17715,9 +17715,9 @@ exports.default = _default;
 
 /***/ }),
 /* 123 */
-/*!***********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/picker.js ***!
-  \***********************************************************************/
+/*!******************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/picker.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17765,9 +17765,9 @@ exports.default = _default;
 
 /***/ }),
 /* 124 */
-/*!**********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/popup.js ***!
-  \**********************************************************************/
+/*!*****************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/popup.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17811,9 +17811,9 @@ exports.default = _default;
 
 /***/ }),
 /* 125 */
-/*!**********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/radio.js ***!
-  \**********************************************************************/
+/*!*****************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/radio.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17855,9 +17855,9 @@ exports.default = _default;
 
 /***/ }),
 /* 126 */
-/*!***************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/radioGroup.js ***!
-  \***************************************************************************/
+/*!**********************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/radioGroup.js ***!
+  \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17902,9 +17902,9 @@ exports.default = _default;
 
 /***/ }),
 /* 127 */
-/*!*********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/rate.js ***!
-  \*********************************************************************/
+/*!****************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/rate.js ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17945,9 +17945,9 @@ exports.default = _default;
 
 /***/ }),
 /* 128 */
-/*!*************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/readMore.js ***!
-  \*************************************************************************/
+/*!********************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/readMore.js ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17984,9 +17984,9 @@ exports.default = _default;
 
 /***/ }),
 /* 129 */
-/*!********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/row.js ***!
-  \********************************************************************/
+/*!***************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/row.js ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18018,9 +18018,9 @@ exports.default = _default;
 
 /***/ }),
 /* 130 */
-/*!**************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/rowNotice.js ***!
-  \**************************************************************************/
+/*!*********************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/rowNotice.js ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18056,9 +18056,9 @@ exports.default = _default;
 
 /***/ }),
 /* 131 */
-/*!***************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/scrollList.js ***!
-  \***************************************************************************/
+/*!**********************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/scrollList.js ***!
+  \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18093,9 +18093,9 @@ exports.default = _default;
 
 /***/ }),
 /* 132 */
-/*!***********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/search.js ***!
-  \***********************************************************************/
+/*!******************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/search.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18151,9 +18151,9 @@ exports.default = _default;
 
 /***/ }),
 /* 133 */
-/*!************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/section.js ***!
-  \************************************************************************/
+/*!*******************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/section.js ***!
+  \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18192,9 +18192,9 @@ exports.default = _default;
 
 /***/ }),
 /* 134 */
-/*!*************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/skeleton.js ***!
-  \*************************************************************************/
+/*!********************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/skeleton.js ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18234,9 +18234,9 @@ exports.default = _default;
 
 /***/ }),
 /* 135 */
-/*!***********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/slider.js ***!
-  \***********************************************************************/
+/*!******************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/slider.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18276,9 +18276,9 @@ exports.default = _default;
 
 /***/ }),
 /* 136 */
-/*!**************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/statusBar.js ***!
-  \**************************************************************************/
+/*!*********************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/statusBar.js ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18308,9 +18308,9 @@ exports.default = _default;
 
 /***/ }),
 /* 137 */
-/*!**********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/steps.js ***!
-  \**********************************************************************/
+/*!*****************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/steps.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18346,9 +18346,9 @@ exports.default = _default;
 
 /***/ }),
 /* 138 */
-/*!**************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/stepsItem.js ***!
-  \**************************************************************************/
+/*!*********************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/stepsItem.js ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18381,9 +18381,9 @@ exports.default = _default;
 
 /***/ }),
 /* 139 */
-/*!***********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/sticky.js ***!
-  \***********************************************************************/
+/*!******************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/sticky.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18418,9 +18418,9 @@ exports.default = _default;
 
 /***/ }),
 /* 140 */
-/*!***************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/subsection.js ***!
-  \***************************************************************************/
+/*!**********************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/subsection.js ***!
+  \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18458,9 +18458,9 @@ exports.default = _default;
 
 /***/ }),
 /* 141 */
-/*!****************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/swipeAction.js ***!
-  \****************************************************************************/
+/*!***********************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/swipeAction.js ***!
+  \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18490,9 +18490,9 @@ exports.default = _default;
 
 /***/ }),
 /* 142 */
-/*!********************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/swipeActionItem.js ***!
-  \********************************************************************************/
+/*!***************************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/swipeActionItem.js ***!
+  \***************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18528,9 +18528,9 @@ exports.default = _default;
 
 /***/ }),
 /* 143 */
-/*!***********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/swiper.js ***!
-  \***********************************************************************/
+/*!******************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/swiper.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18585,9 +18585,9 @@ exports.default = _default;
 
 /***/ }),
 /* 144 */
-/*!*********************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/swipterIndicator.js ***!
-  \*********************************************************************************/
+/*!****************************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/swipterIndicator.js ***!
+  \****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18621,9 +18621,9 @@ exports.default = _default;
 
 /***/ }),
 /* 145 */
-/*!***********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/switch.js ***!
-  \***********************************************************************/
+/*!******************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/switch.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18662,9 +18662,9 @@ exports.default = _default;
 
 /***/ }),
 /* 146 */
-/*!***********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/tabbar.js ***!
-  \***********************************************************************/
+/*!******************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/tabbar.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18701,9 +18701,9 @@ exports.default = _default;
 
 /***/ }),
 /* 147 */
-/*!***************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/tabbarItem.js ***!
-  \***************************************************************************/
+/*!**********************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/tabbarItem.js ***!
+  \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18738,9 +18738,9 @@ exports.default = _default;
 
 /***/ }),
 /* 148 */
-/*!*********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/tabs.js ***!
-  \*********************************************************************/
+/*!****************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/tabs.js ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18795,9 +18795,9 @@ exports.default = _default;
 
 /***/ }),
 /* 149 */
-/*!********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/tag.js ***!
-  \********************************************************************/
+/*!***************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/tag.js ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18841,9 +18841,9 @@ exports.default = _default;
 
 /***/ }),
 /* 150 */
-/*!*********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/text.js ***!
-  \*********************************************************************/
+/*!****************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/text.js ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18897,9 +18897,9 @@ exports.default = _default;
 
 /***/ }),
 /* 151 */
-/*!*************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/textarea.js ***!
-  \*************************************************************************/
+/*!********************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/textarea.js ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18950,9 +18950,9 @@ exports.default = _default;
 
 /***/ }),
 /* 152 */
-/*!**********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/toast.js ***!
-  \**********************************************************************/
+/*!*****************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/toast.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18996,9 +18996,9 @@ exports.default = _default;
 
 /***/ }),
 /* 153 */
-/*!************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/toolbar.js ***!
-  \************************************************************************/
+/*!*******************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/toolbar.js ***!
+  \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19033,9 +19033,9 @@ exports.default = _default;
 
 /***/ }),
 /* 154 */
-/*!************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/tooltip.js ***!
-  \************************************************************************/
+/*!*******************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/tooltip.js ***!
+  \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19077,9 +19077,9 @@ exports.default = _default;
 
 /***/ }),
 /* 155 */
-/*!***************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/transition.js ***!
-  \***************************************************************************/
+/*!**********************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/transition.js ***!
+  \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19112,9 +19112,9 @@ exports.default = _default;
 
 /***/ }),
 /* 156 */
-/*!***********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/props/upload.js ***!
-  \***********************************************************************/
+/*!******************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/props/upload.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19171,9 +19171,9 @@ exports.default = _default;
 
 /***/ }),
 /* 157 */
-/*!*****************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/config/zIndex.js ***!
-  \*****************************************************************/
+/*!************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/config/zIndex.js ***!
+  \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19207,9 +19207,9 @@ exports.default = _default;
 
 /***/ }),
 /* 158 */
-/*!*********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/function/platform.js ***!
-  \*********************************************************************/
+/*!****************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/function/platform.js ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19262,9 +19262,9 @@ exports.default = _default;
 /* 182 */,
 /* 183 */,
 /* 184 */
-/*!**********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/components/u-form/props.js ***!
-  \**********************************************************************/
+/*!*****************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/components/u-form/props.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19325,9 +19325,9 @@ exports.default = _default;
 
 /***/ }),
 /* 185 */
-/*!************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/libs/util/async-validator.js ***!
-  \************************************************************************/
+/*!*******************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/libs/util/async-validator.js ***!
+  \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20505,7 +20505,7 @@ Schema.warning = warning;
 Schema.messages = messages;
 var _default = Schema; // # sourceMappingURL=index.js.map
 exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/node-libs-browser/mock/process.js */ 186)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../../迅雷下载/HBuilderX.3.7.11.20230427/HBuilderX/plugins/uniapp-cli/node_modules/node-libs-browser/mock/process.js */ 186)))
 
 /***/ }),
 /* 186 */
@@ -20871,9 +20871,9 @@ var substr = 'ab'.substr(-1) === 'b'
 /* 191 */,
 /* 192 */,
 /* 193 */
-/*!***************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/components/u-form-item/props.js ***!
-  \***************************************************************************/
+/*!**********************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/components/u-form-item/props.js ***!
+  \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20944,9 +20944,9 @@ exports.default = _default;
 /* 199 */,
 /* 200 */,
 /* 201 */
-/*!***********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/components/u-input/props.js ***!
-  \***********************************************************************/
+/*!******************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/components/u-input/props.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -21156,9 +21156,9 @@ exports.default = _default;
 /* 207 */,
 /* 208 */,
 /* 209 */
-/*!**************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/components/u-textarea/props.js ***!
-  \**************************************************************************/
+/*!*********************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/components/u-textarea/props.js ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -21297,17 +21297,215 @@ exports.default = _default;
 /* 212 */,
 /* 213 */,
 /* 214 */,
-/* 215 */,
+/* 215 */
+/*!************************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/components/u-radio-group/props.js ***!
+  \************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _default = {
+  props: {
+    // 绑定的值
+    value: {
+      type: [String, Number, Boolean],
+      default: uni.$u.props.radioGroup.value
+    },
+    // 是否禁用全部radio
+    disabled: {
+      type: Boolean,
+      default: uni.$u.props.radioGroup.disabled
+    },
+    // 形状，circle-圆形，square-方形
+    shape: {
+      type: String,
+      default: uni.$u.props.radioGroup.shape
+    },
+    // 选中状态下的颜色，如设置此值，将会覆盖parent的activeColor值
+    activeColor: {
+      type: String,
+      default: uni.$u.props.radioGroup.activeColor
+    },
+    // 未选中的颜色
+    inactiveColor: {
+      type: String,
+      default: uni.$u.props.radioGroup.inactiveColor
+    },
+    // 标识符
+    name: {
+      type: String,
+      default: uni.$u.props.radioGroup.name
+    },
+    // 整个组件的尺寸，默认px
+    size: {
+      type: [String, Number],
+      default: uni.$u.props.radioGroup.size
+    },
+    // 布局方式，row-横向，column-纵向
+    placement: {
+      type: String,
+      default: uni.$u.props.radioGroup.placement
+    },
+    // label的文本
+    label: {
+      type: [String],
+      default: uni.$u.props.radioGroup.label
+    },
+    // label的颜色 （默认 '#303133' ）
+    labelColor: {
+      type: [String],
+      default: uni.$u.props.radioGroup.labelColor
+    },
+    // label的字体大小，px单位
+    labelSize: {
+      type: [String, Number],
+      default: uni.$u.props.radioGroup.labelSize
+    },
+    // 是否禁止点击文本操作checkbox(默认 false )
+    labelDisabled: {
+      type: Boolean,
+      default: uni.$u.props.radioGroup.labelDisabled
+    },
+    // 图标颜色
+    iconColor: {
+      type: String,
+      default: uni.$u.props.radioGroup.iconColor
+    },
+    // 图标的大小，单位px
+    iconSize: {
+      type: [String, Number],
+      default: uni.$u.props.radioGroup.iconSize
+    },
+    // 竖向配列时，是否显示下划线
+    borderBottom: {
+      type: Boolean,
+      default: uni.$u.props.radioGroup.borderBottom
+    },
+    // 图标与文字的对齐方式
+    iconPlacement: {
+      type: String,
+      default: uni.$u.props.radio.iconPlacement
+    }
+  }
+};
+exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
+
+/***/ }),
 /* 216 */,
 /* 217 */,
 /* 218 */,
 /* 219 */,
 /* 220 */,
 /* 221 */,
-/* 222 */
-/*!**********************************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uni-transition/components/uni-transition/createAnimation.js ***!
-  \**********************************************************************************************/
+/* 222 */,
+/* 223 */
+/*!******************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/components/u-radio/props.js ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _default = {
+  props: {
+    // radio的名称
+    name: {
+      type: [String, Number, Boolean],
+      default: uni.$u.props.radio.name
+    },
+    // 形状，square为方形，circle为圆型
+    shape: {
+      type: String,
+      default: uni.$u.props.radio.shape
+    },
+    // 是否禁用
+    disabled: {
+      type: [String, Boolean],
+      default: uni.$u.props.radio.disabled
+    },
+    // 是否禁止点击提示语选中单选框
+    labelDisabled: {
+      type: [String, Boolean],
+      default: uni.$u.props.radio.labelDisabled
+    },
+    // 选中状态下的颜色，如设置此值，将会覆盖parent的activeColor值
+    activeColor: {
+      type: String,
+      default: uni.$u.props.radio.activeColor
+    },
+    // 未选中的颜色
+    inactiveColor: {
+      type: String,
+      default: uni.$u.props.radio.inactiveColor
+    },
+    // 图标的大小，单位px
+    iconSize: {
+      type: [String, Number],
+      default: uni.$u.props.radio.iconSize
+    },
+    // label的字体大小，px单位
+    labelSize: {
+      type: [String, Number],
+      default: uni.$u.props.radio.labelSize
+    },
+    // label提示文字，因为nvue下，直接slot进来的文字，由于特殊的结构，无法修改样式
+    label: {
+      type: [String, Number],
+      default: uni.$u.props.radio.label
+    },
+    // 整体的大小
+    size: {
+      type: [String, Number],
+      default: uni.$u.props.radio.size
+    },
+    // 图标颜色
+    color: {
+      type: String,
+      default: uni.$u.props.radio.color
+    },
+    // label的颜色
+    labelColor: {
+      type: String,
+      default: uni.$u.props.radio.labelColor
+    }
+  }
+};
+exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
+
+/***/ }),
+/* 224 */,
+/* 225 */,
+/* 226 */,
+/* 227 */,
+/* 228 */,
+/* 229 */,
+/* 230 */,
+/* 231 */,
+/* 232 */,
+/* 233 */,
+/* 234 */,
+/* 235 */,
+/* 236 */,
+/* 237 */,
+/* 238 */
+/*!*****************************************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uni-transition/components/uni-transition/createAnimation.js ***!
+  \*****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -21438,15 +21636,15 @@ function createAnimation(option, _this) {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 223 */,
-/* 224 */,
-/* 225 */,
-/* 226 */,
-/* 227 */,
-/* 228 */
-/*!**********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/components/u-icon/icons.js ***!
-  \**********************************************************************/
+/* 239 */,
+/* 240 */,
+/* 241 */,
+/* 242 */,
+/* 243 */,
+/* 244 */
+/*!*****************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/components/u-icon/icons.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -21674,10 +21872,10 @@ var _default = {
 exports.default = _default;
 
 /***/ }),
-/* 229 */
-/*!**********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/components/u-icon/props.js ***!
-  \**********************************************************************/
+/* 245 */
+/*!*****************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/components/u-icon/props.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -21781,17 +21979,17 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 230 */,
-/* 231 */,
-/* 232 */,
-/* 233 */,
-/* 234 */,
-/* 235 */,
-/* 236 */,
-/* 237 */
-/*!**********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/components/u-line/props.js ***!
-  \**********************************************************************/
+/* 246 */,
+/* 247 */,
+/* 248 */,
+/* 249 */,
+/* 250 */,
+/* 251 */,
+/* 252 */,
+/* 253 */
+/*!*****************************************************************************!*\
+  !*** E:/workProgram/nongan/uni_modules/uview-ui/components/u-line/props.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -21832,220 +22030,6 @@ var _default = {
     dashed: {
       type: Boolean,
       default: uni.$u.props.line.dashed
-    }
-  }
-};
-exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
-
-/***/ }),
-/* 238 */,
-/* 239 */,
-/* 240 */,
-/* 241 */,
-/* 242 */,
-/* 243 */,
-/* 244 */,
-/* 245 */,
-/* 246 */,
-/* 247 */,
-/* 248 */,
-/* 249 */,
-/* 250 */,
-/* 251 */,
-/* 252 */,
-/* 253 */,
-/* 254 */,
-/* 255 */,
-/* 256 */,
-/* 257 */,
-/* 258 */,
-/* 259 */,
-/* 260 */,
-/* 261 */
-/*!*****************************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/components/u-radio-group/props.js ***!
-  \*****************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var _default = {
-  props: {
-    // 绑定的值
-    value: {
-      type: [String, Number, Boolean],
-      default: uni.$u.props.radioGroup.value
-    },
-    // 是否禁用全部radio
-    disabled: {
-      type: Boolean,
-      default: uni.$u.props.radioGroup.disabled
-    },
-    // 形状，circle-圆形，square-方形
-    shape: {
-      type: String,
-      default: uni.$u.props.radioGroup.shape
-    },
-    // 选中状态下的颜色，如设置此值，将会覆盖parent的activeColor值
-    activeColor: {
-      type: String,
-      default: uni.$u.props.radioGroup.activeColor
-    },
-    // 未选中的颜色
-    inactiveColor: {
-      type: String,
-      default: uni.$u.props.radioGroup.inactiveColor
-    },
-    // 标识符
-    name: {
-      type: String,
-      default: uni.$u.props.radioGroup.name
-    },
-    // 整个组件的尺寸，默认px
-    size: {
-      type: [String, Number],
-      default: uni.$u.props.radioGroup.size
-    },
-    // 布局方式，row-横向，column-纵向
-    placement: {
-      type: String,
-      default: uni.$u.props.radioGroup.placement
-    },
-    // label的文本
-    label: {
-      type: [String],
-      default: uni.$u.props.radioGroup.label
-    },
-    // label的颜色 （默认 '#303133' ）
-    labelColor: {
-      type: [String],
-      default: uni.$u.props.radioGroup.labelColor
-    },
-    // label的字体大小，px单位
-    labelSize: {
-      type: [String, Number],
-      default: uni.$u.props.radioGroup.labelSize
-    },
-    // 是否禁止点击文本操作checkbox(默认 false )
-    labelDisabled: {
-      type: Boolean,
-      default: uni.$u.props.radioGroup.labelDisabled
-    },
-    // 图标颜色
-    iconColor: {
-      type: String,
-      default: uni.$u.props.radioGroup.iconColor
-    },
-    // 图标的大小，单位px
-    iconSize: {
-      type: [String, Number],
-      default: uni.$u.props.radioGroup.iconSize
-    },
-    // 竖向配列时，是否显示下划线
-    borderBottom: {
-      type: Boolean,
-      default: uni.$u.props.radioGroup.borderBottom
-    },
-    // 图标与文字的对齐方式
-    iconPlacement: {
-      type: String,
-      default: uni.$u.props.radio.iconPlacement
-    }
-  }
-};
-exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
-
-/***/ }),
-/* 262 */,
-/* 263 */,
-/* 264 */,
-/* 265 */,
-/* 266 */,
-/* 267 */,
-/* 268 */,
-/* 269 */
-/*!***********************************************************************!*\
-  !*** E:/work/nongan/uni_modules/uview-ui/components/u-radio/props.js ***!
-  \***********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var _default = {
-  props: {
-    // radio的名称
-    name: {
-      type: [String, Number, Boolean],
-      default: uni.$u.props.radio.name
-    },
-    // 形状，square为方形，circle为圆型
-    shape: {
-      type: String,
-      default: uni.$u.props.radio.shape
-    },
-    // 是否禁用
-    disabled: {
-      type: [String, Boolean],
-      default: uni.$u.props.radio.disabled
-    },
-    // 是否禁止点击提示语选中单选框
-    labelDisabled: {
-      type: [String, Boolean],
-      default: uni.$u.props.radio.labelDisabled
-    },
-    // 选中状态下的颜色，如设置此值，将会覆盖parent的activeColor值
-    activeColor: {
-      type: String,
-      default: uni.$u.props.radio.activeColor
-    },
-    // 未选中的颜色
-    inactiveColor: {
-      type: String,
-      default: uni.$u.props.radio.inactiveColor
-    },
-    // 图标的大小，单位px
-    iconSize: {
-      type: [String, Number],
-      default: uni.$u.props.radio.iconSize
-    },
-    // label的字体大小，px单位
-    labelSize: {
-      type: [String, Number],
-      default: uni.$u.props.radio.labelSize
-    },
-    // label提示文字，因为nvue下，直接slot进来的文字，由于特殊的结构，无法修改样式
-    label: {
-      type: [String, Number],
-      default: uni.$u.props.radio.label
-    },
-    // 整体的大小
-    size: {
-      type: [String, Number],
-      default: uni.$u.props.radio.size
-    },
-    // 图标颜色
-    color: {
-      type: String,
-      default: uni.$u.props.radio.color
-    },
-    // label的颜色
-    labelColor: {
-      type: String,
-      default: uni.$u.props.radio.labelColor
     }
   }
 };

@@ -8,6 +8,14 @@
 			"style": {
 				"navigationBarTitleText": "uni-app"
 			}
+		},
+		{
+			"path" : "pages/productRecord/productRecord",
+			"style" : 
+			{
+				"navigationBarTitleText" : "产品收货、销售记录",
+				"enablePullDownRefresh" : false
+			}
 		}
 	],
 	"globalStyle": {
