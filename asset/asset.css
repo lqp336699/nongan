@@ -397,8 +397,10 @@ html {
 	border-radius: 10rpx;
 }
 .navtop{
-	  height: var(--status-bar-height);
-	   width: 100%;
+	  margin-top:var(--status-bar-height)+'rpx' ;
+}
+.br18{
+	border-radius: 18rpx;
 }
 .nav{
 	top:var(--status-bar-height) +'rpx';

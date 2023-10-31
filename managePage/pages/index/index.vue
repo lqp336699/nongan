@@ -13,8 +13,6 @@
 		
 		
 		
-		
-		
 		<u-tabbar :value="current" @change="name => current = name" :fixed="true" :placeholder="true"
 			:safeAreaInsetBottom="true" activeColor="#1F9A64">
 			<u-tabbar-item text="巡查监督" >

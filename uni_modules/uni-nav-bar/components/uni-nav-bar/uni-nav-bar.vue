@@ -334,11 +334,11 @@
 		box-shadow: 0 1px 6px #ccc;
 	}
 
-	.uni-navbar--border {
-		border-bottom-width: 1rpx;
-		border-bottom-style: solid;
-		border-bottom-color: #eee;
-	}
+	// .uni-navbar--border {
+	// 	border-bottom-width: 1rpx;
+	// 	border-bottom-style: solid;
+	// 	border-bottom-color: #eee;
+	// }
 
 	.uni-ellipsis-1 {
 		overflow: hidden;
