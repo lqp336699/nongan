@@ -2,17 +2,12 @@
 	<view>
 
 
-
 		<view class="bd">
 			<home v-if="current==0"></home>
 			<ranking class="ranking" v-if="current==1"></ranking>
 			<Events v-if="current==2"></Events>
 			<policy v-if="current==3"></policy>
 		</view>
-
-
-
-
 
 
 		<u-tabbar :value="current" @change="name => current = name" :fixed="true" :placeholder="true"
