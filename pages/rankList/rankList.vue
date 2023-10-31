@@ -44,16 +44,22 @@
 				</view>
 				<text>评分</text>
 			</view>
-			<view class="bd w100 flex flex-between align-center" style="height: 142rpx;" v-for="(item,index) in 7"
-				:key="index">
-				<view class="flex align-center">
-					<image v-if="index <= imgList.length - 1" style="width: 80rpx;height: 80rpx;" :src="imgList[index]" mode=""></image>
-					<text v-else>{{index+1}}</text>
-					<text class="ml50 col2">射洪大榆镇凤姐蜂蜜养殖场</text>
+			<view class="w100" v-for="(item,index) in 7" :key="index">
+				<view class="flex flex-between align-center border-box"
+					style="height: 142rpx;padding-left: 16rpx;padding-right: 36rpx;">
+					<view class="flex align-center">
+						<image v-if="index <= imgList.length - 1" style="width: 80rpx;height: 80rpx;"
+							:src="imgList[index]" mode=""></image>
+						<view class="flex flex-center align-center" style="width: 80rpx;height: 80rpx;" v-else>
+							<text>{{index+1}}</text>
+						</view>
+						<text class="ml50 col2">射洪大榆镇凤姐蜂蜜养殖场</text>
+					</view>
+					<view class="font32 col2">
+						<text>98</text>
+					</view>
 				</view>
-				<view class="font32 col2">
-					<text>98</text>
-				</view>
+				<view class="mx24" style="border: 1px solid #E9E9E9;"></view>
 			</view>
 		</view>
 	</view>
