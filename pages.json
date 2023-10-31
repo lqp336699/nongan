@@ -3,7 +3,15 @@
 		"^u-(.*)": "@/uni_modules/uview-ui/components/u-$1/u-$1.vue"
 	},
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-		
+		{
+		    "path" : "pages/identity/identity",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "选择身份",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		},
 		
 		{
 		    "path" : "pages/home/home",
@@ -68,6 +76,7 @@
 			}
 		}
 	
+       
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

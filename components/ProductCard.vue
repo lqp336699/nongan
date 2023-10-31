@@ -1,7 +1,24 @@
 <template>
 	<view  class="mt20">
 		<view class="flex bgWhite  py40 px24 border-box flex-column br16">
-			<view class="flex flex-between align-center">
+			<view class="flex  flex-between align-center">
+				<view class="flex align-center ">
+					<text class="mr22">管理人员:</text>
+					<view class="flex ">
+						<image style="width:80rpx; height:80rpx;" class="br110 mr22 " src="@/static/logo.png" mode=""></image>
+						
+						<view class="flex flex-column flex-around">
+							<text>GJZ</text>
+							<text>市级管理人员</text>
+						</view>
+						
+					</view>
+				</view>
+				<image  style="width:8rpx; height:16rpx;" src="@/static/form/left.png" mode=""></image>
+			</view>
+			
+			
+			<view class="flex mt28 flex-between align-center">
 				<view class="flex ">
 					<text class="mr22">主体名称:</text> 
 					<text class="font800">射洪大榆镇凤姐蜂蜜养殖场</text>

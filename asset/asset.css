@@ -27,6 +27,9 @@ html { font-size:28rpx; color:#222222; }
 .mt6{
 	margin-top: 6rpx;
 }
+.br110{
+	border-radius: 110rpx;
+}
 .mt165{
 	margin-top: 165rpx;
 }
