@@ -29,13 +29,40 @@
 	margin-right: 24rpx;
 }
 
+.mx26{
+	margin-left: 26rpx;
+	margin-right: 26rpx;
+}
 
+.mx156{
+	margin-left: 156rpx;
+	margin-right: 156rpx;
+}
+
+.my26{
+	margin-top: 26rpx;
+	margin-bottom: 26rpx;
+}
+
+.px26{
+	padding-left: 26rpx;
+	padding-right: 26rpx;
+}
+
+.px54{
+	padding-left: 54rpx;
+	padding-right: 54rpx;
+}
 .br15{
 	border-radius: 15rpx;
 }
 
 .br58{
 	border-radius: 58rpx;
+}
+
+.br68{
+	border-radius: 68rpx;
 }
 .font50{
 	font-size: 50rpx;
@@ -47,6 +74,14 @@
 
 .ml30{
 	margin-left: 30rpx;
+}
+
+.ml50{
+	margin-left: 50rpx;
+}
+
+.ml100{
+	margin-left: 100rpx;
 }
 
 .pdt40{
@@ -115,6 +150,11 @@
 
 .ml14{
 	margin-left: 14rpx;
+}
+
+.px69{
+	padding-left: 69rpx;
+	padding-right: 69rpx;
 }
 
 .mt76{

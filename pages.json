@@ -63,7 +63,7 @@
 			"path" : "pages/UsePesticideRecord/UsePesticideRecord",
 			"style" : 
 			{
-				"navigationBarTitleText" : "",
+				"navigationBarTitleText" : "农药使用记录",
 				"enablePullDownRefresh" : false
 			}
 		},
@@ -73,6 +73,15 @@
 			{
 				"navigationBarTitleText" : "生产农事记录",
 				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/rankList/rankList",
+			"style" : 
+			{
+				"navigationBarTitleText" : "排行",
+				"enablePullDownRefresh" : false,
+				"navigationStyle": "custom"
 			}
 		}
 	

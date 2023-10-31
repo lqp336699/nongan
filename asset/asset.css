@@ -363,7 +363,14 @@ html { font-size:28rpx; color:#222222; }
 p{
 	padding:0;
 }
-
+.px56{
+	padding-left: 56rpx;
+	padding-right: 56rpx;
+}
+.py14{
+	padding-top: 14rpx;
+	padding-bottom: 14rpx;
+}
 .colf{
 	color:white;
 }
