@@ -1,12 +1,13 @@
 <template>
 	<view>
+		
+		
 
 		<view class="bd">
 			<home v-if="current==0"></home>
 			<ranking v-if="current==1"></ranking>
 			<Events v-if="current==2"></Events>
 			<policy v-if="current==3"></policy>
-			
 		</view>
 		
 		
@@ -45,17 +46,32 @@
 </template>
 
 <script>
-	
+	import Home from './components/manageHome/manageHome.vue';
+	import Ranking from './components/manageRanking/manageRanking.vue';
+	import Events from './components/manageEvents/manageEvents.vue';
+	import Policy from './components/managePolicy/managePolicy.vue';
 	export default {
+		
 		components: {
-			Home:()=>import('./components/manageHome/manageHome.vue'),
-			Ranking:()=>import('./components/manageRanking/manageRanking.vue'),
-			Events:()=>import('./components/manageEvents/manageEvents.vue'),
-			Policy:()=>import('./components/managePolicy/managePolicy.vue'),
+			Home,Ranking,Events,Policy
+			
+			// Home:()=>import('./components/manageHome/manageHome.vue'),
+			// Ranking:()=>import('./components/manageRanking/manageRanking.vue'),
+			// Events:()=>import('./components/manageEvents/manageEvents.vue'),
+			// Policy:()=>import('./components/managePolicy/managePolicy.vue'),
 		},
+		
 		data() {
 			return {
 				current: 0,
+				
+			}
+		},
+		watch:{
+			current:{
+				handler(newVal){
+					uni.set
+				}
 			}
 		},
 		methods: {
