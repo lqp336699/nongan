@@ -425,6 +425,61 @@ html {
 .mb20 {
 	margin-bottom: 20rpx;
 }
+<<<<<<< HEAD
+.px56{
+	padding-left: 56rpx;
+	padding-right: 56rpx;
+}
+.py14{
+	padding-top: 14rpx;
+	padding-bottom: 14rpx;
+}
+.colf{
+	color:white;
+}
+.mt78{
+	margin-top:78rpx;
+}
+.flex-center{
+	justify-content:center;
+}
+.absolute{
+	position:absolute;
+}
+.relactive{
+	position:relative;
+}
+.height100{
+	height:100%;
+}
+.px30{
+	padding-left:30rpx;
+	padding-right:30rpx;
+}
+.mt40{
+	margin-top:40rpx;
+}
+.mt50{
+	margin-top:50rpx;
+}
+.br22{
+	border-radius:22rpx;
+}
+.font28{
+	font-size:28rpx;
+}
+.ml16{
+	margin-left:16rpx;
+}
+.ml18{
+	margin-left:18rpx;
+}
+.ml20{
+	margin-left:20rpx;
+}
+	
+.font22{
+	font-size:22rpx;
 
 .mb26 {
 	margin-bottom: 26rpx;
