@@ -3,13 +3,15 @@ import App from './App'
 // #ifndef VUE3
 import Vue from 'vue'
 import './uni.promisify.adaptor'
+import uView from '@/uni_modules/uview-ui'
+import store from '@/store/index.js'
+
 Vue.config.productionTip = false
 App.mpType = 'app'
 
-
-
-import uView from '@/uni_modules/uview-ui'
 Vue.use(uView)
+
+
 uni.$u.setConfig({
 	// 修改$u.config对象的属性
 	config: {
@@ -32,7 +34,8 @@ uni.$u.setConfig({
 
 
 const app = new Vue({
-  ...App
+  ...App,
+  store
 })
 app.$mount()
 // #endif
