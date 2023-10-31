@@ -396,7 +396,13 @@ html {
 .br10 {
 	border-radius: 10rpx;
 }
-
+.navtop{
+	  height: var(--status-bar-height);
+	   width: 100%;
+}
+.nav{
+	top:var(--status-bar-height) +'rpx';
+}
 .flex-start {
 	justify-content: flex-start;
 }

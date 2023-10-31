@@ -72,13 +72,15 @@
 					"style": {
 						"navigationBarTitleText": "信息登记",
 						"enablePullDownRefresh": false
+						
 					}
 				},
 				{
 					"path": "pages/index/index",
 					"style": {
 						"navigationBarTitleText": "",
-						"enablePullDownRefresh": false
+						"enablePullDownRefresh": false,
+						"navigationStyle":"custom"
 					}
 				}
 
@@ -99,7 +101,8 @@
 				"path": "pages/index/index",
 				"style": {
 					"navigationBarTitleText": "",
-					"enablePullDownRefresh": false
+					"enablePullDownRefresh": false,
+					"navigationStyle":"custom"
 				}
 			}]
 		}

@@ -1,7 +1,17 @@
 <script>
 	export default {
 		onLaunch: function() {
-			console.log('App Launch')
+			if(uni.getStorageSync('identity')==1){
+				uni.redirectTo({
+					url:"/productPage/pages/index/index"
+				})
+			}else if(uni.getStorageSync('identity')==0){
+				uni.redirectTo({
+					url:"/managePage/pages/index/index"
+				})
+			}else{
+				
+			}
 		},
 		onShow: function() {
 			console.log('App Show')

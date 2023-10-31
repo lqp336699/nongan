@@ -1,7 +1,11 @@
 <template>
-	<view class="page px22">
+	<view class="page ">
+	
+		<uni-nav-bar backgroundColor="#3BC688" color="#fff" statusBar title="首页" fixed ></uni-nav-bar>
 		
-		<ProductCard v-for="item in 2" :key="item"></ProductCard>
+		<view class="px22">
+			<ProductCard v-for="item in 2" :key="item" ></ProductCard>
+		</view>
 	</view>
 </template>
 
@@ -22,6 +26,6 @@
 	}
 </script>
 
-<style>
+<style scopd lang="scss">
 
 </style>
