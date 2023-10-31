@@ -480,6 +480,7 @@ html {
 	
 .font22{
 	font-size:22rpx;
+	}
 
 .mb26 {
 	margin-bottom: 26rpx;
@@ -596,9 +597,6 @@ p {
 	margin-left: 20rpx;
 }
 
-.font22 {
-	font-size: 22rpx;
-}
 
 .mx14 {
 	margin-left: 14rpx;
