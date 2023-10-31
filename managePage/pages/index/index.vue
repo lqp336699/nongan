@@ -5,7 +5,7 @@
 
 		<view class="">
 			<home v-if="current==0"></home>
-			<ranking v-if="current==1"></ranking>
+			<ranking class="ranking" v-if="current==1"></ranking>
 			<Events v-if="current==2"></Events>
 			<policy v-if="current==3"></policy>
 		</view>
@@ -81,5 +81,16 @@
 </script>
 
 <style scoped lang="scss">
+	.ranking /deep/ .uni-nav-bar-text {
+		/* #ifdef APP-PLUS */
+		font-size: 36rpx !important;
+		/* #endif */
+		/* #ifndef APP-PLUS */
+		font-size: 18px;
+		/* #endif */
+	}
 
+	.ranking /deep/ .uni-navbar__header-container-inner{
+		justify-content: left !important;
+	}
 </style>

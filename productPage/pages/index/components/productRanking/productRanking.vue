@@ -90,18 +90,6 @@
 </script>
 
 <style lang="scss" scoped>
-	/deep/ .data-v-7a12ddc6 .uni-nav-bar-text {
-		/* #ifdef APP-PLUS */
-		font-size: 36rpx !important;
-		/* #endif */
-		/* #ifndef APP-PLUS */
-		font-size: 18px;
-		/* #endif */
-	}
-
-	/deep/ .uni-navbar__header-container-inner {
-		justify-content: left !important;
-	}
 
 	.active1 {
 		background-color: #fff;
