@@ -32,7 +32,7 @@
 							<text>市级管理人员</text>
 						</view>
 					</view>
-					<view class="flex px16 border-box py16 align-center flex-center br36" style="height:72rpx; width:192rpx; border:2rpx solid #1F9A64;">
+					<view @click="addPatrol" class="flex px16 border-box py16 align-center flex-center br36" style="height:72rpx; width:192rpx; border:2rpx solid #1F9A64;">
 						<image class="" style="width:32rpx; height:32rpx; margin-right:10rpx;" src="/static/index/add.png" mode=""></image>
 						<text style="color:#1F9A64;">添加巡查</text>
 					</view>
@@ -58,10 +58,11 @@
 </template>
 
 <script>
+	import AddPatrol from '@/managePage/pages/addPatrol/addPatrol.vue'
 	import ProductCard from '@/components/ProductCard.vue'
 	export default {
 		components: {
-			ProductCard
+			ProductCard,AddPatrol
 		},
 		data() {
 			return {
@@ -79,6 +80,11 @@
 			},
 			click() {
 
+			},
+			addPatrol(){
+				uni.navigateTo({
+					url:"/managePage/pages/addPatrol/addPatrol"
+				})
 			}
 		}
 	}

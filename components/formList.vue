@@ -3,22 +3,26 @@
 		<uni-popup ref="popup" type="bottom">
 			<DatePick @close="close" v-if="popupType=='Date'"></DatePick>
 			<!-- <u-select v-model="from[selectProp]" v-if="popupType=='Select'" :list="selectList"></u-select> -->
-			
-			<SelectPick  @close="close"  :selectTitle="selectTitle" v-if="popupType=='Select'" :selectList="selectList"></SelectPick>
-			
+
+			<SelectPick @close="close" :selectTitle="selectTitle" v-if="popupType=='Select'" :selectList="selectList">
+			</SelectPick>
+
 		</uni-popup>
 
 
 
 		<view class="">
 
-			<u-form :model="form" ref="uForm" error-type="toast" label-width="180" :rules="rules" :label-style="{color:'#555'}">
+			<u-form :model="form" ref="uForm" error-type="toast" label-width="180" :rules="rules"
+				:label-style="{color:'#555'}">
 
-				<view class="bgWhite  px30 br20 mb10" v-for="item in formList" :key="item.prop" >
+				<view class="bgWhite   br20 mb10" v-for="item in formList" :key="item.prop">
 
-					<view v-if="item.type=='input'" :class="['flex',  'flex-between', 'align-center', item.class ? item.class : '']" :key="item.prop || item.placeholder">
-						<u-form-item class="flex1" :labelWidth="item.labelWidth || 190" :required="item.hasOwnProperty('rule')" :prop="item.prop"
-							:label="item.label">
+					<view v-if="item.type=='input'"
+						:class="['flex',  'flex-between,px30', 'align-center', item.class ? item.class : '']"
+						:key="item.prop || item.placeholder">
+						<u-form-item class="flex1" :labelWidth="item.labelWidth || 190"
+							:required="item.hasOwnProperty('rule')" :prop="item.prop" :label="item.label">
 							<u-input border="false" input-align="right" placeholder-style="text-align:right"
 								:placeholder="item.placeholder" v-model="form[item.prop]" />
 						</u-form-item>
@@ -26,24 +30,15 @@
 						<slot v-if="item.slot">
 							{{item.slot}}
 						</slot>
-					<!-- 	<image v-if="item.type=='select'" style="width:15rpx; height:27rpx;"
+						<!-- 	<image v-if="item.type=='select'" style="width:15rpx; height:27rpx;"
 							src="@/static/form/left.png" mode=""></image> -->
 
 					</view>
 
-					<view :class="['flex',  'flex-between', 'align-center', item.class ? item.class : '']" @click="showDate(item.prop)" v-if="item.type==='date'" :key="item.prop || item.placeholder">
-						<u-form-item class="flex1 " :labelWidth="item.labelWidth || 190" :required="item.hasOwnProperty('rule')" :prop="item.prop"
-							:label="item.label">
-							<u-input input-align="right" placeholder-style="text-align:right" border="false"
-								v-model="form[item.prop]" :placeholder="item.placeholder" type="select" disabled />
-						</u-form-item>
-						<image style="width:15rpx; height:27rpx;" src="@/static/form/left.png" mode=""></image>
-					</view>
-					
-					
-					<view :class="['flex',  'flex-between', 'align-center', item.class ? item.class : '']"  @click="showSelect(item)"  v-if="item.type==='select'" :key="item.prop || item.placeholder">
-						<u-form-item class="flex1 " :labelWidth="item.labelWidth || 190" :required="item.hasOwnProperty('rule')" :prop="item.prop"
-							:label="item.label">
+					<view :class="['flex',  'flex-between', 'align-center,px30', item.class ? item.class : '']"
+						@click="showDate(item.prop)" v-if="item.type==='date'" :key="item.prop || item.placeholder">
+						<u-form-item class="flex1 " :labelWidth="item.labelWidth || 190"
+							:required="item.hasOwnProperty('rule')" :prop="item.prop" :label="item.label">
 							<u-input input-align="right" placeholder-style="text-align:right" border="false"
 								v-model="form[item.prop]" :placeholder="item.placeholder" type="select" disabled />
 						</u-form-item>
@@ -51,9 +46,21 @@
 					</view>
 
 
+					<view :class="['flex',  'flex-between', 'align-center,px30', item.class ? item.class : '']"
+						@click="showSelect(item)" v-if="item.type==='select'" :key="item.prop || item.placeholder">
+						<u-form-item class="flex1 " :labelWidth="item.labelWidth || 190"
+							:required="item.hasOwnProperty('rule')" :prop="item.prop" :label="item.label">
+							<u-input input-align="right" placeholder-style="text-align:right" border="false"
+								v-model="form[item.prop]" :placeholder="item.placeholder" type="select" disabled />
+						</u-form-item>
+						<image style="width:15rpx; height:27rpx;" src="@/static/form/left.png" mode=""></image>
+					</view>
 
 
-					<view :class="['flex',  'flex-between', 'align-center', item.class ? item.class : '']" v-if="item.type=='textarea'" :key="item.prop || item.placeholder">
+
+
+					<view :class="['flex',  'flex-between', 'align-center,px30', item.class ? item.class : '']"
+						v-if="item.type=='textarea'" :key="item.prop || item.placeholder">
 						<u-form-item labelPosition="top" :labelWidth="item.labelWidth || 190" class="flex1 "
 							:prop="item.prop" :label="item.label">
 
@@ -66,7 +73,8 @@
 					</view>
 
 
-					<view :class="['flex',  'flex-between', 'align-center', item.class ? item.class : '']" v-if="item.type=='redio'" :key="item.prop || item.placeholder">
+					<view :class="['flex',  'flex-between', 'align-center,px30', item.class ? item.class : '']"
+						v-if="item.type=='redio'" :key="item.prop || item.placeholder">
 						<u-form-item labelPosition="left" :required="item.hasOwnProperty('rule')"
 							:labelWidth="item.labelWidth || 190" class="flex1" :prop="item.prop" :label="item.label">
 							<u-radio-group v-model="form[item.prop]" @change="radioGroupChange(e,item)">
@@ -79,6 +87,33 @@
 						</u-form-item>
 					</view>
 
+					<view :class="['flex','bigRedio' ,'px30' , 'flex-between', 'align-center', item.class ? item.class : '']"
+						v-if="item.type=='bigRedio'" :key="item.prop || item.placeholder" >
+						<u-form-item labelPosition="top" :required="item.hasOwnProperty('rule')"
+							:labelWidth="item.labelWidth || 190" class="flex1" :prop="item.prop" :label="item.label">
+							<u-radio-group v-model="form[item.prop]" @change="radioGroupChange(e,item)">
+								<u-radio @change="radioChange" class="" active-color="#21A068"
+									v-for="(redioItem, index) in item.redioList" :key="index" :name="redioItem.name"
+									:disabled="redioItem.disabled">
+									{{redioItem.name}}
+								</u-radio>
+							</u-radio-group>
+						</u-form-item>
+					</view>
+
+
+				<!-- 	<view :class="['flex',  'flex-between', 'align-center,px30', item.class ? item.class : '']"
+						v-if="item.type=='textImage'" :key="item.prop || item.placeholder">
+						<u-form-item class="flex1 " :labelWidth="item.labelWidth || 190"
+							:required="item.hasOwnProperty('rule')" :prop="item.prop" :label="item.label">
+
+							<u-input border="false" input-align="right" placeholder-style="text-align:right"
+								:placeholder="item.placeholder" v-model="form[item.prop]" />
+
+						</u-form-item>
+					</view> -->
+
+
 				</view>
 
 			</u-form>
@@ -89,11 +124,12 @@
 
 <script>
 	import DatePick from '@/components/datePick.vue'
-	import SelectPick from  '@/components/selectPick.vue'
+	import SelectPick from '@/components/selectPick.vue'
 	export default {
 		name: "formList",
 		components: {
-			DatePick,SelectPick
+			DatePick,
+			SelectPick
 		},
 		props: {
 			formList: {
@@ -108,7 +144,7 @@
 				if (!form[item.prop]) {
 					this.$set(form, item.prop, '')
 				}
-				
+
 				if (item.rule) {
 					this.$set(rules, item.prop, item.rule)
 				}
@@ -119,10 +155,10 @@
 				rules: {
 					...rules
 				},
-				popupType:false,
-				selectList:[],
-				selectProp:"",
-				selectTitle:""
+				popupType: false,
+				selectList: [],
+				selectProp: "",
+				selectTitle: ""
 			}
 		},
 
@@ -148,7 +184,7 @@
 
 					})
 
-					this.$emit('setFormData', newValCopy)//页面接收newValCopy
+					this.$emit('setFormData', newValCopy) //页面接收newValCopy
 				},
 				deep: true
 			}
@@ -162,26 +198,26 @@
 				this.popupType = 'Date'
 				this.$refs.popup.open('bottom')
 			},
-			showSelect(item){
+			showSelect(item) {
 				this.selectList = item.selectList
-				this.selectTitle=item.selectTitle
+				this.selectTitle = item.selectTitle
 				this.selectProp = item.prop
 				this.popupType = 'Select'
 				this.$refs.popup.open('bottom')
 			},
 			close(value) {
 				console.log(value)
-				if(this.popupType == 'Date'){
+				if (this.popupType == 'Date') {
 					this.form[this.dateProp] = value
-				}else{
+				} else {
 					this.form[this.selectProp] = value
 				}
-				
+
 				this.popupType = ''
 				this.$refs.popup.close()
 			},
-			setSelectProp(val){
-				console.log(val,"bbcvvvcxcccx")
+			setSelectProp(val) {
+				console.log(val, "bbcvvvcxcccx")
 			},
 			radioChange() {
 
@@ -201,7 +237,6 @@
 </script>
 
 <style scoped lang="scss">
-
 
 
 </style>
