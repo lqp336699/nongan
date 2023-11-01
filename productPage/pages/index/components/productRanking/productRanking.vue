@@ -90,7 +90,6 @@
 </script>
 
 <style lang="scss" scoped>
-
 	.active1 {
 		background-color: #fff;
 		color: #FF424D;
