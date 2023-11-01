@@ -2,7 +2,7 @@
 	"easycom": {
 		"^u-(.*)": "@/uni_modules/uview-ui/components/u-$1/u-$1.vue"
 	},
-	"pages": [ 
+	"pages": [
 
 		{
 			"path": "pages/identity/identity",
@@ -12,55 +12,11 @@
 			}
 
 		},
-		
+
 		{
 			"path": "pages/index/index",
 			"style": {
 				"navigationBarTitleText": "uni-app"
-			}
-		},
-		{
-			"path": "pages/productMarketRecord/productMarketRecord",
-			"style": {
-				"navigationBarTitleText": "产品收货、销售记录",
-				"enablePullDownRefresh": false
-			}
-		},
-		{
-			"path": "pages/BuyManureRecord/BuyManureRecord",
-			"style": {
-				"navigationBarTitleText": "肥料购买及出入库记录",
-				"enablePullDownRefresh": false
-			}
-		},
-		{
-			"path": "pages/UseManureRecord/UseManureRecord",
-			"style": {
-				"navigationBarTitleText": "肥料使用记录",
-				"enablePullDownRefresh": false
-			}
-		},
-		{
-
-			"path": "pages/BuyPesticideRecord/BuyPesticideRecord",
-			"style": {
-				"navigationBarTitleText": "农药购买及出入库记录",
-				"enablePullDownRefresh": false
-			}
-		},
-		{
-			"path": "pages/UsePesticideRecord/UsePesticideRecord",
-			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
-			}
-		},
-		{
-
-			"path": "pages/yieldFarmRecord/yieldFarmRecord",
-			"style": {
-				"navigationBarTitleText": "生产农事记录",
-				"enablePullDownRefresh": false
 			}
 		}
 	],
@@ -72,7 +28,7 @@
 					"style": {
 						"navigationBarTitleText": "信息登记",
 						"enablePullDownRefresh": false
-						
+
 					}
 				},
 				{
@@ -80,7 +36,7 @@
 					"style": {
 						"navigationBarTitleText": "",
 						"enablePullDownRefresh": false,
-						"navigationStyle":"custom"
+						"navigationStyle": "custom"
 					}
 				}
 
@@ -92,19 +48,64 @@
 			"root": "productPage",
 			"name": "productPage",
 			"pages": [{
-				"path": "pages/registration/registration",
-				"style": {
-					"navigationBarTitleText": "信息登记",
-					"enablePullDownRefresh": false
+					"path": "pages/registration/registration",
+					"style": {
+						"navigationBarTitleText": "信息登记",
+						"enablePullDownRefresh": false
+					}
+				}, {
+					"path": "pages/index/index",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "pages/productMarketRecord/productMarketRecord",
+					"style": {
+						"navigationBarTitleText": "产品收货、销售记录",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "pages/BuyManureRecord/BuyManureRecord",
+					"style": {
+						"navigationBarTitleText": "肥料购买及出入库记录",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "pages/UseManureRecord/UseManureRecord",
+					"style": {
+						"navigationBarTitleText": "肥料使用记录",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+
+					"path": "pages/BuyPesticideRecord/BuyPesticideRecord",
+					"style": {
+						"navigationBarTitleText": "农药购买及出入库记录",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "pages/UsePesticideRecord/UsePesticideRecord",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+
+					"path": "pages/yieldFarmRecord/yieldFarmRecord",
+					"style": {
+						"navigationBarTitleText": "生产农事记录",
+						"enablePullDownRefresh": false
+					}
 				}
-			}, {
-				"path": "pages/index/index",
-				"style": {
-					"navigationBarTitleText": "",
-					"enablePullDownRefresh": false,
-					"navigationStyle":"custom"
-				}
-			}]
+			]
 		}
 
 	],

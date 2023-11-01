@@ -1,14 +1,16 @@
 <script>
 	export default {
 		onLaunch: function() {
-			if(uni.getStorageSync('identity')==1){
-				uni.redirectTo({
-					url:"/productPage/pages/index/index"
-				})
-			}else if(uni.getStorageSync('identity')==0){
-				uni.redirectTo({
-					url:"/managePage/pages/index/index"
-				})
+			if(uni.getStorageSync('identity')){
+				if(uni.getStorageSync('identity')==1){
+					uni.redirectTo({
+						url:"/productPage/pages/index/index"
+					})
+				}else if(uni.getStorageSync('identity')==0){
+					uni.redirectTo({
+						url:"/managePage/pages/index/index"
+					})
+				}
 			}else{
 				
 			}

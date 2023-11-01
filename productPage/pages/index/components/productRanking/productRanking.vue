@@ -1,11 +1,11 @@
 <template>
-	<view class="page">
+	<view class="overH" style="height:  calc(100vh - 170rpx)">
 		<!-- 导航栏 -->
 		<uni-nav-bar status-bar style="position: fixed;z-index: 10;" :leftWidth="0" :border="false" color="#fff"
 			title="排行" fixed="true" backgroundColor="rgba(0,0,0,0)"></uni-nav-bar>
 		<!-- 导航栏 -->
 
-		<view class="relactive" style="height: 568rpx;">
+			<view class="relactive" style="height: 568rpx;">
 			<image style="width: 100%;height: 568rpx;"
 				:src="rankType == 1 ?'/static/rank/red.png' : '/static/rank/black.png'" mode=""></image>
 			<view class="br68 bgWhite flex flex-around align-center absolute"
@@ -37,30 +37,33 @@
 			</view>
 		</view>
 		<view class="bgWhite flex flex-column align-center" style="width: 750rpx;">
-			<view class="px26 border-box flex flex-between w100" style="height: 34rpx;">
+			<view class="px26 border-box flex flex-between w100 col5" style="height: 34rpx;">
 				<view class="">
 					<text>排名</text>
 					<text class="ml100">主体名称</text>
 				</view>
 				<text>评分</text>
 			</view>
-			<view class="w100" v-for="(item,index) in 7" :key="index">
-				<view class="flex flex-between align-center border-box"
-					style="height: 142rpx;padding-left: 16rpx;padding-right: 36rpx;">
-					<view class="flex align-center">
-						<image v-if="index <= imgList.length - 1" style="width: 80rpx;height: 80rpx;"
-							:src="imgList[index]" mode=""></image>
-						<view class="flex flex-center align-center" style="width: 80rpx;height: 80rpx;" v-else>
-							<text>{{index+1}}</text>
+			<scroll-view class="" scroll-y="true" style="height:calc(100vh -  774rpx);">
+				<view class="w100" v-for="(item,index) in 10" :key="index">
+					<view class="flex flex-between align-center border-box"
+						style="height: 142rpx;padding-left: 16rpx;padding-right: 36rpx;">
+						<view class="flex align-center">
+							<image v-if="index <= imgList.length - 1" style="width: 80rpx;height: 80rpx;"
+								:src="imgList[index]" mode=""></image>
+							<view class="flex flex-center align-center" style="width: 80rpx;height: 80rpx;" v-else>
+								<text>{{index+1}}</text>
+							</view>
+							<text class="ml50 col2">射洪大榆镇凤姐蜂蜜养殖场</text>
 						</view>
-						<text class="ml50 col2">射洪大榆镇凤姐蜂蜜养殖场</text>
+						<view class="font32 col2">
+							<text>98</text>
+						</view>
 					</view>
-					<view class="font32 col2">
-						<text>98</text>
-					</view>
+					<view class="mx24" style="border: 1px solid #E9E9E9;"></view>
 				</view>
-				<view class="mx24" style="border: 1px solid #E9E9E9;"></view>
-			</view>
+			</scroll-view>
+
 		</view>
 	</view>
 </template>
