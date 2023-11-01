@@ -402,6 +402,9 @@ html {
 .br18{
 	border-radius: 18rpx;
 }
+.mr4{
+	margin-right: 4rpx;
+}
 .nav{
 	top:var(--status-bar-height) +'rpx';
 }
@@ -652,7 +655,9 @@ p {
 .bbs {
 	border-bottom: 1rpx solid #ccc;
 }
-
+.box-shadow{
+	box-shadow: 4rpx 4rpx 5rpx 4rpx #ececec;
+}
 .line2over {
 	overflow: hidden;
 	-webkit-line-clamp: 2;
