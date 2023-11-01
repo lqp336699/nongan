@@ -4,10 +4,10 @@
 		
 
 		<view class="">
-			<home v-if="current==0"></home>
-			<ranking class="ranking" v-if="current==1"></ranking>
-			<Events v-if="current==2"></Events>
-			<policy v-if="current==3"></policy>
+			<home ref="Home" v-if="current==0"></home>
+			<ranking ref="ranking" class="ranking" v-if="current==1"></ranking>
+			<Events ref="Events" v-if="current==2"></Events>
+			<policy ref="policy" v-if="current==3"></policy>
 		</view>
 		
 		
@@ -66,8 +66,12 @@
 		},
 		
 		onReachBottom(){
-			
-		}
+			switch(this.current){
+				case 0 : 
+				// this.$refs.Home.page_size++
+				
+			}
+		},
 		watch:{
 			current:{
 				handler(newVal){

@@ -1,5 +1,5 @@
 <template>
-	<view class="page bd relactive ">
+	<view class="page  relactive ">
 
 		<uni-nav-bar backgroundColor="#3BC688" color="#fff" statusBar title="首页" fixed></uni-nav-bar>
 
@@ -8,7 +8,7 @@
 		</view>
 		
 
-		<view class="px22 absolute pb100" style="z-index: 1; ">
+		<view class="px22 relactive pb40" style="z-index: 1; ">
 			<view class="navtop">
 				
 			</view>
@@ -53,7 +53,11 @@
 			</view>
 			
 			<ProductCard v-for="item in 2" :key="item"></ProductCard>
+			
+			
 		</view>
+		<u-loadmore class="mt20" :height="100" font-size="28" :status="status" :loading-text="loadingText" :loadmore-text="loadmoreText"
+			:nomore-text="nomoreText" />
 	</view>
 </template>
 
@@ -71,7 +75,13 @@
 					'https://cdn.uviewui.com/uview/swiper/swiper2.png',
 					'https://cdn.uviewui.com/uview/swiper/swiper3.png',
 				],
-				swiperIndex:1
+				swiperIndex:1,
+				limit: 8,
+				page: 1,
+				status: 'loadmore',
+				loadingText: '努力加载中',
+				loadmoreText: '轻轻上拉',
+				nomoreText: '没有更多了'
 			}
 		},
 		methods: {
