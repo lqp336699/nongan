@@ -64,10 +64,14 @@
 				
 			}
 		},
+		
+		onReachBottom(){
+			
+		}
 		watch:{
 			current:{
 				handler(newVal){
-					uni.set
+					
 				}
 			}
 		},

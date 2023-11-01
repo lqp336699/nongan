@@ -1,5 +1,5 @@
 <template>
-	<view class="page relactive">
+	<view class="page bd relactive ">
 
 		<uni-nav-bar backgroundColor="#3BC688" color="#fff" statusBar title="首页" fixed></uni-nav-bar>
 
@@ -8,7 +8,7 @@
 		</view>
 		
 
-		<view class="px22 absolute " style="z-index: 1; ">
+		<view class="px22 absolute pb100" style="z-index: 1; ">
 			<view class="navtop">
 				
 			</view>

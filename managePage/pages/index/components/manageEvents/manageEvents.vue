@@ -1,7 +1,7 @@
 <template>
 	<view class="page">
 		<uni-nav-bar  statusBar title="生产主体" fixed></uni-nav-bar>
-		<scroll-view scroll-y="true" bd>
+		<!-- <scroll-view scroll-y="true" class="pb60 border-box bd" bd> -->
 			<view class="px22">
 				
 				<!-- <view v-if="recodeList.length == 0" class="py100 flex flex-center align-center">
@@ -10,16 +10,15 @@
 				
 				
 				<!-- <view v-if="recodeList.length > 0" class="pb40   border-box"> -->
-				<product-item></product-item>
+				<product-item v-for="item in 5" :key="item"></product-item>
 				<!-- </view> -->
-				
 				
 				
 			</view>
 			
 			
 			<u-loadmore v-if="recodeList.length > 0" class="" fontSize="28" :status="status" :loading-text="loadingText" :loadmore-text="loadmoreText" :nomore-text="nomoreText" />
-		</scroll-view>
+		<!-- </scroll-view> -->
 	</view>
 </template>
 
