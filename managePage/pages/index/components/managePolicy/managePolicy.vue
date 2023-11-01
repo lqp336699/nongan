@@ -1,7 +1,7 @@
 <template>
 	<view class="px24 page">
 		<!-- hot -->
-		<uni-nav-bar backgroundColor="#3BC688" color="#fff" statusBar title="首页" fixed></uni-nav-bar>
+		<uni-nav-bar  statusBar title="首页" fixed></uni-nav-bar>
 		<view class=" flex flex-between mt20">
 
 			<navigator

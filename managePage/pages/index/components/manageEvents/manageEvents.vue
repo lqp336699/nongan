@@ -1,5 +1,5 @@
 <template>
-	<view class="page">
+	<view class="page pb50">
 		<uni-nav-bar statusBar title="生产主体" fixed></uni-nav-bar>
 		<!-- <scroll-view scroll-y="true" class="pb60 border-box bd" bd> -->
 		<view class="px22">
@@ -16,9 +16,11 @@
 
 		</view>
 
+		<view class="mt20 ">
+			<u-loadmore fontSize="28" :status="status" :loading-text="loadingText" :loadmore-text="loadmoreText"
+				:nomore-text="nomoreText" />
+		</view>
 
-		<u-loadmore v-if="recodeList.length > 0" class="" fontSize="28" :status="status" :loading-text="loadingText"
-			:loadmore-text="loadmoreText" :nomore-text="nomoreText" />
 		<!-- </scroll-view> -->
 	</view>
 </template>

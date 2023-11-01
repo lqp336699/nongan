@@ -60,24 +60,10 @@
 		data() {
 			return {
 				formList: [{
-						type: 'select',
-						placeholder: "请输入",
-						selectList: [
-							[{
-								value: '1',
-								label: '李'
-							}, {
-								value: '1',
-								label: '江'
-							}],
-							[{
-								value: '2',
-								label: '清平'
-							}, {
-								value: '2',
-								label: '来了'
-							}]
-						],
+						type: 'addressSelect',
+						placeholder: "请选择",
+						selectTitle:"选择所在地区",
+						selectList: [],
 						rule: [{
 							required: true,
 							message: '请输入地块名称',

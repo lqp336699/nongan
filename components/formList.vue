@@ -6,6 +6,8 @@
 
 			<SelectPick @close="close" :selectTitle="selectTitle" v-if="popupType=='Select'" :selectList="selectList">
 			</SelectPick>
+			
+			<AddressPick @close="close" :selectTitle="selectTitle" v-if="popupType=='addressSelect'" ></AddressPick>
 
 		</uni-popup>
 
@@ -48,6 +50,16 @@
 
 					<view :class="['flex',  'flex-between', 'align-center,px30', item.class ? item.class : '']"
 						@click="showSelect(item)" v-if="item.type==='select'" :key="item.prop || item.placeholder">
+						<u-form-item class="flex1 " :labelWidth="item.labelWidth || 190"
+							:required="item.hasOwnProperty('rule')" :prop="item.prop" :label="item.label">
+							<u-input input-align="right" placeholder-style="text-align:right" border="false"
+								v-model="form[item.prop]" :placeholder="item.placeholder" type="select" disabled />
+						</u-form-item>
+						<image style="width:15rpx; height:27rpx;" src="@/static/form/left.png" mode=""></image>
+					</view>
+					
+					<view :class="['flex',  'flex-between', 'align-center,px30', item.class ? item.class : '']"
+						@click="showSelect(item)" v-if="item.type==='addressSelect'" :key="item.prop || item.placeholder">
 						<u-form-item class="flex1 " :labelWidth="item.labelWidth || 190"
 							:required="item.hasOwnProperty('rule')" :prop="item.prop" :label="item.label">
 							<u-input input-align="right" placeholder-style="text-align:right" border="false"
@@ -124,12 +136,14 @@
 
 <script>
 	import DatePick from '@/components/datePick.vue'
+	import AddressPick from '@/components/addressPick.vue'
 	import SelectPick from '@/components/selectPick.vue'
 	export default {
 		name: "formList",
 		components: {
 			DatePick,
-			SelectPick
+			SelectPick,
+			AddressPick
 		},
 		props: {
 			formList: {
@@ -202,7 +216,13 @@
 				this.selectList = item.selectList
 				this.selectTitle = item.selectTitle
 				this.selectProp = item.prop
-				this.popupType = 'Select'
+				if(item.type=="select"){
+					this.popupType = 'Select'
+				}else if(item.type=="addressSelect"){
+					this.popupType = 'addressSelect'
+				}
+				
+				
 				this.$refs.popup.open('bottom')
 			},
 			close(value) {

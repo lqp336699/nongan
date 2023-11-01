@@ -15,7 +15,9 @@ html {
 .mt36{
 	margin-top: 36rpx;
 }
-
+.pb50{
+	padding-bottom:50rpx;
+}
 .pd20 {
 	padding: 20rpx;
 }
