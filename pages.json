@@ -2,8 +2,7 @@
 	"easycom": {
 		"^u-(.*)": "@/uni_modules/uview-ui/components/u-$1/u-$1.vue"
 	},
-	"pages": [
-		{
+	"pages": [{
 			"path": "pages/identity/identity",
 			"style": {
 				"navigationBarTitleText": "选择身份",
@@ -19,6 +18,7 @@
 			}
 
 		}
+
 
 	],
 	"subpackages": [{
@@ -113,8 +113,15 @@
 						"navigationBarTitleText": "生产农事记录",
 						"enablePullDownRefresh": false
 					}
+				},
+				{
+					"path": "pages/patrolDetail/patrolDetail",
+					"style": {
+						"navigationBarTitleText": "巡查详情",
+						"enablePullDownRefresh": false,
+						"navigationStyle": "custom"
+					}
 				}
-
 			]
 		}
 

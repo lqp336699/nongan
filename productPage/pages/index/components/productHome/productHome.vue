@@ -8,13 +8,11 @@
 		</view>
 
 
-		<view class="px22 absolute " style="z-index: 1; ">
-			<view class="navtop">
-
-			</view>
-			<view class="" style="margin-top: 44rpx;">
-
-			</view>
+		<view class="px22 relactive " style="z-index: 1; ">
+			<view class="navtop"></view>
+			
+			
+			<view class="" style="margin-top: 44rpx;"></view>
 			<view class="relactive">
 				<view class="absolute flex flex-end  pr40" style="bottom: 20rpx; z-index:2; left:0; right:0;">
 					<text class="py4 px8 colf br18" style="background: rgba(0,0,0,0.5); ">{{swiperIndex+1}}/
@@ -88,7 +86,8 @@
 			},
 			click() {
 
-			}
+			},
+			
 		}
 	}
 </script>

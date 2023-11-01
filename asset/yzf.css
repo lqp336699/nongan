@@ -76,6 +76,10 @@
 	font-size: 50rpx;
 }
 
+.ml6{
+	margin-left: 6rpx;
+}
+
 .ml26{
 	margin-left: 26rpx;
 }
@@ -90,6 +94,22 @@
 
 .ml100{
 	margin-left: 100rpx;
+}
+
+.mb22{
+	margin-bottom: 22rpx;
+}
+
+.mb24{
+	margin-bottom: 24rpx;
+}
+
+.pt38{
+	padding-top: 38rpx;
+}
+
+.pb42{
+	padding-bottom: 42rpx;
 }
 
 .pdt40{

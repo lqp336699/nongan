@@ -56,11 +56,12 @@
 				uni.navigateTo({
 					url: item.path
 				})
-			}
+			},
+			
 		}
 	}
 </script>
 
-<style>
+<style lang="scss" scoped>
 
 </style>
