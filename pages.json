@@ -2,7 +2,7 @@
 	"easycom": {
 		"^u-(.*)": "@/uni_modules/uview-ui/components/u-$1/u-$1.vue"
 	},
-	"pages": [ 
+	"pages": [
 
 		{
 			"path": "pages/identity/identity",
@@ -12,7 +12,7 @@
 			}
 
 		},
-		
+
 		{
 			"path": "pages/index/index",
 			"style": {
@@ -63,6 +63,7 @@
 				"enablePullDownRefresh": false
 			}
 		}
+
 	],
 	"subpackages": [{
 			"root": "managePage",
@@ -72,7 +73,7 @@
 					"style": {
 						"navigationBarTitleText": "信息登记",
 						"enablePullDownRefresh": false
-						
+
 					}
 				},
 				{
@@ -80,8 +81,15 @@
 					"style": {
 						"navigationBarTitleText": "",
 						"enablePullDownRefresh": false,
-						"navigationStyle":"custom"
+						"navigationStyle": "custom"
 					}
+				}, {
+					"path": "pages/addPatrol/addPatrol",
+					"style": {
+						"navigationBarTitleText": "添加巡查",
+						"enablePullDownRefresh": false
+					}
+
 				}
 
 
@@ -102,7 +110,7 @@
 				"style": {
 					"navigationBarTitleText": "",
 					"enablePullDownRefresh": false,
-					"navigationStyle":"custom"
+					"navigationStyle": "custom"
 				}
 			}]
 		}

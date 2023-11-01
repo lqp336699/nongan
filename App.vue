@@ -26,5 +26,12 @@
 	@import "@/uni_modules/uview-ui/index.scss";
 	@import url('asset/asset.css');
 	@import url('asset/yzf.css');
+	/deep/ .u-radio-group--row{
+		justify-content: flex-end !important;
+	}
+	.bigRedio /deep/  .u-radio-group--row{
+		margin-top: 20rpx;
+		justify-content: flex-start !important;
+	}
 	/*每个页面公共css */
 </style>
