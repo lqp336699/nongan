@@ -3,7 +3,6 @@
 		"^u-(.*)": "@/uni_modules/uview-ui/components/u-$1/u-$1.vue"
 	},
 	"pages": [
-
 		{
 			"path": "pages/identity/identity",
 			"style": {
@@ -93,7 +92,7 @@
 				{
 					"path": "pages/UsePesticideRecord/UsePesticideRecord",
 					"style": {
-						"navigationBarTitleText": "",
+						"navigationBarTitleText": "农药使用记录",
 						"enablePullDownRefresh": false
 					}
 				},

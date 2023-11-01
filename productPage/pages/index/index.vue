@@ -5,7 +5,7 @@
 		<view class="">
 			<home v-if="current==0"></home>
 			<ranking class="ranking" v-if="current==1"></ranking>
-			<Events v-if="current==2"></Events>
+			<Events class="ranking" v-if="current==2"></Events>
 			<policy v-if="current==3"></policy>
 		</view>
 
