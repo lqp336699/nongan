@@ -4,7 +4,7 @@
 
 .page {
 	background-color: #F7F7F7;
-	min-height:calc(100vh - 94px) ;
+	min-height:calc(100vh - 50px) ;
 	box-sizing: border-box;
 }
 

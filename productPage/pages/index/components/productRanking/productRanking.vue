@@ -1,5 +1,5 @@
 <template>
-	<view class="overH" style="height:  calc(100vh - 170rpx)">
+	<view class="overH " style="height:  calc(100vh - 50px)">
 		<!-- 导航栏 -->
 		<uni-nav-bar status-bar style="position: fixed;z-index: 10;" :leftWidth="0" :border="false" color="#fff"
 			title="排行" fixed="true" backgroundColor="rgba(0,0,0,0)"></uni-nav-bar>
