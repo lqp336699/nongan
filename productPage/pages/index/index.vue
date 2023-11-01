@@ -2,7 +2,7 @@
 	<view>
 
 
-		<view class="bd">
+		<view class="">
 			<home v-if="current==0"></home>
 			<ranking class="ranking" v-if="current==1"></ranking>
 			<Events v-if="current==2"></Events>
