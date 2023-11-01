@@ -87,8 +87,8 @@
 						</u-form-item>
 					</view>
 
-					<view :class="['flex','bigRedio' , 'flex-between', 'align-center', item.class ? item.class : '']"
-						v-if="item.type=='bigRedio'" :key="item.prop || item.placeholder">
+					<view :class="['flex','bigRedio' ,'px30' , 'flex-between', 'align-center', item.class ? item.class : '']"
+						v-if="item.type=='bigRedio'" :key="item.prop || item.placeholder" >
 						<u-form-item labelPosition="top" :required="item.hasOwnProperty('rule')"
 							:labelWidth="item.labelWidth || 190" class="flex1" :prop="item.prop" :label="item.label">
 							<u-radio-group v-model="form[item.prop]" @change="radioGroupChange(e,item)">
@@ -237,7 +237,6 @@
 </script>
 
 <style scoped lang="scss">
-
 
 
 </style>

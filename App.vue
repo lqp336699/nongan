@@ -1,19 +1,29 @@
 <script>
 	export default {
 		onLaunch: function() {
-			if(uni.getStorageSync('identity')){
-				if(uni.getStorageSync('identity')==1){
-					uni.redirectTo({
-						url:"/productPage/pages/index/index"
-					})
-				}else if(uni.getStorageSync('identity')==0){
-					uni.redirectTo({
-						url:"/managePage/pages/index/index"
-					})
-				}
-			}else{
-				
-			}
+			let identity = ''
+			uni.getStorage({
+				key:'identity',
+				success: function (res) {
+						identity = res.data
+						console.log(identity,"identityidentityidentity")
+						if([0,1].includes( identity)  ){
+							
+							if(identity==1){
+								uni.redirectTo({
+									url:"/productPage/pages/index/index"
+								})
+							}else if(identity==0){
+								uni.redirectTo({
+									url:"/managePage/pages/index/index"
+								})
+							}
+						}else{
+							console.log("kfdssdkf")
+						}
+					}
+			})
+			
 		},
 		onShow: function() {
 			console.log('App Show')
@@ -35,5 +45,6 @@
 		margin-top: 20rpx;
 		justify-content: flex-start !important;
 	}
+	
 	/*每个页面公共css */
 </style>

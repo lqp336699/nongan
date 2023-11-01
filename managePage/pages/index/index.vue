@@ -12,7 +12,6 @@
 		
 		
 		
-		
 		<u-tabbar :value="current" @change="name => current = name" :fixed="true" :placeholder="true"
 			:safeAreaInsetBottom="true" activeColor="#1F9A64">
 			<u-tabbar-item text="巡查监督" >
@@ -90,5 +89,10 @@
 
 	.ranking /deep/ .uni-navbar__header-container-inner{
 		justify-content: left !important;
+	}
+	/deep/ .u-count-down__text {
+	
+		color: #409F5FFF !important;
+		font-size: 22rpx !important;
 	}
 </style>
