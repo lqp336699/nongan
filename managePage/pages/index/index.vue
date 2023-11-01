@@ -71,6 +71,7 @@
 				// this.$refs.Home.page_size++
 				
 			}
+			
 		},
 		watch:{
 			current:{
