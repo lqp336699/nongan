@@ -41,7 +41,7 @@
 		</view>
 
 
-		<view @click="submit" class="flex  mt94 flex-center align-center btnBg" style=" height:90rpx;">
+		<view @click="submit" class="flex  mt94 flex-center align-center br83 btnBg" style=" height:90rpx;">
 			<text style="color:#1F9A64">提交</text>
 		</view>
 	</view>

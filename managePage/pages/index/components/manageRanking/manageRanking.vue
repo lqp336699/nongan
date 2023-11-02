@@ -1,5 +1,5 @@
 <template>
-	<view class="overH" style="height:  calc(100vh - 170rpx)">
+	<view class="overH bd" style="height:  calc(100vh - 100rpx)">
 		<!-- 导航栏 -->
 		<uni-nav-bar status-bar style="position: fixed;z-index: 10;" :leftWidth="0" :border="false" color="#fff"
 			title="排行" fixed="true" backgroundColor="rgba(0,0,0,0)"></uni-nav-bar>
@@ -36,7 +36,7 @@
 				</view>
 			</view>
 		</view>
-		<view class="bgWhite flex flex-column align-center" style="width: 750rpx;">
+		<view class="bgWhite flex flex-column align-center" style="width: 770rpx;">
 			<view class="px26 border-box flex flex-between w100 col5" style="height: 34rpx;">
 				<view class="">
 					<text>排名</text>
@@ -44,7 +44,7 @@
 				</view>
 				<text>评分</text>
 			</view>
-			<scroll-view class="" scroll-y="true" style="height:calc(100vh -  774rpx);">
+			<scroll-view class="" scroll-y="true" style="height:calc(100vh -  810rpx);">
 				<view class="w100" v-for="(item,index) in 10" :key="index">
 					<view class="flex flex-between align-center border-box"
 						style="height: 142rpx;padding-left: 16rpx;padding-right: 36rpx;">
