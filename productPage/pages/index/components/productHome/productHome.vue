@@ -10,8 +10,8 @@
 
 		<view class="px22 relactive " style="z-index: 1; ">
 			<view class="navtop"></view>
-			
-			
+
+
 			<view class="" style="margin-top: 44rpx;"></view>
 			<view class="relactive">
 				<view class="absolute flex flex-end  pr40" style="bottom: 20rpx; z-index:2; left:0; right:0;">
@@ -61,6 +61,8 @@
 
 			<ProductCard v-for="item in 2" :key="item"></ProductCard>
 		</view>
+		<u-loadmore class="mt20" :height="100" font-size="28" :status="status" :loading-text="loadingText"
+			:loadmore-text="loadmoreText" :nomore-text="nomoreText" />
 	</view>
 </template>
 
@@ -77,7 +79,13 @@
 					'https://cdn.uviewui.com/uview/swiper/swiper2.png',
 					'https://cdn.uviewui.com/uview/swiper/swiper3.png',
 				],
-				swiperIndex: 1
+				swiperIndex: 1,
+				limit: 8,
+				page: 1,
+				status: 'loadmore',
+				loadingText: '努力加载中',
+				loadmoreText: '轻轻上拉',
+				nomoreText: '没有更多了'
 			}
 		},
 		methods: {
@@ -87,7 +95,7 @@
 			click() {
 
 			},
-			
+
 		}
 	}
 </script>
