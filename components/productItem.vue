@@ -1,5 +1,5 @@
 <template>
-	<view  class="mt20">
+	<view  class="mt20" @click="ProductCardClick()">
 		<view class="flex bgWhite  py40 px24 border-box flex-column br16">
 			<view class="flex  flex-between align-center">
 				<view class="flex align-center ">
@@ -102,6 +102,13 @@
 			return {
 				
 			};
+		},
+		methods:{
+			ProductCardClick() {
+				uni.navigateTo({
+					url: '/productPage/pages/patrolDetail/patrolDetail'
+				})
+			}
 		}
 	}
 </script>

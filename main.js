@@ -1,11 +1,20 @@
 import App from './App'
-
+import Request from '@/utils/request.js'
 // #ifndef VUE3
 import Vue from 'vue'
 import './uni.promisify.adaptor'
 import uView from '@/uni_modules/uview-ui'
 import store from '@/store/index.js'
+import permission from 'utils/permission.js'
 
+
+
+permission()
+
+
+
+
+Vue.prototype.$http = Request.http
 Vue.config.productionTip = false
 App.mpType = 'app'
 

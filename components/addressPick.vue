@@ -144,7 +144,7 @@
 			},
 			selsetSubmit() {
 				if(!this.loading){
-					let string = this.province + "" +  this.city + "" + this.regions
+					let string = this.province.label + "   " +  this.city.label + "   " + this.region.label
 					this.$emit("close", string)
 				}
 			},
