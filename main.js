@@ -9,16 +9,18 @@ import permission from 'utils/permission.js'
 
 
 
-permission()
 
 
 
 
 Vue.prototype.$http = Request.http
+
+
 Vue.config.productionTip = false
 App.mpType = 'app'
 
 Vue.use(uView)
+
 
 
 uni.$u.setConfig({
@@ -47,6 +49,8 @@ const app = new Vue({
   store
 })
 app.$mount()
+
+permission()
 // #endif
 
 // #ifdef VUE3

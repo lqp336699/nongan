@@ -25,13 +25,14 @@
 	export default {
 		data() {
 			return {
-				identity:-1
+				identity:-1,
+				loading:true //等待查询身份跳转指定页面
 			}
 		},
 		methods: {
 			selectIdentity(identity){
 				this.identity = identity
-				console.log(this.$store.state.identity.identity)
+				
 			},
 			async submitIdentity(){
 				let identityCopy =  await this.$store.dispatch('identity/changeIdentity',this.identity)

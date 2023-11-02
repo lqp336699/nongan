@@ -2,7 +2,21 @@
 	"easycom": {
 		"^u-(.*)": "@/uni_modules/uview-ui/components/u-$1/u-$1.vue"
 	},
-	"pages": [{
+	"pages": [
+		
+		{
+		    "path" : "pages/welcome/welcome",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "",
+		        "enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+				
+		    }
+		    
+		},
+		
+		{
 			"path": "pages/identity/identity",
 			"style": {
 				"navigationBarTitleText": "选择身份",
@@ -10,17 +24,8 @@
 			}
 
 		}
-
-		// {
-		// 	"path": "pages/index/index",
-		// 	"style": {
-		// 		"navigationBarTitleText": "uni-app"
-		// 	}
-
-		// }
-
-
-	],
+	  
+    ],
 	"subpackages": [{
 			"root": "managePage",
 			"name": "managePage",
