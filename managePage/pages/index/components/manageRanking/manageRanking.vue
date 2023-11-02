@@ -5,6 +5,7 @@
 			title="排行" fixed="true" backgroundColor="rgba(0,0,0,0)"></uni-nav-bar>
 		<!-- 导航栏 -->
 
+
 		<view class=" " style="height: 620rpx; position: fixed; width: 100%; z-index:1; ">
 			<view class="relactive " style="height: 620rpx;">
 				<image class="absolute" style="width: 100%; height: 568rpx; z-index:1;"
