@@ -35,8 +35,10 @@
 				
 			},
 			async submitIdentity(){
+				//设置身份
 				
-				if(identityCopy == 0){
+				let identity = await this.$store.dispatch('identity/setIdentity',this.identity)
+				if(identity == 0){
 					// 管理人员
 					uni.navigateTo({
 						url:"/managePage/pages/registration/registration"

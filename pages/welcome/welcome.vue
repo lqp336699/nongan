@@ -12,13 +12,12 @@
 			}
 		},
 		onLoad(){
-			// this.$store.dispatch('identity/changeIdentity')
 			
 			setTimeout(()=>{
 				uni.redirectTo({
 					url:'/pages/identity/identity'
 				})
-			},1000)
+			},2000)
 		},
 		methods: {
 			
