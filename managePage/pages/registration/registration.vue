@@ -6,6 +6,8 @@
 			</view>
 		</view>
 		
+		
+	
 		<view class=" mt60 flex align-center" style="height:110rpx;box-shadow: 0rpx 0rpx 6rpx 2rpx rgba(41,193,126,0.1);">
 			<u-input class="" v-model="form.moble" placeholder="请输入手机号" height="110rpx" :border="false" />
 		</view>

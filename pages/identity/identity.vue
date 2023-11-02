@@ -35,7 +35,6 @@
 				
 			},
 			async submitIdentity(){
-				let identityCopy =  await this.$store.dispatch('identity/changeIdentity',this.identity)
 				
 				if(identityCopy == 0){
 					// 管理人员
