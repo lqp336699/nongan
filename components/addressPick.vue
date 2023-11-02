@@ -1,6 +1,5 @@
 <template>
 	<view>
-		lgfdgfddgdggfdg
 		<view style="height:780rpx;" class="br20 flex flex-between  flex-column bgWhite">
 
 			<view class="px30 flex bbe flex-between align-center" style="height:117rpx;">
@@ -97,30 +96,31 @@
 		watch:{
 			province:{
 				handler(newVal,oldVal){
-					
-					let activeProvince = area.filter(item=>{
-						return item.value == newVal.value
-					})
-					console.log(this.val[1],"gggggggggggggggggggggggggg")
-					let activeCity = activeProvince[0].children[this.val[1]]
-				
-					this.citys = activeProvince[0].children
-					
-					
-					
-					this.regions = activeCity.children
+						let activeProvince = area.filter(item=>{
+							return item.value == newVal.value
+						})
+						let activeCity = {}
+						if(activeProvince[0].children.length < this.val[1]){
+							activeCity = activeProvince[0].children[this.val[1]]
+						}else{
+							activeCity = activeProvince[0].children[activeProvince[0].children.length-1]
+						}
+						
+						this.citys = activeProvince[0].children
+						this.regions = activeCity.children
 				}
 			},
 			city:{
 				handler(newVal,oldVal){
-					let activeProvince = area.filter(item=>{
-						return item.value == this.province.value
-					})
-					let activeRegions = activeProvince[0].children.filter(item=>{
-						return item.value == newVal.value
-					})
-					this.regions = activeRegions[0].children
-					this.region = activeRegions[0].children[0]
+						let activeProvince = area.filter(item=>{
+							return item.value == this.province.value
+						})
+						let activeRegions = activeProvince[0].children.filter(item=>{
+							return item.value == newVal.value
+						})
+						this.regions = activeRegions[0].children
+						this.region = activeRegions[0].children[0]
+					
 				}
 			}
 		},
@@ -144,7 +144,13 @@
 			},
 			selsetSubmit() {
 				if(!this.loading){
-					let string = this.province.label + "   " +  this.city.label + "   " + this.region.label
+					let string =""
+					if( this.province.label && this.city.label && this.region.label){
+						 string = this.province.label + "   " +  this.city.label + "   " + this.region.label	
+					}else{
+						string = area[0].label  + "    " + area[0].children[0].label + "   " + area[0].children[0].children[0].label
+					}
+					
 					this.$emit("close", string)
 				}
 			},
