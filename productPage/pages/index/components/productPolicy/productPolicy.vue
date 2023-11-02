@@ -1,7 +1,7 @@
 <template>
 	<view class="px24 page">
 		<!-- hot -->
-		<uni-nav-bar  statusBar title="首页" fixed></uni-nav-bar>
+		<uni-nav-bar  statusBar title="政策动态" color="#222" :border="false" :leftWidth="0" fixed></uni-nav-bar>
 		<view class=" flex flex-between mt20">
 
 			<navigator
@@ -126,5 +126,11 @@
 </script>
 
 <style scoped lang="scss">
+	/deep/ .uni-nav-bar-text {
+		font-size: 36rpx !important;
+	}
 	
+	/deep/ uni-navbar__header-container data-v-6bda1a90 {
+		justify-content: left !important;
+	}
 </style>
