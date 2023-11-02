@@ -12,13 +12,13 @@
 			</view>
 			<u-safe-bottom v-if="safeAreaInsetBottom"></u-safe-bottom>
 		</view>
-		<view
+		<!-- <view
 		    class="u-tabbar__placeholder"
 			v-if="placeholder"
 		    :style="{
 				height: placeholderHeight + 'px',
 			}"
-		></view>
+		></view> -->
 	</view>
 </template>
 
