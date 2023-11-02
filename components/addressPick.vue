@@ -33,8 +33,6 @@
 						<text class="colf">确定</text>
 					</view>
 				</view>
-
-
 			</view>
 		</view>
 

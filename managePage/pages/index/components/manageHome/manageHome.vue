@@ -8,7 +8,7 @@
 		</view>
 		
 
-		<view class="px22 relactive pb40" style="z-index: 1; ">
+		<view class="px22 relactive " style="z-index: 1; ">
 			<view class="navtop">
 				
 			</view>
@@ -56,7 +56,7 @@
 			
 			
 		</view>
-		<u-loadmore class="mt20" :height="100" font-size="28" :status="status" :loading-text="loadingText" :loadmore-text="loadmoreText"
+		<u-loadmore class="mt50" :height="100" font-size="28" :status="status" :loading-text="loadingText" :loadmore-text="loadmoreText"
 			:nomore-text="nomoreText" />
 	</view>
 </template>

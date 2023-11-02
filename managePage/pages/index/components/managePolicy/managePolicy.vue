@@ -52,7 +52,7 @@
 			</navigator>
 		</view>
 
-		<u-loadmore class="" :height="100" font-size="28" :status="status" :loading-text="loadingText" :loadmore-text="loadmoreText"
+		<u-loadmore class="mt50" :height="100" font-size="28" :status="status" :loading-text="loadingText" :loadmore-text="loadmoreText"
 			:nomore-text="nomoreText" />
 	</view>
 </template>

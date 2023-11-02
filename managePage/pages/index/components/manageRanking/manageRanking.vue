@@ -1,5 +1,5 @@
 <template>
-	<view class="overH  flex flex-column ">
+	<view class="overH  flex flex-column page pb40">
 		<!-- 导航栏 -->
 		<uni-nav-bar status-bar style="position: fixed;z-index: 10;" :leftWidth="0" :border="false" color="#fff"
 			title="排行" fixed="true" backgroundColor="rgba(0,0,0,0)"></uni-nav-bar>
@@ -7,31 +7,31 @@
 
 		<view class=" " style="height: 620rpx; position: fixed; width: 100%; z-index:1; ">
 			<view class="relactive " style="height: 620rpx;">
-				<image class="absolute" style="width: 100%;height: 568rpx; z-index:1;"
+				<image class="absolute" style="width: 100%; height: 568rpx; z-index:1;"
 					:src="rankType == 1 ?'/static/rank/red.png' : '/static/rank/black.png'" mode=""></image>
 					
 					
 				<view class="absolute w100" style="z-index: 2;">
 					
 					<view class="flex  w100">
-						<view class="br68 ml36  bgWhite  flex flex-around align-center "
-							style=" background-color: rgba(255,255,255,0.3);  width:326rpx; margin-top:350rpx;">
+						<view class="br68 ml36 border-box bgWhite  flex flex-between align-center "
+							style=" background-color: rgba(255,255,255,0.3);  width:340rpx; margin-top:340rpx;">
 							<view
 								:class="['flex','border-box','align-center','px54,py14','flex-center', 'br68',rankType==1 ?'active1':'colf']"
 								@click="actived(1)">
-								红榜
+								<text>红榜</text>
 							</view>
 							<view
 								:class="['flex', 'border-box','align-center','px54,py14,flex-center', 'br68',rankType==2 ?'active2':'colf']"
 								@click="actived(2)">
-								黑榜
+								<text>黑榜</text>
 							</view>
 						</view>
 					</view>
 					
 					
 					
-					<view class=" w100 flex mt50 flex-center  bgWhite"
+					<view class=" w100 flex  mt50 flex-center  bgWhite"
 						style="height: 110rpx; border-radius: 32rpx 32rpx 0 0;">
 						<view class="flex flex-around  mt32 font28"
 							style="width: 706rpx;border-bottom: 1px solid #E8E8E8;">
@@ -82,11 +82,11 @@
 					</view>
 				</view>
 			</view>
-
-
-			<u-loadmore class="mt20" :height="100" font-size="28" :status="status" :loading-text="loadingText"
-				:loadmore-text="loadmoreText" :nomore-text="nomoreText" />
+			
 		</view>
+		
+		<u-loadmore class="mt50" :height="100" font-size="28" :status="status" :loading-text="loadingText"
+			:loadmore-text="loadmoreText" :nomore-text="nomoreText" />
 
 	</view>
 </template>
