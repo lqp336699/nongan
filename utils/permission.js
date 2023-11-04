@@ -41,6 +41,10 @@ export default async function() {
 					}else{
 						if(![1,2].includes(identity)){
 							console.log("拦截黑名单，跳转身份选择")
+							uni.showToast({
+								title:"身份不足",
+								icon:"none"
+							})
 							uni.redirectTo({
 								url: '/pages/identity/identity'
 							})
