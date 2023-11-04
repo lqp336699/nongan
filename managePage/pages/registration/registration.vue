@@ -9,12 +9,12 @@
 		
 	
 		<view class=" mt60 flex align-center" style="height:110rpx;box-shadow: 0rpx 0rpx 6rpx 2rpx rgba(41,193,126,0.1);">
-			<u-input class="" v-model="form.moble" placeholder="请输入手机号" height="110rpx" :border="false" />
+			<u-input class="" v-model="form.mobile" placeholder="请输入手机号" height="110rpx" :border="false" />
 		</view>
 		
 		
 		<view class=" mt24 flex align-center" style="height:110rpx;box-shadow: 0rpx 0rpx 6rpx 2rpx rgba(41,193,126,0.1);">
-			<u-input class="" v-model="form.aaa" placeholder="请输入唯一码" height="110rpx" :border="false" />
+			<u-input class="" v-model="form.random" placeholder="请输入唯一码" height="110rpx" :border="false" />
 		</view>
 		
 		<view @click="submitIdentity" :class="['flex, mt94, flex-center, align-center, br10', formSubmit ?  'submit' : '']" style="background-color: #ECFFF7; height:110rpx;border:0; box-shadow: 0rpx 0rpx 6rpx 2rpx rgba(41,193,126,0.1);">
@@ -29,16 +29,17 @@
 		data() {
 			return {
 				form:{
-					moble:'',
-					aaa:''
+					mobile:'',
+					random:'',
+					identity:'1'
 				},
 				formSubmit:false
 			}
 		},
 		watch:{
 			form:{
-				handler(newVal,oldVal){
-					if(newVal.moble!==''&&newVal.aaa!==""){
+				handler(newVal){
+					if(newVal.mobile!==''&&newVal.random!==""){
 						this.formSubmit = true
 					}else{
 						this.formSubmit = false
@@ -49,9 +50,28 @@
 		},
 		methods: {
 			submitIdentity(){
-				uni.navigateTo({
-					url:'/managePage/pages/index/index'
+				this.$http({
+					url:"/Data/auth",
+					data:{
+						...this.form
+					}
+				}).then(async res=>{
+					if(res.code == 1){
+						await this.$store.dispatch('identity/setIdentity',this.form.identity)
+						
+						setTimeout(()=>{
+							uni.redirectTo({
+								url: '/managePage/pages/index/index'
+							})
+						},1000)
+						
+					}
 				})
+				
+				
+				// uni.navigateTo({
+				// 	url:'/managePage/pages/index/index'
+				// })
 			}
 		}
 	}

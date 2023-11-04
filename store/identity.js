@@ -25,13 +25,13 @@ const identity = {
 				})
 			})
 		},
-		setIdentity({commit}) {
-			
+		setIdentity({commit},identity) {
 			return new Promise((resolve, reject) => {
-				
-				
-				
-				
+				commit('CHANGE_IDENTITY', identity)
+				uni.showToast({
+					title:"注册成功"
+				})
+				resolve('pp')
 			})
 		},
 		
