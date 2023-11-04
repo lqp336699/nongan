@@ -100,6 +100,6 @@
 	}
 </script>
 
-<style scopd lang="scss">
+<style lang="scss" scoped>
 
 </style>

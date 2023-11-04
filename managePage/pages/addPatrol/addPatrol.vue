@@ -66,7 +66,7 @@
 						selectList: [],
 						rule: [{
 							required: true,
-							message: '请输入地块名称',
+							message: '请选择地区',
 							trigger: ['change']
 						}],
 						value: '',
@@ -137,7 +137,7 @@
 						],
 						rule: [{
 							required: true,
-							message: '请输入姓名',
+							message: '请输入主体类型',
 							trigger: ['change']
 						}],
 						prop: '543',
@@ -152,7 +152,7 @@
 							message: '请填写经营主要品种',
 							trigger: ['change']
 						}],
-						prop: '666',
+						prop: '347',
 						label: "经营品种"
 					},
 					{
@@ -203,7 +203,7 @@
 							message: '请输入联系人',
 							trigger: ['change']
 						}],
-						prop: '666',
+						prop: '65',
 						label: "联系人"
 					},
 					{
@@ -215,7 +215,7 @@
 							message: '请输入联系手机',
 							trigger: ['change']
 						}],
-						prop: '666',
+						prop: '234',
 						label: "联系手机"
 					},
 				],

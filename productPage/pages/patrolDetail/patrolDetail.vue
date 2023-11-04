@@ -25,21 +25,21 @@
 
 
 
-				<view class="flex flex-between align-center">
-					<view class="flex font32">
-						<text class="mr22">主体名称:</text>
-						<text class="font800">射洪大榆镇凤姐蜂蜜养殖场</text>
+				<view class="flex  ">
+					<view class="flex align-center">
+						<text class="mr22 font28">主体名称:</text>
+						<text class="font32 font800">射洪大榆镇凤姐蜂蜜养殖场</text>
 					</view>
 				</view>
 
-				<view class="flex mt28 flex-between align-center">
-					<view class="flex ">
+				<view class="flex mt28  ">
+					<view class="flex align-center">
 						<text class="mr22">经营品种:</text>
 						<text class="">蜂蜜180箱-4月至8月</text>
 					</view>
 				</view>
-				<view class="flex mt28 flex-between align-center">
-					<view class="flex ">
+				<view class="flex mt28  ">
+					<view class="flex align-center">
 						<text class="mr22">联系方式:</text>
 						<text class="">胥凤琼 13320649879</text>
 					</view>
