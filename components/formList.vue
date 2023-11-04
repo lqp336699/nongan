@@ -113,7 +113,6 @@
 						</u-form-item>
 					</view>
 
-
 				<!-- 	<view :class="['flex',  'flex-between', 'align-center,px30', item.class ? item.class : '']"
 						v-if="item.type=='textImage'" :key="item.prop || item.placeholder">
 						<u-form-item class="flex1 " :labelWidth="item.labelWidth || 190"
@@ -149,14 +148,23 @@
 			formList: {
 				type: Array,
 				default: [],
+			},
+			formIsValidate:{
+				type:Boolean,
+				default:false
 			}
 		},
 		data() {
 			let form = {}
 			let rules = {}
+			let requireForm = []
 			this.formList.forEach(item => {
 				if (!form[item.prop]) {
 					this.$set(form, item.prop, '')
+				}
+				
+				if(item.rule){
+					requireForm.push(item.prop)
 				}
 
 				if (item.rule) {
@@ -169,6 +177,7 @@
 				rules: {
 					...rules
 				},
+				requireForm:requireForm,
 				popupType: false,
 				selectList: [],
 				selectProp: "",
@@ -181,8 +190,16 @@
 				handler: function(newVal) {
 					// 拷贝newVal
 					let newValCopy = Object.assign({}, newVal)
-
-
+					let requireSuccess = true
+					
+					this.requireForm.forEach(item=>{
+						if(newValCopy[item] == ""){
+							 requireSuccess = false
+						}
+					})
+				
+					this.$emit('update:formIsValidate',requireSuccess)
+					
 					// 替换redio的name字段为value
 					let redioLists = this.formList.filter(item => {
 						return item.type == "redio"
@@ -203,9 +220,8 @@
 				deep: true
 			}
 		},
-		mounted() {
-
-		},
+	
+	
 		methods: {
 			showDate(prop) {
 				this.dateProp = prop
@@ -237,7 +253,7 @@
 				this.$refs.popup.close()
 			},
 			setSelectProp(val) {
-				console.log(val, "bbcvvvcxcccx")
+				// console.log(val, "bbcvvvcxcccx")
 			},
 			radioChange() {
 

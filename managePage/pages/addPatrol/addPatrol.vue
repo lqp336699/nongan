@@ -109,7 +109,7 @@
 							message: '请填写主体名称',
 							trigger: ['change']
 						}],
-						prop: '666',
+						prop: '66bcbfdsg6',
 						label: "主体名称"
 					},
 
@@ -152,7 +152,7 @@
 							message: '请填写经营主要品种',
 							trigger: ['change']
 						}],
-						prop: '666',
+						prop: '66fsdfs6',
 						label: "经营品种"
 					},
 
@@ -195,7 +195,7 @@
 							message: '请输入联系人',
 							trigger: ['change']
 						}],
-						prop: '666',
+						prop: '666vbbdsfs',
 						label: "联系人"
 					},
 					{
@@ -207,7 +207,7 @@
 							message: '请输入联系手机',
 							trigger: ['change']
 						}],
-						prop: '666',
+						prop: '66sdfs6',
 						label: "联系手机"
 					},
 				],
@@ -233,7 +233,7 @@
 						placeholder: "",
 						labelWidth: "650",
 						value: '',
-						prop: 'kksdek',
+						prop: 'kkggsdek',
 						label: "是否使用国家明令禁止的农药、鱼药、兽药等",
 						redioList: [{
 							name: "是",
@@ -248,7 +248,7 @@
 						placeholder: "",
 						labelWidth: "600",
 						value: '',
-						prop: 'kkfgk',
+						prop: 'ksdfkfgk',
 						label: "是否违法添加和滥用添加剂",
 						redioList: [{
 							name: "是",
@@ -263,7 +263,7 @@
 						placeholder: "",
 						labelWidth: "600",
 						value: '',
-						prop: 'kntkk',
+						prop: 'kntfdkk',
 						label: "销售产品是否自检或委托检测",
 						redioList: [{
 							name: "是",
@@ -278,7 +278,7 @@
 						placeholder: "",
 						labelWidth: "600",
 						value: '',
-						prop: 'nvv',
+						prop: 'nfsdvv',
 						label: "采收时是否达到农药安全间隔期",
 						redioList: [{
 							name: "是",
@@ -294,7 +294,7 @@
 						type: 'input',
 						placeholder: "非必填项",
 						value: '',
-						prop: '123',
+						prop: '12vcv3',
 						label: "存在的问题"
 					},
 					{
@@ -312,6 +312,9 @@
 				},
 				formRules4: {}
 			}
+		},
+		watch:{
+			
 		},
 		created() {
 			this.formList2.forEach((item, index) => {

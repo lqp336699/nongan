@@ -18,7 +18,7 @@ export default async function() {
 			async invoke(e) {
 				const token = uni.getStorageSync('token') || ''
 				const url = e.url.split('?')[0]
-				let identity = await store.dispatch('identity/getIdentity',0)
+				let identity = await store.dispatch('identity/getIdentity',1)
 				
 				
 				//如果有token
