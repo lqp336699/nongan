@@ -1,6 +1,6 @@
 <template>
 	<view class="page  px22 flex flex-column flex-between pb20 border-box">
-		<from-list ref="formList" class="" :formList="formList" @setFormData="setFormData"></from-list>
+		<from-list :formIsValidate.sync="formIsValidate" ref="formList" class="" :formList="formList" @setFormData="setFormData"></from-list>
 
 		<!-- 检查内容 -->
 		<view class="  bgWhite  br14">
@@ -41,8 +41,8 @@
 		</view>
 
 
-		<view @click="submit" class="flex  mt94 flex-center align-center br83 btnBg" style=" height:90rpx;">
-			<text style="color:#1F9A64">提交</text>
+		<view @click="submit" class="flex  mt94 flex-center align-center br83 btnBg" :style="{background: formIsValidate ? '#1F9A64' : '#ECFFF7', height:'90rpx'}">
+			<text :style="{color:formIsValidate ? '#fff' : '#1F9A64'}">提交</text>
 		</view>
 	</view>
 
@@ -59,6 +59,7 @@
 		},
 		data() {
 			return {
+				formIsValidate:false,
 				formList: [{
 						type: 'addressSelect',
 						placeholder: "请选择",

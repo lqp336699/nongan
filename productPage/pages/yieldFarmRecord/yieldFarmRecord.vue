@@ -1,11 +1,11 @@
 <template>
 	<view class="page px22 flex flex-column flex-between border-box pb60">
-		<form-list ref="formList" :formList="formList" @setFormData="setFormData"></form-list>
+		<form-list :formIsValidate.sync="formIsValidate" ref="formList" :formList="formList" @setFormData="setFormData"></form-list>
 
 
 		<view @click="submit" class="flex mt94 flex-center align-center br83"
-			style="background: #ECFFF7; height:90rpx;">
-			<text style="color:#1F9A64">提交</text>
+			:style="{background: formIsValidate ? '#1F9A64' : '#ECFFF7', height:'90rpx'}">
+			<text :style="{color:formIsValidate ? '#fff' : '#1F9A64'}">提交</text>
 		</view>
 	</view>
 </template>
@@ -18,6 +18,7 @@
 		},
 		data() {
 			return {
+				formIsValidate:false,
 				formList: [{ //地块名称
 					type: 'input',
 					placeholder: '请输入名称',
