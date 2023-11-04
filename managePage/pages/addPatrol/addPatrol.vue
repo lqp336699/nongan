@@ -155,14 +155,6 @@
 						prop: '666',
 						label: "经营品种"
 					},
-					{
-						type: 'input',
-						placeholder: "请填写经营主要品种",
-						labelWidth: "300",
-						value: '',
-						prop: 'bbb',
-						label: "经营品种"
-					},
 
 					{
 						type: 'redio',
