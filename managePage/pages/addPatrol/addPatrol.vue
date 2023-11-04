@@ -1,7 +1,6 @@
 <template>
 	<view class="page  px22 flex flex-column flex-between pb20 border-box">
-		<from-list ref="formList" class="" :formList="formList" @setFormData="setFormData"></from-list>
-
+		<from-list :formIsValidate.sync="formIsValidate" ref="formList" class="" :formList="formList" @setFormData="setFormData" key="a"></from-list>
 		<!-- 检查内容 -->
 		<view class="  bgWhite  br14">
 			<view class="px30">
@@ -11,10 +10,10 @@
 			</view>
 
 
-			<from-list ref="formList2" :formList="formList2" @setFormData="setFormData"></from-list>
+			<from-list :formIsValidate.sync="formIsValidate1" ref="formList2" :formList="formList2" @setFormData="setFormData" key="b"></from-list>
 		</view>
 		<view class="mt30">
-			<from-list ref="formList3" :formList="formList3" @setFormData="setFormData"></from-list>
+			<from-list :formIsValidate.sync="formIsValidate2" ref="formList3" :formList="formList3" @setFormData="setFormData" key="c"></from-list>
 		</view>
 
 		<view class="bgWhite textImg px30 py40 ">
@@ -41,8 +40,8 @@
 		</view>
 
 
-		<view @click="submit" class="flex  mt94 flex-center align-center br83 btnBg" style=" height:90rpx;">
-			<text style="color:#1F9A64">提交</text>
+		<view @click="submit" class="flex  mt94 flex-center align-center br83 btnBg" :style="{background:formIsValidate1 && formIsValidate && formIsValidate2 ? '#1F9A64' : '#ECFFF7', height:'90rpx'}">
+			<text :style="{color:formIsValidate1 && formIsValidate && formIsValidate2 ? '#fff':'#1F9A64'}">提交</text>
 		</view>
 	</view>
 
@@ -59,6 +58,9 @@
 		},
 		data() {
 			return {
+				formIsValidate1:false,
+				formIsValidate:false,
+				formIsValidate2:false,
 				formList: [{
 						type: 'addressSelect',
 						placeholder: "请选择",
@@ -329,8 +331,8 @@
 		methods: {
 			setFormData(formData) {
 				this.formData = {
-					...formData,
-					...this.formData
+					...this.formData,
+					...formData
 				}
 				console.log(this.formData,
 					"this.formDatathis.formDatathis.formDatathis.formDatathis.formDatathis.formData")

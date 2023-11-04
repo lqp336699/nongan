@@ -47,7 +47,7 @@
 				days: [],
 				dateTimeFormat: "",
 				day: "",
-				value: [],
+				value: [0,0,0],
 				dateTime: [999, 1, 1],
 				indicatorStyle: `height: 100rpx;`
 			};
@@ -73,6 +73,7 @@
 			}
 		},
 		mounted() {
+		
 			this.getDate()
 			this.getCountDays()
 		},
@@ -128,6 +129,9 @@
 				this.days = days
 				this.months = months
 				this.value = [9999, month - 1, day - 1]
+				this.year = this.years[0]
+				this.month = this.months[0]
+				this.day = this.days[0]
 			},
 			close() {
 				this.$emit("close")

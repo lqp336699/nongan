@@ -184,7 +184,11 @@
 				selectTitle: ""
 			}
 		},
-
+		mounted(){
+			if(this.requireForm.length == 0){
+				this.$emit('update:formIsValidate',true)
+			}
+		},
 		watch: {
 			'form': {
 				handler: function(newVal) {
@@ -197,7 +201,7 @@
 							 requireSuccess = false
 						}
 					})
-				
+					
 					this.$emit('update:formIsValidate',requireSuccess)
 					
 					// 替换redio的name字段为value
@@ -214,7 +218,7 @@
 						}
 
 					})
-
+					console.log("newValCopynewValCopynewValCopynewValCopynewValCopynewValCopy",newValCopy)
 					this.$emit('setFormData', newValCopy) //页面接收newValCopy
 				},
 				deep: true
