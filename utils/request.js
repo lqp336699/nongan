@@ -1,7 +1,7 @@
 // let baseUrl = '/'
 // let baseUrl = 'http://192.168.101.162:1021/'
-let baseUrl = 'https://group.zxkjnc.com/'
-uni.baseUrl = baseUrl
+let baseUrl = 'http://36.134.191.59:88/api'
+// uni.baseUrl =   + baseUrl
 // let baseUrl = 'http://192.168.101.61:13019/'
 
 const http = {
@@ -48,12 +48,13 @@ const http = {
 					}
 					
 				},
-				fail(res) {
+				fail(err) {
 					uni.showToast({
 						title: '系统错误',
 						icon: 'none'
 					})
-					console.log(res);
+					console.log("请求失败",err);
+					reject(err)
 					if (loading) {
 						uni.hideLoading()
 					}
@@ -65,15 +66,15 @@ const http = {
 
 export default http
 
-function onNavigateBack(delta = 1) {
-	const pages = getCurrentPages()
-	if (pages.length > 1) {
-		uni.navigateBack({
-			delta: Number(delta || 1)
-		})
-	} else {
-		uni.switchTab({
-			url: '/pages/index/index'
-		})
-	}
-}
+// function onNavigateBack(delta = 1) {
+// 	const pages = getCurrentPages()
+// 	if (pages.length > 1) {
+// 		uni.navigateBack({
+// 			delta: Number(delta || 1)
+// 		})
+// 	} else {
+// 		uni.switchTab({
+// 			url: '/pages/index/index'
+// 		})
+// 	}
+// }

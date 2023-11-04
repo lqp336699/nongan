@@ -13,14 +13,37 @@
 		},
 		onLoad(){
 			
-			setTimeout(()=>{
+			if(!uni.getStorageSync('token')){
+				this.login()
+			}else{
 				uni.redirectTo({
-					url:'/pages/identity/identity'
+					url:"/pages/identity/identity"
 				})
-			},2000)
+			}
+			//登录
 		},
 		methods: {
-			
+			login(){
+				uni.login({
+				  success : res=> {
+				    if (res.code) {
+						this.$http({
+							url:'/Wechat/wechat_login',
+							data:{
+								code:res.code
+							}
+						}).then(res=>{
+							uni.setStorageSync('token',res.data.openid)
+							uni.redirectTo({
+								url:"/pages/identity/identity"
+							})
+						})
+				    } else {
+				      console.log('登录失败！' + res.errMsg)
+				    }
+				  }
+				})
+			}
 		}
 	}
 </script>

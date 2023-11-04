@@ -1,9 +1,9 @@
 //身份信息
-
+import Request from '@/utils/request.js'
 
 const identity = {
 	state: {
-		identity: uni.getStorageInfoSync('identity') || -1 //0管理人员，1生产主体
+		identity: uni.getStorageInfoSync('identity') || 0 //0游客，1监督人员    2生产主体
 	},
 	mutations: {
 		CHANGE_IDENTITY(state, identity) {
@@ -12,21 +12,29 @@ const identity = {
 		}
 	},
 	actions: {
-		getIdentity({ commit }, identity) {
+		getIdentity({ commit }) {
 			return new Promise((resolve, reject) => {
-				commit('CHANGE_IDENTITY', identity)
-				resolve(identity)
+				
+				Request.http({
+					url:'/wechat/userinfo'
+				}).then(res=>{
+					
+					commit('CHANGE_IDENTITY', res.data.identity)
+					  
+					  resolve(res.data.identity)
+				})
 			})
-			//后期异步请求获取identity	
 		},
-		setIdentity({
-			commit
-		}, identity) {
+		setIdentity({commit}) {
+			
 			return new Promise((resolve, reject) => {
-				commit('CHANGE_IDENTITY', identity)
-				resolve(identity)
+				
+				
+				
+				
 			})
-		}
+		},
+		
 	},
 	getters: {
 

@@ -18,39 +18,43 @@ export default async function() {
 			async invoke(e) {
 				const token = uni.getStorageSync('token') || ''
 				const url = e.url.split('?')[0]
-				let identity = await store.dispatch('identity/getIdentity',0)
-				
-				
+				let identity = await store.dispatch('identity/getIdentity')
+				console.log(identity,"222222222222222222222222222222222222222222222")
 				//如果有token
-				if("token"){
+				if(token){
 					//发送请求获取用户身份
 					if (whiteList.includes(url)) {
-						if(identity== 0){
+						console.log("拦截白名单，默认跳转")
+						if(identity== 1){
 							//如果身份是管理重定向管理员首页
 							uni.redirectTo({
 								url: '/managePage/pages/index/index'
 							})
 							return false
-						}else if(identity== 1){
+						}else if(identity== 2){
 							uni.redirectTo({
 								url: '/productPage/pages/index/index'
 							})
 							return false
 						}
-						
-						
+						return e
+					}else{
+						if(![1,2].includes(identity)){
+							console.log("拦截黑名单，跳转身份选择")
+							uni.redirectTo({
+								url: '/pages/identity/identity'
+							})
+							return false
+						}
 					}
 					
-				}
 				
-				
-				// 判断当前窗口是白名单，如果是则不重定向路由
-				if (!whiteList.includes(url) && !token && !identity) {
-					// uni.redirectTo({
-					// 	url: '/pages/welcome/welcome'
-					// })
-					// return false
-					return e
+				}else{
+					console.log("拦截未登录，跳转欢迎页面")
+					uni.redirectTo({
+						url: '/pages/welcome/welcome'
+					})
+					return false
 				}
 				return e
 			},
