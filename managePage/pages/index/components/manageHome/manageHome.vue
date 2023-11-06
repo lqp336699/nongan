@@ -1,7 +1,7 @@
 <template>
 	<view class="">
-		<Skeleton v-if="true"></Skeleton>
-		<view v-if="false" class="page  relactive ">
+		<Skeleton v-if="skeleton"></Skeleton>
+		<view v-if="!skeleton" class="page  relactive ">
 
 			<uni-nav-bar backgroundColor="#3BC688" color="#fff" statusBar title="首页" fixed></uni-nav-bar>
 
@@ -59,7 +59,7 @@
 					</view>
 				</view>
 
-				<ProductCard v-for="item in 2" :key="item"></ProductCard>
+				<ProductCard @ProductCardClick="ProductCardClick" v-for="item in 2" :key="item"></ProductCard>
 
 
 			</view>
@@ -83,6 +83,7 @@
 		},
 		data() {
 			return {
+				skeleton:false,
 				list1: [
 					'https://cdn.uviewui.com/uview/swiper/swiper1.png',
 					'https://cdn.uviewui.com/uview/swiper/swiper2.png',
@@ -97,6 +98,9 @@
 				nomoreText: '没有更多了'
 			}
 		},
+		onLoad(){
+			new Promise.all()
+		},
 		methods: {
 			change(e) {
 				this.swiperIndex = e.current
@@ -108,7 +112,15 @@
 				uni.navigateTo({
 					url: "/managePage/pages/addPatrol/addPatrol"
 				})
+			},
+			
+			
+			ProductCardClick(){
+				uni.navigateTo({
+					url: '/managePage/pages/patrolDetail/patrolDetail'
+				})
 			}
+			
 		}
 	}
 </script>

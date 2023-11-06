@@ -52,6 +52,14 @@
 						"enablePullDownRefresh": false
 					}
 
+				},
+				{
+					"path": "pages/patrolDetail/patrolDetail",
+					"style": {
+						"navigationBarTitleText": "巡查详情",
+						"enablePullDownRefresh": false,
+						"navigationStyle": "custom"
+					}
 				}
 
 

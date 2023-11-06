@@ -108,9 +108,8 @@
 		methods: {
 			ProductCardClick() {
 				console.log();
-				uni.navigateTo({
-					url: '/productPage/pages/patrolDetail/patrolDetail'
-				})
+				this.$emit('ProductCardClick')
+				
 			}
 		}
 	}

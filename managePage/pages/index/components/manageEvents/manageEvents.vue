@@ -1,30 +1,39 @@
 <template>
-	<view class="page overH pb50">
-		<uni-nav-bar statusBar title="生产主体" fixed></uni-nav-bar>
-		<!-- <scroll-view scroll-y="true" class="pb60 border-box bd" bd> -->
-		<view class="px22 ">
-			<!-- <view v-if="recodeList.length == 0" class="py100 flex flex-center align-center">
-					<text>暂无数据</text>
-				</view> -->
-			<!-- <view v-if="recodeList.length > 0" class="pb40   border-box"> -->
-			<product-item v-for="item in 5" :key="item"></product-item>
-			<!-- </view> -->
+	<view class="">
+		<Skeleton v-if="true"></Skeleton>
+		
+		<view v-if="false" class="page overH pb50">
+			<uni-nav-bar statusBar title="生产主体" fixed></uni-nav-bar>
+			<!-- <scroll-view scroll-y="true" class="pb60 border-box bd" bd> -->
+			<view class="px22 ">
+				<!-- <view v-if="recodeList.length == 0" class="py100 flex flex-center align-center">
+						<text>暂无数据</text>
+					</view> -->
+				<!-- <view v-if="recodeList.length > 0" class="pb40   border-box"> -->
+				<product-item v-for="item in 5" :key="item"></product-item>
+				<!-- </view> -->
+			</view>
+			<view style="height:50rpx;"></view>
+			<view >
+				<u-loadmore fontSize="28" :status="status" :loading-text="loadingText" :loadmore-text="loadmoreText"
+					:nomore-text="nomoreText" />
+			</view>
+		
+			<!-- </scroll-view> -->
 		</view>
-		<view style="height:50rpx;"></view>
-		<view >
-			<u-loadmore fontSize="28" :status="status" :loading-text="loadingText" :loadmore-text="loadmoreText"
-				:nomore-text="nomoreText" />
-		</view>
-
-		<!-- </scroll-view> -->
 	</view>
+	
 </template>
 
 <script>
+	
+	
+	
 	import ProductItem from '@/components/productItem.vue'
+	import Skeleton from './skeleton/skeleton.vue'
 	export default {
 		components: {
-			ProductItem
+			ProductItem,Skeleton
 		},
 		data() {
 			return {

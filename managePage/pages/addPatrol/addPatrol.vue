@@ -120,7 +120,7 @@
 
 					{
 						type: 'select',
-						selectTitle: "主体类型",
+						selectTitle: "行业归属",
 						placeholder: "请输入",
 						value: '',
 						class: "",

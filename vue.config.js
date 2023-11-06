@@ -1,6 +1,6 @@
 module.exports = {
 	"devServer" : {
-	    "port" : 8888,
+	    "port" : 8080,
 	    "disableHostCheck" : true,
 	    "proxy" : {
 	        "/api" : {

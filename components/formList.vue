@@ -208,6 +208,21 @@
 					let redioLists = this.formList.filter(item => {
 						return item.type == "redio"
 					})
+					
+					let dateLists = this.formList.filter(item => {
+						return item.type == "date"
+					})
+					dateLists.forEach(item=>{
+						let date =  newValCopy[item['prop']].replace('年','-').replace('月','-').replace('日','')
+						let time = new Date(date).getTime()/1000
+						console.log(date,time,"pppppp")
+						
+						 newValCopy[item['prop']] = time
+						
+						// newValCopy[item['prop']] = 
+					})
+					
+					
 					redioLists.forEach(item2 => {
 						if (item2.redioList.length > 0) {
 							item2.redioList.forEach(redioListItem => {

@@ -3,19 +3,20 @@
 let baseUrl = 'http://36.134.191.59:88/api'
 // uni.baseUrl =   + baseUrl
 // let baseUrl = 'http://192.168.101.61:13019/'
-
 const http = {
 	http({
 		url,
 		data = {},
 		method = 'post',
-		loading
+		loading,
 	}) {
 		if (loading) {
 			uni.showLoading({
-				title: '请稍后...'
+				title: '请稍后...',
+				mask:true
 			})
 		}
+		
 		if(uni.getStorageSync('token')){
 			data.token = uni.getStorageSync('token')
 		}

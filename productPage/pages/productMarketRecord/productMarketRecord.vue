@@ -28,7 +28,8 @@
 					}],
 					value: '',
 					prop: 'name',
-					label: '地块名称'
+					label: '地块名称'    
+    
 				}, { //地块面积
 					type: 'input',
 					placeholder: '请输入',
@@ -38,7 +39,7 @@
 						trigger: ['change']
 					}],
 					slot: 'm²',
-					prop: 'abc',
+					prop: 'dk_area',
 					label: '地块面积'
 				}, { //本季作物名称
 					type: 'input',
@@ -55,7 +56,7 @@
 					type: 'date',
 					placeholder: '请选择',
 					value: '',
-					prop: 'data',
+					prop: 'time',
 					label: '日期',
 					class:"mt30"
 				}, { //收获面积
@@ -67,7 +68,7 @@
 						trigger: ['change']
 					}],
 					slot: 'm²',
-					prop: 'area',
+					prop: 'have_area',
 					label: '收获面积'
 				}, { //销售数量
 					type: 'input',
@@ -78,7 +79,7 @@
 						trigger: ['change']
 					}],
 					slot: 'm²',
-					prop: 'num',
+					prop: 'xs_num',
 					label: '销售数量'
 				}, { //销售对象
 					type: 'input',
@@ -89,7 +90,7 @@
 						trigger: ['change']
 					}],
 					value: '',
-					prop: 'obj',
+					prop: 'nzu_name',
 					label: '销售对象'
 				}, { //库存数量
 					type: 'input',
@@ -114,13 +115,21 @@
 		methods: {
 			setFormData(formData) {
 				console.log(formData);
-				this.formData = formData
+				this.formData = {...formData,type:1}
 			},
 			submit() {
 				this.$refs.formList.formValidate((res) => {
 					if (res instanceof Array) {
 						return
 					}
+					
+					this.$http({
+						url:"/Data/add_product_log",
+						data:this.formData,
+						loading:true
+					}).then(res=>{
+						console.log(res,"ooooooooooooooo")
+					})
 
 				})
 			}
