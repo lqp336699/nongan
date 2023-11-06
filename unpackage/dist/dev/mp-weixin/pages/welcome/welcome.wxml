@@ -1,1 +1,0 @@
-<view class="page  flex flex-center align-center"><u-loading-page vue-id="1bce42ba-1" fontSize="38" iconSize="56" loading="{{true}}" bind:__l="__l"></u-loading-page></view>

@@ -1,8 +1,0 @@
-{
-  "component": true,
-  "usingComponents": {
-    "uni-nav-bar": "/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar",
-    "u-loadmore": "/uni_modules/uview-ui/components/u-loadmore/u-loadmore",
-    "product-item": "/components/productItem"
-  }
-}

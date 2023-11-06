@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "肥料购买及出入库记录",
-  "enablePullDownRefresh": false,
-  "usingComponents": {
-    "form-list": "/components/formList"
-  }
-}

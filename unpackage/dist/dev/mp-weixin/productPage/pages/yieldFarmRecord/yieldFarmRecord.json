@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "生产农事记录",
-  "enablePullDownRefresh": false,
-  "usingComponents": {
-    "form-list": "/components/formList"
-  }
-}

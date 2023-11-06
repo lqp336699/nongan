@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "农药使用记录",
-  "enablePullDownRefresh": false,
-  "usingComponents": {
-    "form-list": "/components/formList"
-  }
-}
