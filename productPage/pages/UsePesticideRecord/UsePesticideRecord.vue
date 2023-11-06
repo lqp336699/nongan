@@ -38,7 +38,7 @@
 						trigger: ['change']
 					}],
 					slot: 'm²',
-					prop: 'abc',
+					prop: 'dk_area',
 					label: '地块面积'
 				}, { //本季作物名称
 					type: 'input',
@@ -49,13 +49,13 @@
 						trigger: ['change']
 					}],
 					value: '',
-					prop: 'zuowu',
+					prop: 'nzu_name',
 					label: '本季作物名称',
 				}, { //日期
 					type: 'date',
 					placeholder: '请选择',
 					value: '',
-					prop: 'data',
+					prop: 'time',
 					label: '日期',
 					class:"mt30"
 				}, { //农药名称
@@ -67,7 +67,7 @@
 						trigger: ['change']
 					}],
 					value: '',
-					prop: 'pesticideName',
+					prop: 'ny_name',
 					label: '农药名称'
 				}, { //防治对象
 					type: 'input',
@@ -78,7 +78,7 @@
 						trigger: ['change']
 					}],
 					value: '',
-					prop: 'FzObject',
+					prop: 'fz_object',
 					label: '防治对象'
 				}, { //每亩用量
 					type: 'input',
@@ -89,7 +89,7 @@
 						trigger: ['change']
 					}],
 					value: '',
-					prop: 'useNum',
+					prop: 'mu_use',
 					label: '每亩用量'
 				}, { //稀释倍数
 					type: 'input',
@@ -100,7 +100,7 @@
 						trigger: ['change']
 					}],
 					value: '',
-					prop: 'attenuation',
+					prop: 'multiple',
 					label: '稀释倍数'
 				}, { //施用方法
 					type: 'input',
@@ -111,7 +111,7 @@
 						trigger: ['change']
 					}],
 					value: '',
-					prop: 'useWay',
+					prop: 'sy_method',
 					label: '施用方法'
 				}, { //安全间隔期
 					type: 'input',
@@ -122,7 +122,7 @@
 						trigger: ['change']
 					}],
 					value: '',
-					prop: 'interval',
+					prop: 'aq_time',
 					label: '安全间隔期'
 				}, { //备注
 					type: 'input',
@@ -135,15 +135,18 @@
 		},
 		methods: {
 			setFormData(formData) {
-				console.log(formData);
-				this.formData = formData
+				this.formData = {...formData,type:3}
 			},
 			submit() {
 				this.$refs.formList.formValidate((res) => {
 					if (res instanceof Array) {
 						return
 					}
-
+					uni.showToast({
+						title: "添加成功",
+						icon:"success",
+						mask:true
+					})
 				})
 			}
 		}
