@@ -1,7 +1,7 @@
 <template>
 	<view class="">
-		<Skeleton v-if="true"></Skeleton>
-		<view v-if="false" class="overH  flex flex-column page pb40">
+		<!-- <Skeleton v-if="true"></Skeleton> -->
+		<view v-if="true" class="overH  flex flex-column page pb40">
 			<!-- 导航栏 -->
 			<uni-nav-bar status-bar style="position: fixed;z-index: 10;" :leftWidth="0" :border="false" color="#fff"
 				title="排行" fixed="true" backgroundColor="rgba(0,0,0,0)"></uni-nav-bar>

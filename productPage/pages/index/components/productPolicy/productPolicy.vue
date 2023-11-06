@@ -1,8 +1,8 @@
 <template>
 	
 	<view class="">
-		<Skeleton v-if="true"></Skeleton>
-		<view v-if="false" class="px24 page">
+		<!-- <Skeleton v-if="true"></Skeleton> -->
+		<view v-if="true" class="px24 page">
 			<!-- hot -->
 			<uni-nav-bar  statusBar title="政策动态" color="#222" :border="false" :leftWidth="0" fixed></uni-nav-bar>
 			<view class=" flex flex-between mt20">

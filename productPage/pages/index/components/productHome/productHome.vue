@@ -2,8 +2,8 @@
 	
 	<view class="">
 
-		<Skeleton v-if="true"></Skeleton>
-		<view v-if="false"  class="page relactive">
+		<!-- <Skeleton v-if="true"></Skeleton> -->
+		<view v-if="true"  class="page relactive">
 			
 		
 			<uni-nav-bar backgroundColor="#3BC688" color="#fff" statusBar title="首页" fixed></uni-nav-bar>

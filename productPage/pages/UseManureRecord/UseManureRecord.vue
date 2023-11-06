@@ -103,14 +103,24 @@
 		methods: {
 			setFormData(formData) {
 				console.log(formData);
-				this.formData = formData
+				this.formData = {...formData,type:2}
 			},
 			submit() {
 				this.$refs.formList.formValidate((res) => {
 					if (res instanceof Array) {
 						return
 					}
-
+					
+					
+					this.$http({
+						url:"/Data/add_product_log",
+						data:this.formData,
+						loading:true
+					}).then(res=>{
+						console.log(res,"ooooooooooooooo")
+					})
+					
+					
 				})
 			}
 		}

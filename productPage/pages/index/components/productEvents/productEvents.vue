@@ -1,7 +1,7 @@
 <template>
 	<view class="">
-		<Skeleton v-if="true"></Skeleton>
-		<view v-if="false" class="page">
+		<!-- <Skeleton v-if="true"></Skeleton> -->
+		<view v-if="true" class="page">
 			<!-- 导航栏 -->
 			<uni-nav-bar status-bar fixed :leftWidth="0" :border="false" color="#000" title="生产记事"
 				backgroundColor="#fff"></uni-nav-bar>
