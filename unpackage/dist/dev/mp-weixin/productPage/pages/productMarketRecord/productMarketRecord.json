@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "产品收货、销售记录",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "form-list": "/components/formList"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "component": true,
+  "usingComponents": {
+    "uni-nav-bar": "/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar",
+    "u-swiper": "/uni_modules/uview-ui/components/u-swiper/u-swiper",
+    "u-loadmore": "/uni_modules/uview-ui/components/u-loadmore/u-loadmore",
+    "product-card": "/components/ProductCard",
+    "add-patrol": "/managePage/pages/addPatrol/addPatrol",
+    "skeleton": "/managePage/pages/index/components/manageHome/skeleton/skeleton"
+  }
+}
