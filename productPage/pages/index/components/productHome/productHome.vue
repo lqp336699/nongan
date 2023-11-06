@@ -2,8 +2,8 @@
 	
 	<view class="">
 
-		
-		<view  class="page relactive">
+		<Skeleton v-if="true"></Skeleton>
+		<view v-if="false"  class="page relactive">
 			
 		
 			<uni-nav-bar backgroundColor="#3BC688" color="#fff" statusBar title="首页" fixed></uni-nav-bar>
@@ -74,10 +74,12 @@
 </template>
 
 <script>
+	import Skeleton from './skeleton/skeleton.vue'
 	import ProductCard from '@/components/ProductCard.vue'
 	export default {
 		components: {
 			ProductCard,
+			Skeleton
 		},
 		data() {
 			return {
