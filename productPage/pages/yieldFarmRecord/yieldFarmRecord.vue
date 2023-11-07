@@ -39,7 +39,7 @@
 						trigger: ['change']
 					}],
 					slot: 'm²',
-					prop: 'abc',
+					prop: 'dk_area',
 					label: '地块面积'
 				}, { //本季作物名称
 					type: 'input',
@@ -50,7 +50,7 @@
 						trigger: ['change']
 					}],
 					value: '',
-					prop: 'zuowu',
+					prop: 'nzu_name',
 					label: '本季作物名称',
 				}, { //前茬作物名称
 					type: 'input',
@@ -61,13 +61,13 @@
 						trigger: ['change']
 					}],
 					value: '',
-					prop: 'previousCrop',
+					prop: 'qc_name',
 					label: '前茬作物名称',
 				}, { //日期
 					type: 'date',
 					placeholder: '请选择',
 					value: '',
-					prop: 'data',
+					prop: 'time',
 					label: '日期',
 					class: "mt30"
 				}, {
@@ -76,7 +76,7 @@
 					labelWidth: "300",
 					height: "300",
 					value: '',
-					prop: 'content',
+					prop: 'n_activity',
 					label: "农事活动内容"
 				}],
 				formData: {}
@@ -85,13 +85,26 @@
 		methods: {
 			setFormData(formData) {
 				console.log(formData);
-				this.formData = formData
+				this.formData = {...formData,type:4}
 			},
 			submit() {
 				this.$refs.formList.formValidate((res) => {
 					if (res instanceof Array) {
 						return
 					}
+					
+					
+					this.$http({
+						url:"/Data/add_product_log",
+						data:this.formData,
+						loading:true
+					}).then(res=>{
+						uni.showToast({
+							title: "添加成功",
+							icon:"success",
+							mask:true
+						})
+					})
 
 				})
 			}

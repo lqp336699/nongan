@@ -142,10 +142,16 @@
 					if (res instanceof Array) {
 						return
 					}
-					uni.showToast({
-						title: "添加成功",
-						icon:"success",
-						mask:true
+					this.$http({
+						url: "/Data/add_product_log",
+						data: this.formData,
+						loading: true
+					}).then(response => {
+						uni.showToast({
+							title: "添加成功",
+							icon:"success",
+							mask:true
+						})
 					})
 				})
 			}

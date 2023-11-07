@@ -52,7 +52,7 @@
 						trigger: ['change']
 					}],
 					value: '',
-					prop: 'zuowu',
+					prop: 'nzu_name',
 					label: '本季作物名称',
 				}, { //日期
 					type: 'date',
@@ -92,7 +92,7 @@
 						trigger: ['change']
 					}],
 					value: '',
-					prop: 'nzu_name',
+					prop: 'xs_object',
 					label: '销售对象'
 				}, { //库存数量
 					type: 'input',

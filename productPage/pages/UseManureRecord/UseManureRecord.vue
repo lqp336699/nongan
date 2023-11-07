@@ -38,7 +38,7 @@
 						trigger: ['change']
 					}],
 					slot: 'm²',
-					prop: 'abc',
+					prop: 'dk_area',
 					label: '地块面积'
 				}, { //本季作物名称
 					type: 'input',
@@ -49,13 +49,13 @@
 						trigger: ['change']
 					}],
 					value: '',
-					prop: 'zuowu',
+					prop: 'nzu_name',
 					label: '本季作物名称',
 				}, { //日期
 					type: 'date',
 					placeholder: '请选择',
 					value: '',
-					prop: 'data',
+					prop: 'time',
 					label: '日期',
 					class:"mt30"
 				}, { //肥料名称
@@ -67,7 +67,7 @@
 						trigger: ['change']
 					}],
 					value: '',
-					prop: 'manureName',
+					prop: 'fl_name',
 					label: '肥料名称'
 				}, { //每亩用量
 					type: 'input',
@@ -78,7 +78,7 @@
 						trigger: ['change']
 					}],
 					value: '',
-					prop: 'useNum',
+					prop: 'mu_use',
 					label: '每亩用量'
 				}, { //施肥方式
 					type: 'input',
@@ -89,7 +89,7 @@
 						trigger: ['change']
 					}],
 					value: '',
-					prop: 'way',
+					prop: 'sf_method',
 					label: '施肥方式'
 				}, { //备注
 					type: 'input',

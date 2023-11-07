@@ -23,7 +23,7 @@
 					type: 'date',
 					placeholder: '请选择',
 					value: '',
-					prop: 'data',
+					prop: 'time',
 					label: '日期',
 				}, { //农药名称
 					type: 'input',
@@ -34,7 +34,7 @@
 						trigger: ['change']
 					}],
 					value: '',
-					prop: 'pesticideName',
+					prop: 'name',
 					label: '农药名称'
 				}, { //有效成份种类及含量
 					type: 'input',
@@ -45,7 +45,7 @@
 						trigger: ['change']
 					}],
 					value: '',
-					prop: 'vaildChengfen',
+					prop: 'component',
 					label: '有效成份种类及含量',
 					labelWidth: '300'
 				}, { //登记证号
@@ -57,7 +57,7 @@
 						trigger: ['change']
 					}],
 					value: '',
-					prop: 'register',
+					prop: 'no',
 					label: '登记证号'
 				}, { //销售单位
 					type: 'input',
@@ -68,7 +68,7 @@
 						trigger: ['change']
 					}],
 					value: '',
-					prop: 'unitName',
+					prop: 'work',
 					label: '销售单位'
 				}, { //农药剂型
 					type: 'input',
@@ -79,7 +79,7 @@
 						trigger: ['change']
 					}],
 					value: '',
-					prop: 'pesticide',
+					prop: 'dosage_form',
 					label: '农药剂型'
 				}, { //包装规格
 					type: 'input',
@@ -90,7 +90,7 @@
 						trigger: ['change']
 					}],
 					value: '',
-					prop: 'packSize',
+					prop: 'spec',
 					label: '包装规格'
 				}, { //购买数量
 					type: 'input',
@@ -101,7 +101,7 @@
 						trigger: ['change']
 					}],
 					value: '',
-					prop: 'buyNum',
+					prop: 'buy_num',
 					label: '购买数量'
 				}, { //出库数量
 					type: 'input',
@@ -112,7 +112,7 @@
 						trigger: ['change']
 					}],
 					value: '',
-					prop: 'outNum',
+					prop: 'buy_num',
 					label: '出库数量'
 				}, { //库存数量
 					type: 'input',
@@ -123,7 +123,7 @@
 						trigger: ['change']
 					}],
 					value: '',
-					prop: 'stockNum',
+					prop: 'stock',
 					label: '库存数量'
 				}, ]
 
@@ -132,13 +132,28 @@
 		methods: {
 			setFormData(formData) {
 				console.log(formData);
-				this.formData = formData
+				this.formData = {
+					...formData,
+					type: 2
+				}
 			},
 			submit() {
 				this.$refs.formList.formValidate((res) => {
 					if (res instanceof Array) {
 						return
 					}
+					
+					this.$http({
+						url: '/Data/add_stock_log',
+						data: this.formData,
+						loading: true
+					}).then(response => {
+						uni.showToast({
+							title: "添加成功",
+							icon:"success",
+							mask:true
+						})
+					})
 
 				})
 			}
