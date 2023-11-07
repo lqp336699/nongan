@@ -97,7 +97,8 @@
 					value: '',
 					prop: 'remark',
 					label: '备注'
-				}, ]
+				}, ],
+				formData: {}
 			};
 		},
 		methods: {
@@ -117,7 +118,11 @@
 						data:this.formData,
 						loading:true
 					}).then(res=>{
-						console.log(res,"ooooooooooooooo")
+						uni.showToast({
+							title: "添加成功",
+							icon:"success",
+							mask:true
+						})
 					})
 					
 					
