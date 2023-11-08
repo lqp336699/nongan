@@ -23,7 +23,7 @@
 						<text class="py4 px8 colf br18" style="background: rgba(0,0,0,0.5); ">{{swiperIndex+1}}/
 							<text class="font20">{{list1.length}}</text></text>
 					</view>
-					<u-swiper height="254" :list="list1" @change="change" @click="click"></u-swiper>
+					<u-swiper height="254" :list="list1" @change="change"></u-swiper>
 				</view>
 		
 				<view class="bgWhite  py40 px40 br16 mt24">
@@ -64,9 +64,9 @@
 					</view> -->
 				</view>
 		
-				<ProductCard v-for="item in 2" :key="item"></ProductCard>
+				<ProductCard @ProductCardClick="toPatrol" v-for="item in 2" :key="item"></ProductCard>
 			</view>
-			<u-loadmore class="mt20" :height="100" font-size="28" :status="status" :loading-text="loadingText"
+			<u-loadmore class="mt20" :height="100" fomkjnt-size="28" :status="status" :loading-text="loadingText"
 				:loadmore-text="loadmoreText" :nomore-text="nomoreText" />
 		</view>
 	</view>
@@ -101,8 +101,10 @@
 			change(e) {
 				this.swiperIndex = e.current
 			},
-			click() {
-
+			toPatrol() {
+				uni.navigateTo({
+					url: '/productPage/pages/patrolDetail/patrolDetail'
+				})
 			},
 
 		}
