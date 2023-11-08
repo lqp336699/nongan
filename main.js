@@ -46,7 +46,11 @@ uni.$u.setConfig({
 
 const app = new Vue({
   ...App,
-  store
+  store,
+   beforeCreate () {
+          // this就是Vue实例对象vm   ,vm上有$on,$emit,$off，直接用它就行
+          Vue.prototype.$bus = this   // 安装全局事件总线
+      }
 })
 app.$mount()
 

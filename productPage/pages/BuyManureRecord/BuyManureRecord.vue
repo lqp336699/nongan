@@ -1,4 +1,5 @@
 <template>
+	<!-- 肥料购买及出入库记录 -->
 	<view class="page px22 flex flex-column flex-between border-box pb60">
 		<form-list :formIsValidate.sync="formIsValidate" ref="formList" :formList="formList"
 			@setFormData="setFormData"></form-list>

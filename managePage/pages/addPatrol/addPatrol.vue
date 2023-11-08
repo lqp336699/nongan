@@ -1,9 +1,10 @@
 <template>
 	<view class="page  px22 flex flex-column flex-between pb20 border-box">
-		<from-list :formIsValidate.sync="formIsValidate" ref="formList" class="" :formList="formList" @setFormData="setFormData" key="a"></from-list>
+		<from-list :formIsValidate.sync="formIsValidate" ref="formList" class="" :formList="formList"
+			:selectList="selectList" @seletType="seletType"  @search="search" @setFormData="setFormData" key="a"></from-list>
 
 		<!-- 检查内容 -->
-		<view class="  bgWhite  br14">
+		<view class="  bgWhite  br14" v-if="formList2.length>0">
 			<view class="px30">
 				<view class="py40  flex align-center" style="border-bottom:2rpx dashed #D9D9D9;">
 					<text>检查内容</text>
@@ -11,10 +12,38 @@
 			</view>
 
 
-			<from-list :formIsValidate.sync="formIsValidate1" ref="formList2" :formList="formList2" @setFormData="setFormData" key="b"></from-list>
+			<!-- <from-list :formIsValidate.sync="formIsValidate1" ref="formList2" :formList="formList2"
+				@setFormData="setFormData" key="b"></from-list> -->
+				
+				<!-- // {"code":1,"msg":"success","data":[{"id":1,"title":"是否看好种植业","option":[{"id":2,"title":"是","score":50,"check":"false"},{"id":4,"title":"否","score":0,"check":"false"}]},{"id":3,"title":"是否种植过花","option":[{"id":5,"title":"是","score":50,"check":"false"},{"id":6,"title":"否","score":0,"check":"false"}]}]}// -->
+				{{JSON.stringify(formList2)}}
+				<view v-for="item in formList2" :key="item.id">
+					<view :class="['flex','bigRedio' ,'px30' , 'flex-between', 'align-center', item.class ? item.class : '']"
+						 :key="item.id || item.placeholder" >
+						<u-form-item labelPosition="top" :required="item.hasOwnProperty('rule')"
+							:labelWidth="item.labelWidth || 600" class="flex1" :prop="item.check" :label="item.title">
+							<u-radio-group v-model="item.value" iconSize="24">
+								<!-- @change="radioGroupChange(e,item)" -->
+								 <!-- @change="radioChange" -->
+								<u-radio class="" active-color="#21A068"
+									v-for="(redioItem, index) in item.option" :key="index" 
+									 :label="redioItem.title"
+									 :name="redioItem.title"
+									:disabled="redioItem.disabled">
+									{{redioItem.title}}
+								</u-radio>
+							</u-radio-group>
+						</u-form-item>
+					</view>
+				</view>
+				
+				
+				
+				
 		</view>
 		<view class="mt30">
-			<from-list :formIsValidate.sync="formIsValidate2" ref="formList3" :formList="formList3" @setFormData="setFormData" key="c"></from-list>
+			<from-list :formIsValidate.sync="formIsValidate2" ref="formList3" :formList="formList3"
+				@setFormData="setFormData" key="c"></from-list>
 		</view>
 
 		<view class="bgWhite textImg px30 py40 ">
@@ -22,13 +51,13 @@
 			<u--form labelPosition="left" :model="formData4" :rules="formRules4" ref="formList4">
 				<view class="flex  flex-between align-center">
 					<u-form-item class="flex1" label="主体描述" prop="formData4.ss" label-width="200">
-						<u--input input-align="right" v-model="model1.userInfo.name" disabled border="none"></u--input>
+						<u--input input-align="right" v-model="xx" disabled border="none"></u--input>
 					</u-form-item>
 				</view>
 
 				<view class="">
 					<u-form-item>
-						<u--textarea v-model="formData4.aad" border="none" placeholder="请填写描述"
+						<u--textarea v-model="formData4.desc" border="none" placeholder="请填写描述"
 							height="224"></u--textarea>
 					</u-form-item>
 				</view>
@@ -41,7 +70,8 @@
 		</view>
 
 
-		<view @click="submit" class="flex  mt94 flex-center align-center br83 btnBg" :style="{background:formIsValidate1 && formIsValidate && formIsValidate2 ? '#1F9A64' : '#ECFFF7', height:'90rpx'}">
+		<view @click="submit" class="flex  mt94 flex-center align-center br83 btnBg"
+			:style="{background:formIsValidate1 && formIsValidate && formIsValidate2 ? '#1F9A64' : '#ECFFF7', height:'90rpx'}">
 			<text :style="{color:formIsValidate1 && formIsValidate && formIsValidate2 ? '#fff':'#1F9A64'}">提交</text>
 
 		</view>
@@ -60,21 +90,22 @@
 		},
 		data() {
 			return {
-				formIsValidate1:false,
-				formIsValidate:false,
-				formIsValidate2:false,
-
+				formIsValidate1: false,
+				formIsValidate: false,
+				formIsValidate2: false,
+				defaultSelectList:[],
+				selectList: [],
 				formList: [{
-						type: 'addressSelect',
+						type: 'input',
+						disabled: true,
 						placeholder: "请选择",
-						selectTitle:"选择所在地区",
-						selectList: [],
+						selectTitle: "选择所在地区",
 						rule: [{
 							required: true,
 							message: '请选择地区',
 							trigger: ['change']
 						}],
-						value: '',
+						value: '四川省 射洪市',
 						prop: 'name',
 						label: "所在地区"
 					},
@@ -83,38 +114,24 @@
 						type: 'select',
 						placeholder: "请选择",
 						value: '',
-						selectList: [
-							[{
-								value: '1',
-								label: '李'
-							}, {
-								value: '1',
-								label: '江'
-							}],
-							[{
-								value: '2',
-								label: '清平'
-							}, {
-								value: '2',
-								label: '来了'
-							}]
-						],
-						prop: 'date',
+						selectList:[],
+						prop: 'address',
 						label: "所在镇村"
 					},
 
 
 					{
-						type: 'input',
+						type: 'search',
 						placeholder: "请填写主体名称",
 						value: '',
 						class: "mt20",
+						
 						rule: [{
 							required: true,
 							message: '请填写主体名称',
 							trigger: ['change']
 						}],
-						prop: '66bcbfdsg6',
+						prop: 'uid',
 						label: "主体名称"
 					},
 
@@ -124,40 +141,26 @@
 						placeholder: "请输入",
 						value: '',
 						class: "",
-						selectList: [
-							[{
-								value: '1',
-								label: '李'
-							}, {
-								value: '1',
-								label: '江'
-							}],
-							[{
-								value: '2',
-								label: '清平'
-							}, {
-								value: '2',
-								label: '来了'
-							}]
-						],
+
 						rule: [{
 							required: true,
-							message: '请输入主体类型',
+							message: '请输入行业归属',
 							trigger: ['change']
 						}],
-						prop: '543',
-						label: "主体类型"
+						prop: 'work_id',
+						label: "行业归属"
 					},
 					{
 						type: 'input',
 						placeholder: "请填写经营主要品种",
 						value: '',
+						disabled:true,
 						rule: [{
 							required: true,
 							message: '请填写经营主要品种',
 							trigger: ['change']
 						}],
-						prop: '66fsdfs6',
+						prop: 'breed',
 
 						label: "经营品种"
 					},
@@ -167,13 +170,14 @@
 						placeholder: "",
 						labelWidth: "380",
 						value: '',
-						prop: 'kkk',
+						prop: 'is_hg',
 						label: "是否为合格证开具主体",
+						disabled:true,
 						redioList: [{
-							name: "是",
+							name: "否",
 							value: 0
 						}, {
-							name: "否",
+							name: "是",
 							value: 1
 						}]
 					},
@@ -182,13 +186,14 @@
 						placeholder: "",
 						labelWidth: "380",
 						value: '',
-						prop: 'avcvd',
+						prop: 'is_sx',
 						label: "是否实行风险分级管理",
+						disabled:true,
 						redioList: [{
-							name: "是",
+							name: "否",
 							value: 0
 						}, {
-							name: "否",
+							name: "是",
 							value: 1
 						}]
 					},
@@ -201,7 +206,7 @@
 							message: '请输入联系人',
 							trigger: ['change']
 						}],
-						prop: '666vbbdsfs',
+						prop: 'contacts',
 
 						label: "联系人"
 					},
@@ -221,83 +226,7 @@
 				],
 
 
-				formList2: [{
-						type: 'bigRedio',
-						placeholder: "",
-						labelWidth: "600",
-						value: '',
-						prop: 'krekk',
-						label: "是否建立生产记录档案，是否如实记录",
-						redioList: [{
-							name: "是",
-							value: 0
-						}, {
-							name: "否",
-							value: 1
-						}]
-					},
-					{
-						type: 'bigRedio',
-						placeholder: "",
-						labelWidth: "650",
-						value: '',
-						prop: 'kkggsdek',
-						label: "是否使用国家明令禁止的农药、鱼药、兽药等",
-						redioList: [{
-							name: "是",
-							value: 0
-						}, {
-							name: "否",
-							value: 1
-						}]
-					},
-					{
-						type: 'bigRedio',
-						placeholder: "",
-						labelWidth: "600",
-						value: '',
-						prop: 'ksdfkfgk',
-						label: "是否违法添加和滥用添加剂",
-						redioList: [{
-							name: "是",
-							value: 0
-						}, {
-							name: "否",
-							value: 1
-						}]
-					},
-					{
-						type: 'bigRedio',
-						placeholder: "",
-						labelWidth: "600",
-						value: '',
-						prop: 'kntfdkk',
-						label: "销售产品是否自检或委托检测",
-						redioList: [{
-							name: "是",
-							value: 0
-						}, {
-							name: "否",
-							value: 1
-						}]
-					},
-					{
-						type: 'bigRedio',
-						placeholder: "",
-						labelWidth: "600",
-						value: '',
-						prop: 'nfsdvv',
-						label: "采收时是否达到农药安全间隔期",
-						redioList: [{
-							name: "是",
-							value: 0
-						}, {
-							name: "否",
-							value: 1
-						}]
-					},
-
-				],
+				formList2: [],
 				formList3: [{
 						type: 'input',
 						placeholder: "非必填项",
@@ -309,46 +238,211 @@
 						type: 'input',
 						placeholder: "非必填项",
 						value: '',
-						prop: '66sfds6',
+						prop: 'problem',
 						label: "处理意见"
 					},
 
 				],
 				formData: {},
 				formData4: {
-					aad: ''
+					desc: ''
 				},
-				formRules4: {}
+				formRules4: {},
+				address: [],
+				searchData:{},
+				selectType:''
 			}
 		},
-		watch:{
+		watch: {
+			'formData.work_id':{
+				handler(newVal,oldVal){
+					
+					
+					
+					this.$http({
+						url:'/Data/get_subject',
+						data:{
+							work_id:newVal
+						}
+					}).then(res=>{
+						this.formList2 = res.data
+						this.formList2.forEach(item=>{
+							this.$set(item,'value','')
+						})
+					})
+				}
+			},
 			
 		},
+
 		created() {
 			this.formList2.forEach((item, index) => {
-				if ((index+1) % 2 == 0) {
+				if ((index + 1) % 2 == 0) {
 					item.class = "bigRedioActive"
 				}
 			})
 		},
+		onLoad() {
+			this.getAddress()
+			this.$bus.$on('selectPickChange', (options) => {
+				
+				if(this.selectType=="address"){
+					// 改变了镇的选择，获取村的数据
+					console.log(options.newVal[0],options.oldVal[0])
+					if (options.newVal[0] !== options.oldVal[0]) {
+						
+						
+						let arr = this.address.filter((item, index) => {
+							return index == options.newVal[0]
+						})
+						
+						let arr1 = arr[0].village.map(item => {
+							return {
+								label: item.name,
+								id: item.id
+							}
+						})
+						this.selectList.pop()
+						this.selectList.push(arr1)
+					}
+				}
+				
+			})
+
+		},
+		destroyed(){
+			uni.removeStorageSync('selectValue')
+		},
 		methods: {
 			setFormData(formData) {
+				
 				this.formData = {
 					...this.formData,
-					...formData
+					...formData,
+					uid:this.searchData.id
 				}
-				console.log(this.formData,
-					"this.formDatathis.formDatathis.formDatathis.formDatathis.formDatathis.formData")
+
+			},
+			getAddress() {
+				this.formList[1].selectList = []
+				this.$http({
+					url: '/Data/address'
+				}).then(res => {
+					this.address = res.data
+					
+				})
 			},
 			submit() {
 				this.$refs.formList.formValidate((res) => {
 					if (res instanceof Array) {
 						return
 					}
-
-
 				})
-
+				let form2 = this.listForm2.map(item=>{
+					if(item.value=="是"){
+						item.option.forEach(optionItem=>{
+							if(optionItem.title == "是"){
+								optionItem.checked = true
+							}
+							
+						})
+					}else{
+						item.option.forEach(optionItem=>{
+							if(optionItem.title == "否"){
+								optionItem.checked = true
+							}
+							
+						})
+					}
+					
+				})
+				let form = {
+					...this.formData,
+					...form2
+				}
+				console.log(form,"kkkkkkkkkkkkkkkk")
+			},
+			
+			// search页面传来的数据
+			getList(data){
+			    console.log(data,'B页面传递的数据')
+				let prop = ''
+				this.formList.forEach((item,index)=>{
+					if(item.type=='search'){
+						prop = item.prop
+					}
+				})
+				
+				
+				this.$refs.formList.form[prop] = data.main_name
+				this.$refs.formList.form['breed'] = data.breed
+				if(data.is_sx == 0){
+					this.$refs.formList.form['is_sx'] = "否"
+				}else{
+					this.$refs.formList.form['is_sx'] = "是"
+				}
+				
+				if(data.is_hg== 0){
+					this.$refs.formList.form['is_hg'] = "否"
+				}else{
+					this.$refs.formList.form['is_hg'] = "是"
+				}
+				
+				
+				this.searchData = data
+				
+				
+				//获取行业归属
+				
+				// this.selectList = 
+			},
+			seletType(type){
+				this.selectType = type
+				if(type=="address"){
+					this.selectList =[]
+					let arr1 = this.address.map(item => {
+						return {
+							label: item.name,
+							id: item.id
+						}
+					})
+					let arr2 = this.address[0].village.map(item => {
+						return {
+							label: item.name,
+							id: item.id
+						}
+					})
+					this.formList[1].selectList.push(arr1)
+					this.formList[1].selectList.push(arr2)
+					this.selectList.push(arr1)
+					this.selectList.push(arr2)
+				}else if(type=="work_id"){
+					
+					this.selectList =[]
+					let arr1 = this.searchData.work_arr.map(item => {
+						return {
+							label: item.work_name,
+							id: item.id
+						}
+					})
+					
+					this.formList[1].selectList.push(arr1)
+					
+					this.selectList.push(arr1)
+					
+				}
+			},
+			search(){
+				if(!this.formData['address']){
+					uni.showToast({
+						title:"请先选择镇村",
+						icon:"none"
+					})
+					return
+				}
+				uni.navigateTo({
+					url:'/managePage/pages/search/search?address='+this.formData['address']
+				})
 			}
 		}
 	}

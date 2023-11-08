@@ -26,15 +26,29 @@
 						<u-form-item class="flex1" :labelWidth="item.labelWidth || 190"
 							:required="item.hasOwnProperty('rule')" :prop="item.prop" :label="item.label">
 							<u-input border="false" input-align="right" placeholder-style="text-align:right"
-								:placeholder="item.placeholder" v-model="form[item.prop]" />
+								:placeholder="item.placeholder" :disabled="item.disabled" v-model="form[item.prop]" />
 						</u-form-item>
 
 						<slot v-if="item.slot">
 							{{item.slot}}
 						</slot>
-						<!-- 	<image v-if="item.type=='select'" style="width:15rpx; height:27rpx;"
-							src="@/static/form/left.png" mode=""></image> -->
+					
 
+					</view>
+					
+					<view v-if="item.type=='search'"
+						:class="['flex',  'flex-between,px30', 'align-center', item.class ? item.class : '']"
+						:key="item.prop || item.placeholder" @click="search">
+						<u-form-item class="flex1" :labelWidth="item.labelWidth || 190"
+							:required="item.hasOwnProperty('rule')" :prop="item.prop" :label="item.label">
+							<u-input border="false" input-align="right" placeholder-style="text-align:right"
+								:placeholder="item.placeholder" :disabled="item.disabled" v-model="form[item.prop]" />
+						</u-form-item>
+					
+						<slot v-if="item.slot">
+							{{item.slot}}
+						</slot>
+					
 					</view>
 
 					<view :class="['flex',  'flex-between', 'align-center,px30', item.class ? item.class : '']"
@@ -89,10 +103,10 @@
 						v-if="item.type=='redio'" :key="item.prop || item.placeholder">
 						<u-form-item labelPosition="left" :required="item.hasOwnProperty('rule')"
 							:labelWidth="item.labelWidth || 190" class="flex1" :prop="item.prop" :label="item.label">
-							<u-radio-group v-model="form[item.prop]" @change="radioGroupChange(e,item)">
-								<u-radio @change="radioChange" class="" active-color="#21A068"
-									v-for="(redioItem, index) in item.redioList" :key="index" :name="redioItem.name"
-									:disabled="redioItem.disabled">
+							<u-radio-group :value="form[item.prop]" @change="radioGroupChange(e,item)" >
+								<u-radio :disabled="item.disabled" @change="radioChange" class="" active-color="#21A068"
+									v-for="(redioItem, index) in item.redioList" :key="index" :name="redioItem.name" :label="redioItem.name"
+									>
 									{{redioItem.name}}
 								</u-radio>
 							</u-radio-group>
@@ -100,10 +114,10 @@
 					</view>
 
 					<view :class="['flex','bigRedio' ,'px30' , 'flex-between', 'align-center', item.class ? item.class : '']"
-						v-if="item.type=='bigRedio'" :key="item.prop || item.placeholder" >
+						v-if="item.type=='bigRedio'" :key="item.id || item.placeholder" >
 						<u-form-item labelPosition="top" :required="item.hasOwnProperty('rule')"
-							:labelWidth="item.labelWidth || 190" class="flex1" :prop="item.prop" :label="item.label">
-							<u-radio-group v-model="form[item.prop]" @change="radioGroupChange(e,item)">
+							:labelWidth="item.labelWidth || 190" class="flex1" :prop="item.id" :label="item.label">
+							<u-radio-group v-model="form[item.checked]" @change="radioGroupChange(e,item)">
 								<u-radio @change="radioChange" class="" active-color="#21A068"
 									v-for="(redioItem, index) in item.redioList" :key="index" :name="redioItem.name"
 									:disabled="redioItem.disabled">
@@ -152,6 +166,10 @@
 			formIsValidate:{
 				type:Boolean,
 				default:false
+			},
+			selectList:{
+				type: Array,
+				default: [],
 			}
 		},
 		data() {
@@ -160,7 +178,7 @@
 			let requireForm = []
 			this.formList.forEach(item => {
 				if (!form[item.prop]) {
-					this.$set(form, item.prop, '')
+					this.$set(form, item.prop, item.value)
 				}
 				
 				if(item.rule){
@@ -177,9 +195,9 @@
 				rules: {
 					...rules
 				},
+				selectForm:[],
 				requireForm:requireForm,
 				popupType: false,
-				selectList: [],
 				selectProp: "",
 				selectTitle: ""
 			}
@@ -209,13 +227,23 @@
 						return item.type == "redio"
 					})
 					
+					
+					
 					let dateLists = this.formList.filter(item => {
 						return item.type == "date"
 					})
+					
+					
+					let work_id = this.selectForm.map(item=>{
+						return item.id
+					})
+					
+					newValCopy[this.selectProp] = work_id[0]
+					
+					
 					dateLists.forEach(item=>{
 						let date =  newValCopy[item['prop']].replace('年','-').replace('月','-').replace('日','')
 						let time = new Date(date).getTime()/1000
-						console.log(date,time,"pppppp")
 						
 						 newValCopy[item['prop']] = time
 						
@@ -231,9 +259,8 @@
 								}
 							})
 						}
-
 					})
-					console.log("newValCopynewValCopynewValCopynewValCopynewValCopynewValCopy",newValCopy)
+					console.log(newValCopy,"oooooooooooo")
 					this.$emit('setFormData', newValCopy) //页面接收newValCopy
 				},
 				deep: true
@@ -248,7 +275,10 @@
 				this.$refs.popup.open('bottom')
 			},
 			showSelect(item) {
-				this.selectList = item.selectList
+				
+				// this.$emit('update:selectList', item.selectList)
+				this.$emit('seletType',item.prop)
+				
 				this.selectTitle = item.selectTitle
 				this.selectProp = item.prop
 				if(item.type=="select"){
@@ -261,11 +291,27 @@
 				this.$refs.popup.open('bottom')
 			},
 			close(value) {
-				console.log(value)
-				if (this.popupType == 'Date') {
-					this.form[this.dateProp] = value
-				} else {
-					this.form[this.selectProp] = value
+				if(value){
+					if (this.popupType == 'Date') {
+						this.form[this.dateProp] = value
+					} else {
+						
+						let string = ''
+						if (value.length>0) {
+							for (let i = 0; i <= value.length - 1; i++) {
+								
+								if(value[i]){
+									string += value[i]['label'] + '   '
+								}
+							}
+						
+						}
+						
+						this.selectForm = value
+					
+						
+						this.form[this.selectProp] = string
+					}
 				}
 
 				this.popupType = ''
@@ -286,6 +332,9 @@
 				}).catch(errors => {
 					callBack(errors)
 				})
+			},
+			search(){
+				this.$emit('search')
 			}
 		}
 	}
