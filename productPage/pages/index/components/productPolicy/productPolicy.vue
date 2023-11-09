@@ -7,10 +7,8 @@
 			<uni-nav-bar statusBar title="政策动态" color="#222" :border="false" :leftWidth="0" fixed></uni-nav-bar>
 			<view class=" flex flex-between mt20">
 
-				<navigator
-					:url="`/pages/webView/webView?ProjectNewsId=${item.id}&ProjectNewsTitle=${item.title}&from=doctor`"
-					v-for="(item,index) in hotList" :key="index" class=" br10 pb20 bgWhite overH  border-box"
-					style="width:336rpx; ">
+				<navigator :url="`/pages/id=${item.id}`" v-for="(item,index) in hotList" :key="index"
+					class=" br10 pb20 bgWhite overH  border-box" style="width:336rpx; ">
 					<image style="height: 226rpx;" :src="item.img"></image>
 					<view class="pd14  relactive">
 						<image src="@/static/product/hot.png" mode="" class="absolute"
@@ -36,7 +34,7 @@
 
 
 			<view class=" ">
-				<navigator v-for="(item,index) in list" :key="index"
+				<navigator :url="`/pages/id=${item.id}`" v-for="(item,index) in list" :key="index"
 					class="bgWhite bbs pd30 border-box flex flex-between">
 					<view class="flex flex-between flex-column " style="width:420rpx;">
 						<view class="">
@@ -80,7 +78,6 @@
 				}],
 				hotList: [{
 						title: "新闻标题新闻标闻标题新闻标题新闻",
-						doctor: "李清平",
 						hits: "54",
 						img: "https://cdn.uviewui.com/uview/swiper/swiper1.png",
 						time: "2022-07-01",
@@ -88,7 +85,6 @@
 					},
 					{
 						title: "新闻标题新闻标闻标题新闻标题新闻",
-						doctor: "李清平",
 						hits: "54",
 						img: "https://cdn.uviewui.com/uview/swiper/swiper1.png",
 						time: "2022-07-01",
@@ -97,21 +93,18 @@
 				],
 				list: [{
 						title: "新闻标题新闻标闻标题新闻标题新闻",
-						doctor: "李清平",
 						hits: "54",
 						img: "https://cdn.uviewui.com/uview/swiper/swiper1.png",
 						time: "2022-07-01"
 					},
 					{
 						title: "新闻标题新闻标闻标题新闻标题新闻",
-						doctor: "李清平",
 						hits: "54",
 						img: "https://cdn.uviewui.com/uview/swiper/swiper1.png",
 						time: "2022-07-01"
 					},
 					{
 						title: "新闻标题新闻标闻标题新闻标题新闻",
-						doctor: "李清平",
 						hits: "54",
 						img: "https://cdn.uviewui.com/uview/swiper/swiper1.png",
 						time: "2022-07-01"
