@@ -31,7 +31,7 @@
 			<view class="flex mt28 flex-between align-center">
 				<view class="flex ">
 					<text class="mr22">经营品种:</text>
-					<text class="">{{productData.work_name}}</text>
+					<text class="">{{productData.breed}}</text>
 				</view>
 			</view>
 			<view class="flex mt28 flex-between align-center">

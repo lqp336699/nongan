@@ -90,7 +90,8 @@
 					"style": {
 						"navigationBarTitleText": "",
 						"enablePullDownRefresh": false,
-						"navigationStyle": "custom"
+						"navigationStyle": "custom",
+						"onReachBottomDistance": 50
 					}
 				},
 				{

@@ -66,7 +66,7 @@
 
 				<ProductCard @ProductCardClick="toPatrol(item.id)" :productData="item" v-for="item in dataList" :key="item.id"></ProductCard>
 			</view>
-			<u-loadmore class="mt20" :height="100" fomkjnt-size="28" :status="status" :loading-text="loadingText"
+			<u-loadmore class="mt20" :height="100" font-size="28" :status="status" :loading-text="loadingText"
 				:loadmore-text="loadmoreText" :nomore-text="nomoreText" />
 		</view>
 	</view>
@@ -102,6 +102,21 @@
 			this.init()
 		},
 		methods: {
+			loadMore(){
+				if(this.status == 'nomore'){
+					return 
+				}
+				this.page++
+				this.$http({
+					url:'/Data/home',
+					data:{
+						page:this.page,
+						limit:this.limit
+					}
+				}).then(res=>{
+					this.list = this.list.push(...res.data.list) 
+				})
+			},
 			init() {
 				this.$http({
 					url: '/Data/home'
@@ -109,6 +124,11 @@
 					this.list1 = res.data.banner.map(item => item.img)
 					this.count = res.data.count
 					this.dataList = res.data.list
+					if(res.data.list.length < this.limit){
+						this.status = 'nomore'
+					}else{
+						this.status = 'loadmore'
+					}
 				})
 			},
 			change(e) {

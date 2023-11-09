@@ -16,12 +16,12 @@
 			<view class="relactive mt40 px24 border-box">
 				<view class="colf">
 					<view class="">
-						<text class="font44">{{patrolInfo.total_score}}</text>
+						<text class="font44">{{patrolInfo.total_score || ''}}</text>
 						<text class="ml10">分</text>
 					</view>
 					<view class="pt20 pdb30 ">
 						<text>巡查时间：</text>
-						<text>{{$u.timeFormat(patrolInfo.create_time, 'yyyy.mm.dd hh:MM')}}</text>
+						<text>{{$u.timeFormat(patrolInfo.create_time || '', 'yyyy.mm.dd hh:MM')}}</text>
 					</view>
 				</view>
 
@@ -33,20 +33,20 @@
 					<view class="flex  ">
 						<view class="flex align-center">
 							<text class="mr22 font28">主体名称:</text>
-							<text class="font32 font800">{{patrolInfo.main_name}}</text>
+							<text class="font32 font800">{{patrolInfo.main_name || ''}}</text>
 						</view>
 					</view>
 
 					<view class="flex mt28  ">
 						<view class="flex align-center">
 							<text class="mr22">经营品种:</text>
-							<text class="">{{patrolInfo.work_name}}</text>
+							<text class="">{{patrolInfo.breed || ''}}</text>
 						</view>
 					</view>
 					<view class="flex mt28  ">
 						<view class="flex align-center">
 							<text class="mr22">联系方式:</text>
-							<text class="">{{patrolInfo.mobile}}</text>
+							<text class="">{{patrolInfo.mobile || ''}}</text>
 						</view>
 					</view>
 
@@ -75,7 +75,7 @@
 						<image style="width:16rpx; height:23rpx;" class="mr14" src="/static/form/left.png" mode="">
 						</image>
 						<view class="flex align-center">
-							<text>江西省遂宁市射洪市 {{patrolInfo.county_name}} {{patrolInfo.village_name}}</text>
+							<text>江西省遂宁市射洪市 {{patrolInfo.county_name || ''}} {{patrolInfo.village_name || ''}}</text>
 						</view>
 					</view>
 				</view>
@@ -83,7 +83,7 @@
 
 				<view class="br10 px24 py36 border-box" style="background: #F5FFFB;">
 					<view class="mb20 ml6">
-						<text>{{patrolInfo.desc}}</text>
+						<text>{{patrolInfo.desc || ''}}</text>
 					</view>
 					<view class="flex flex-wrap">
 						<view class=" flex flex-center align-center" v-for="item in getImg()" :key="item"
@@ -112,10 +112,10 @@
 
 					<view class="flex flex-between align-center py30  border-box" v-for="(item,index) in patrolInfo.patrol_subject"
 						:key="index">
-						<text>{{item.title}}</text>
+						<text>{{item.title || ''}}</text>
 						<view class="" style="color: #1F9A64;">
 							+
-							<text>{{item.score}}分</text>
+							<text>{{item.score || ''}}分</text>
 						</view>
 					</view>
 
