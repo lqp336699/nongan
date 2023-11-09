@@ -68,20 +68,25 @@
 					success: function(chooseImageRes) {
 						that.loading = true
 						const tempFilePaths = chooseImageRes.tempFilePaths;
+						console.log(JSON.stringify(chooseImageRes.tempFilePaths));
 						chooseImageRes.tempFilePaths.forEach((item,index)=>{
 							uni.uploadFile({
-								url: '/api/ajax/upload',
+								url: 'http://36.134.191.59:88/api/ajax/upload',
 								filePath: tempFilePaths[index],
 								name: 'file',
 								formData: {
 									'file': tempFilePaths[index]
 								},
 								success: (uploadFileRes) => {
+									console.log(uploadFileRes,"llllll")
 									let file = JSON.parse(uploadFileRes.data).data.file
-									file.url = "https://sh.wellday.com" + file.url
+									file.url = "http://36.134.191.59:88" + file.url
 									let arr = that.fileList.concat([file])
 									that.$emit('update:fileList', arr)
 									that.loading = false
+								},
+								error:(err)=>{
+									console.log(err,"ooooooooooo")
 								}
 							});
 						})

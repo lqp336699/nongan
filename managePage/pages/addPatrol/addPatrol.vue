@@ -16,7 +16,6 @@
 				@setFormData="setFormData" key="b"></from-list> -->
 				
 				<!-- // {"code":1,"msg":"success","data":[{"id":1,"title":"是否看好种植业","option":[{"id":2,"title":"是","score":50,"check":"false"},{"id":4,"title":"否","score":0,"check":"false"}]},{"id":3,"title":"是否种植过花","option":[{"id":5,"title":"是","score":50,"check":"false"},{"id":6,"title":"否","score":0,"check":"false"}]}]}// -->
-				{{JSON.stringify(formList2)}}
 				<view v-for="item in formList2" :key="item.id">
 					<view :class="['flex','bigRedio' ,'px30' , 'flex-between', 'align-center', item.class ? item.class : '']"
 						 :key="item.id || item.placeholder" >
@@ -42,7 +41,7 @@
 				
 		</view>
 		<view class="mt30">
-			<from-list :formIsValidate.sync="formIsValidate2" ref="formList3" :formList="formList3"
+			<from-list  ref="formList3" :formList="formList3"
 				@setFormData="setFormData" key="c"></from-list>
 		</view>
 
@@ -51,7 +50,7 @@
 			<u--form labelPosition="left" :model="formData4" :rules="formRules4" ref="formList4">
 				<view class="flex  flex-between align-center">
 					<u-form-item class="flex1" label="主体描述" prop="formData4.ss" label-width="200">
-						<u--input input-align="right" v-model="xx" disabled border="none"></u--input>
+						<u--input input-align="right"  disabled border="none"></u--input>
 					</u-form-item>
 				</view>
 
@@ -61,18 +60,17 @@
 							height="224"></u--textarea>
 					</u-form-item>
 				</view>
-
-
+				{{JSON.stringify(fileList)}}
 				<view class="">
-					<up-image></up-image>
+					<up-image :fileList.sync="fileList"></up-image>
 				</view>
 			</u--form>
 		</view>
 
 
 		<view @click="submit" class="flex  mt94 flex-center align-center br83 btnBg"
-			:style="{background:formIsValidate1 && formIsValidate && formIsValidate2 ? '#1F9A64' : '#ECFFF7', height:'90rpx'}">
-			<text :style="{color:formIsValidate1 && formIsValidate && formIsValidate2 ? '#fff':'#1F9A64'}">提交</text>
+			:style="{background: formIsValidate ? '#1F9A64' : '#ECFFF7', height:'90rpx'}">
+			<text :style="{color:formIsValidate ? '#fff':'#1F9A64'}">提交</text>
 
 		</view>
 	</view>
@@ -95,6 +93,7 @@
 				formIsValidate2: false,
 				defaultSelectList:[],
 				selectList: [],
+				fileList:[],
 				formList: [{
 						type: 'input',
 						disabled: true,
@@ -219,7 +218,7 @@
 							message: '请输入联系手机',
 							trigger: ['change']
 						}],
-						prop: '66sdfs6',
+						prop: 'mobile',
 
 						label: "联系手机"
 					},
@@ -231,14 +230,14 @@
 						type: 'input',
 						placeholder: "非必填项",
 						value: '',
-						prop: '12vcv3',
+						prop: 'problem',
 						label: "存在的问题"
 					},
 					{
 						type: 'input',
 						placeholder: "非必填项",
 						value: '',
-						prop: 'problem',
+						prop: 'take',
 						label: "处理意见"
 					},
 
@@ -338,29 +337,51 @@
 						return
 					}
 				})
-				let form2 = this.listForm2.map(item=>{
+				
+				let form2 = this.formList2.map(item=>{
 					if(item.value=="是"){
-						item.option.forEach(optionItem=>{
+						 item.option.forEach(optionItem=>{
 							if(optionItem.title == "是"){
-								optionItem.checked = true
+								optionItem.check = true
 							}
 							
 						})
+						return item
 					}else{
-						item.option.forEach(optionItem=>{
+						 item.option.forEach(optionItem=>{
 							if(optionItem.title == "否"){
-								optionItem.checked = true
+								optionItem.check = true
 							}
 							
 						})
+						return item
 					}
 					
 				})
+				console.log(this.fileList)
+				let string = ''
+				this.fileList.forEach(item=>{
+					string +=item.url+','
+				})
+				string = string.substring(0, string.length - 1)
+				
 				let form = {
 					...this.formData,
-					...form2
+					...this.formData4,
+					subject:form2,
+					img:string
 				}
-				console.log(form,"kkkkkkkkkkkkkkkk")
+				
+				this.$http({
+					url:"/Data/post_patrol",
+					data:{
+						...form
+					}
+				}).then(res=>{
+					uni.showToast({
+						title:res.msg
+					})
+				})
 			},
 			
 			// search页面传来的数据
