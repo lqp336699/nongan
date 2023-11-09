@@ -81,6 +81,7 @@
 			AddPatrol,
 			Skeleton
 		},
+	
 		data() {
 			return {
 				skeleton:false,

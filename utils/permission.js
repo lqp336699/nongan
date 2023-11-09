@@ -24,18 +24,18 @@ export default async function() {
 					//发送请求获取用户身份
 					if (whiteList.includes(url)) {
 						console.log("拦截白名单，默认跳转")
-						// if(identity== 1){
-						// 	//如果身份是管理重定向管理员首页
-						// 	uni.redirectTo({
-						// 		url: '/managePage/pages/index/index'
-						// 	})
-						// 	return false
-						// }else if(identity== 2){
-						// 	uni.redirectTo({
-						// 		url: '/productPage/pages/index/index'
-						// 	})
-						// 	return false
-						// }
+						if(identity== 1){
+							//如果身份是管理重定向管理员首页
+							uni.redirectTo({
+								url: '/managePage/pages/index/index'
+							})
+							return false
+						}else if(identity== 2){
+							uni.redirectTo({
+								url: '/productPage/pages/index/index'
+							})
+							return false
+						}
 						return e
 					}else{
 						if(![1,2].includes(identity)){
