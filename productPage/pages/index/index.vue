@@ -3,10 +3,10 @@
 
 
 		<view class="">
-			<home v-if="current==0"></home>
-			<ranking class="ranking" v-if="current==1"></ranking>
-			<Events class="ranking" v-if="current==2"></Events>
-			<policy v-if="current==3"></policy>
+			<home class="navBarMenu" ref="Home" v-if="current==0"></home>
+			<ranking class="navBar" ref="ranking" v-if="current==1"></ranking>
+			<Events class="navBar" v-if="current==2"></Events>
+			<policy class="navBar" v-if="current==3"></policy>
 		</view>
 
 
@@ -62,13 +62,23 @@
 		data() {
 			return {
 				current: 0,
-
 			}
+		},
+		onReachBottom() {
+			switch (this.current) {
+				case 0:
+					this.$refs.Home.loadMore()
+					break;
+				case 1:
+					this.$refs.ranking.loadMore()
+					break;
+			}
+		
 		},
 		watch: {
 			current: {
 				handler(newVal) {
-					uni.set
+					
 				}
 			}
 		},
@@ -79,7 +89,7 @@
 </script>
 
 <style scoped lang="scss">
-	.ranking /deep/ .uni-nav-bar-text {
+	.navBar /deep/ .uni-nav-bar-text {
 		/* #ifdef APP-PLUS */
 		font-size: 36rpx !important;
 		/* #endif */
@@ -87,8 +97,13 @@
 		font-size: 18px;
 		/* #endif */
 	}
+	
+	
+	.navBarMenu /deep/ .uni-nav-bar-text{
+		font-size: 36rpx !important;
+	}
 
-	.ranking /deep/ .uni-navbar__header-container-inner {
+	.navBar /deep/ .uni-navbar__header-container-inner {
 		justify-content: left !important;
 	}
 </style>

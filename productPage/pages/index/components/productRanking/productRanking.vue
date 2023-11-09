@@ -1,7 +1,7 @@
 <template>
 	<view class="">
 		<!-- <Skeleton v-if="true"></Skeleton> -->
-		<view v-if="true" class="overH  flex flex-column page pb40">
+		<view v-if="true" class="overH  flex flex-column page">
 			<!-- 导航栏 -->
 			<uni-nav-bar status-bar style="position: fixed;z-index: 10;" :leftWidth="0" :border="false" color="#fff"
 				title="排行" fixed="true" backgroundColor="rgba(0,0,0,0)"></uni-nav-bar>
@@ -66,7 +66,7 @@
 			</view>
 
 
-			<view class="bgWhite flex  flex-column align-center flex1 mb30" style="width: 750rpx; margin-top:620rpx;">
+			<view class="bgWhite flex  flex-column align-center flex1 " style="width: 750rpx; margin-top:620rpx;">
 
 				<view class="w100" :style="{borderBottom: index == list.length-1 ?'none' :  '1rpx solid #E9E9E9'}"
 					v-for="(item,index) in list" :key="index">
@@ -76,22 +76,24 @@
 							<image v-if="index <= imgList.length - 1" style="width: 80rpx;height: 80rpx;"
 								:src="imgList[index]" mode=""></image>
 							<view class="flex flex-center align-center" style="width: 80rpx;height: 80rpx;" v-else>
-								<text>{{index+1}}</text>
+								<text>{{item.ranking}}</text>
 							</view>
-							<text class="ml50 col2">射洪大榆镇凤姐蜂蜜养殖场</text>
+							<text class="ml50 col2">{{item.main_name || ''}}</text>
 						</view>
 						<view class="font32 col2">
-							<text>98</text>
+							<text>{{item.average || ''}}</text>
 						</view>
 					</view>
 				</view>
-
 			</view>
-
-			<u-loadmore class="mt50" :height="100" font-size="28" :status="status" :loading-text="loadingText"
-				:loadmore-text="loadmoreText" :nomore-text="nomoreText" />
-
+			
+			
 		</view>
+		
+		
+		<u-loadmore class="" :height="100" font-size="28" :status="status" :loading-text="loadingText"
+			:loadmore-text="loadmoreText" :nomore-text="nomoreText" />
+
 	</view>
 
 </template>
@@ -102,6 +104,18 @@
 		components: {
 			Skeleton
 		},
+		watch: {
+			'rankType': {
+				handler(newVal, oldVal) {
+					this.init()
+				}
+			},
+			'rankStatus': {
+				handler(newVal, oldVal) {
+					this.init()
+				}
+			}
+		},
 		data() {
 			return {
 				rankType: 1, //红榜1，黑榜2
@@ -111,7 +125,7 @@
 					'/static/rank/No2.png',
 					'/static/rank/No3.png'
 				],
-				list: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],
+				list: [],
 				limit: 8,
 				page: 1,
 				status: 'loadmore',
@@ -120,7 +134,47 @@
 				nomoreText: '没有更多了'
 			};
 		},
+		created() {
+			this.init()
+		},
 		methods: {
+			loadMore() {
+				if (this.status == 'nomore') {
+					return
+				}
+				this.page++
+				this.$http({
+					url: '/Data/ranking',
+					data: {
+						type: this.rankType,
+						time: this.rankStatus,
+						page: this.page,
+						limit: this.limit
+					}
+				}).then(res => {
+					this.list = this.list.push(...res.data.list)
+				})
+			},
+
+			init() {
+				this.$http({
+					url: '/Data/ranking',
+					data: {
+						type: this.rankType,
+						time: this.rankStatus,
+						page: this.page,
+						limit: this.limit
+					}
+				}).then(res => {
+					console.log(res);
+					if (res.data.list.length < this.limit) {
+						this.status = 'nomore'
+					} else {
+						this.status = 'loadmore'
+					}
+					this.list = res.data.list
+				})
+			},
 			actived(rankType) {
 				this.rankType = rankType
 			},
