@@ -20,19 +20,19 @@
 				<view class="relactive">
 					<view class="absolute flex flex-end  pr40" style="bottom: 20rpx; z-index:2; left:0; right:0;">
 						<text class="py4 px8 colf br18" style="background: rgba(0,0,0,0.5); ">{{swiperIndex+1}}/
-							<text class="font20">{{list1.length}}</text></text>
+							<text class="font20">{{bannerList.length}}</text></text>
 					</view>
-					<u-swiper height="254" :list="list1" @change="change" @click="click"></u-swiper>
+					<u-swiper height="254" :list="bannerList" @change="change" @click="click"></u-swiper>
 				</view>
 
 				<view class="bgWhite  py40 px40 br16 mt24">
 					<view class="flex flex-between align-center">
 						<view class="flex">
-							<image class="br110 mr26" src="/static/logo.png" style="height:110rpx; width:110rpx;"
+							<image class="br110 mr26" :src="userInfo.wxPhotoURL || ''" style="height:110rpx; width:110rpx;"
 								mode=""></image>
 							<view class="flex flex-column flex-around">
-								<text class="font800 font36">zjl</text>
-								<text>市级管理人员</text>
+								<text class="font800 font36">{{userInfo.truename || ''}}</text>
+								<text>{{userInfo.work || ''}}</text>
 							</view>
 						</view>
 						<view @click="addPatrol" class="flex px16 border-box py16 align-center flex-center br36"
@@ -48,18 +48,17 @@
 						<view class="flex flex-column align-center flex-center"
 							style="width:272rpx; height:130rpx; background: linear-gradient(180deg, #E1FFF2 0%, #FFFFFF 100%);">
 							<text>总巡查(件)</text>
-							<text class="mt20 font36 " style="color:#29C17E;">15</text>
+							<text class="mt20 font36 " style="color:#29C17E;">{{homeData.count}}</text>
 						</view>
-
 						<view class="flex flex-column align-center flex-center"
 							style="width:272rpx; height:130rpx;background: linear-gradient(180deg, #EBF3FF 0%, #FFFFFF 100%);">
 							<text>本月巡查(件)</text>
-							<text class="mt20 font36 " style="color:#17A5E3;">15</text>
+							<text class="mt20 font36 " style="color:#17A5E3;">{{homeData.month_count}}</text>
 						</view>
 					</view>
 				</view>
 
-				<ProductCard @ProductCardClick="ProductCardClick" v-for="item in 2" :key="item"></ProductCard>
+				<ProductCard @ProductCardClick="ProductCardClick" :productData="item" v-for="item in productData" :key="item.id"></ProductCard>
 
 
 			</view>
@@ -96,11 +95,28 @@
 				status: 'loadmore',
 				loadingText: '努力加载中',
 				loadmoreText: '轻轻上拉',
-				nomoreText: '没有更多了'
+				nomoreText: '没有更多了',
+				bannerList:[],
+				userInfo:{},
+				productData:[],
+				homeData:{}
 			}
+		},
+		created(){
+			this.init()
 		},
 		onLoad(){
 			new Promise.all()
+			
+		},
+		
+		loadMore(){
+			if(this.status == "nomore"){
+				return
+			}
+			this.status = "loading"
+			this.page ++
+			this.getMore()
 		},
 		methods: {
 			change(e) {
@@ -112,6 +128,46 @@
 			addPatrol() {
 				uni.navigateTo({
 					url: "/managePage/pages/addPatrol/addPatrol"
+				})
+			},
+			getMore(){
+				this.$http({
+					url: '/Data/home',
+					data:{
+						page:this.page,
+						limit:this.limit
+					}
+				}).then(res => {
+					// this.homeData = res.data
+					// this.bannerList = res.data.banner.map(item => item.img)
+					// this.count = res.data.count
+					// this.userInfo = res.data.user_info
+					if(res.data.list.length < this.limit){
+						this.status = 'nomore'
+					}else{
+						this.status = 'loadmore'
+					}
+					this.productData =this.productData.push(...res.data.list) 
+				})
+			},
+			init() {
+				this.$http({
+					url: '/Data/home',
+					data:{
+						page:this.page,
+						limit:this.limit
+					}
+				}).then(res => {
+					this.homeData = res.data
+					this.bannerList = res.data.banner.map(item => item.img)
+					// this.count = res.data.count
+					this.userInfo = res.data.user_info
+					this.productData = res.data.list
+					if(res.data.list.length < this.limit){
+						this.status = 'nomore'
+					}else{
+						this.status = 'loadmore'
+					}
 				})
 			},
 			

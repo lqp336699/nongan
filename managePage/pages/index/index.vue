@@ -43,6 +43,7 @@
 </template>
 
 <script>
+	import { mapState } from 'vuex'
 	import Home from './components/manageHome/manageHome.vue';
 	import Ranking from './components/manageRanking/manageRanking.vue';
 	import Events from './components/manageEvents/manageEvents.vue';
@@ -64,12 +65,20 @@
 				
 			}
 		},
+		computed: {
+		   ...mapState({
+		        identity: state => state.identity.identity,
+		      }),
+		},
 		
 		onReachBottom(){
-			switch(this.current){
-				case 0 : 
-				// this.$refs.Home.page_size++
-				
+			if(identity == 1){
+				switch(this.current){
+					case 0 : 
+					this.$refs.Home.loadMore()
+					case 1:
+					this.$refs.ranking.loadMore()
+				}
 			}
 			
 		},

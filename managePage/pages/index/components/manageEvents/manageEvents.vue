@@ -1,10 +1,14 @@
 <template>
 	<view class="">
-		<Skeleton v-if="true"></Skeleton>
+		<!-- <Skeleton v-if="true"></Skeleton> -->
 		
-		<view v-if="false" class="page overH pb50">
+		<view v-if="true" class="page overH pb50">
 			<uni-nav-bar statusBar title="生产主体" fixed></uni-nav-bar>
 			<!-- <scroll-view scroll-y="true" class="pb60 border-box bd" bd> -->
+			
+			<view class="">
+				<u-search placeholder="搜索" v-model="keyword"></u-search>
+			</view>
 			<view class="px22 ">
 				<!-- <view v-if="recodeList.length == 0" class="py100 flex flex-center align-center">
 						<text>暂无数据</text>
@@ -41,38 +45,60 @@
 				loadingText: '努力加载中',
 				loadmoreText: '轻轻上拉',
 				nomoreText: '没有更多了',
-				page_size: 8,
-				page_index: 1,
+				limit: 8,
+				page: 1,
+				keyword:'',
 				recodeList: [],
 			}
 		},
-		onLoad() {
+		created() {
 			this.getData()
 		},
-		onReachBottom() {
-			if (this.status == "nomore") {
-				return
-			}
-			if (this.status == 'loadmore') {
-				this.page_index++
-				this.getData()
-			}
-		},
+		
 		methods: {
+			getMore(){
+				if(this.status == 'nomore'){
+					return 
+				}
+				
+				
+				this.page++
+				
+				this.$http({
+					url: '/Data/patrol_index',
+					data:{
+						page: this.page,
+						limit: this.limit
+					}
+				}).then(res => {
+					
+					if(res.data.list.length < this.limit){
+						this.status = 'nomore'
+					}else{
+						this.status = 'loadmore'
+					}
+					this.recodeList =res.data.list
+					
+				})
+			},
 			getData() {
 				this.status = "loading"
-				// this.$http({
-				// 	url: 'api/Wechat/userDrawList',
-				// 	data:{
-				// 		page_index: this.page_index,
-				// 		page_size: this.page_size
-				// 	}
-				// }).then(res => {
-				// 	this.recodeList = this.recodeList.concat(res.data)
-				// 	if(res.data.length < this.page_size){
-				// 		this.status = "nomore"
-				// 	}
-				// })
+				this.$http({
+					url: '/Data/patrol_index',
+					data:{
+						page: this.page,
+						limit: this.limit
+					}
+				}).then(res => {
+					
+					if(res.data.list.length < this.limit){
+						this.status = 'nomore'
+					}else{
+						this.status = 'loadmore'
+					}
+					this.recodeList =res.data.list
+					
+				})
 			}
 		}
 	}

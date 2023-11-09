@@ -11,6 +11,11 @@ const identity = {
 			uni.setStorageSync('identity', identity);
 		}
 	},
+	getters: {
+	  identity: (state) => (id) => {
+	    return state.identity
+	  }
+	},
 	actions: {
 		getIdentity({ commit }) {
 			return new Promise((resolve, reject) => {

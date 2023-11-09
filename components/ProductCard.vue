@@ -1,8 +1,8 @@
 <template>
 	<view class="mt20" @click="ProductCardClick()">
 		<view class="flex bgWhite py40 px24 border-box flex-column br16">
-			<view class="flex  flex-between align-center">
-				<view class="flex align-center ">
+			<view class="flex  flex-between align-center" v-if="$store.state.identity.identity == 2">
+				<view class="flex align-center bd">
 					<text class="mr22">管理人员:</text>
 					<view class="flex ">
 						<!-- :src="productData.wxPhotoURL || ''"	 -->
@@ -10,8 +10,8 @@
 						</image>
 
 						<view class="flex flex-column flex-around">
-							<text>{{productData.truename}}</text>
-							<text>{{productData.main_type_name}}</text>
+							<text>{{productData.truename || ''}}</text>
+							<text>{{productData.main_type_name || ''}}</text>
 						</view>
 
 					</view>
@@ -23,7 +23,7 @@
 			<view class="flex mt28 flex-between align-center">
 				<view class="flex ">
 					<text class="mr22">主体名称:</text>
-					<text class="font800">{{productData.main_name}}</text>
+					<text class="font800">{{productData.main_name || ''}}</text>
 				</view>
 				<image style="width:8rpx; height:16rpx;" src="@/static/form/left.png" mode=""></image>
 			</view>
@@ -99,6 +99,7 @@
 </template>
 
 <script>
+	import { mapState } from 'vuex'
 	export default {
 		name: "ProductCard",
 		props: {
@@ -111,6 +112,11 @@
 			return {
 				
 			};
+		},
+		computed: {
+		   ...mapState({
+		        identity: state => state.identity.identity,
+		      }),
 		},
 		created() {
 			

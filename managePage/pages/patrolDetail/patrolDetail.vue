@@ -2,9 +2,9 @@
 
 	<view class=" " >
 		
-		<Skeleton v-if="true"></Skeleton>
+		<!-- <Skeleton v-if="true"></Skeleton> -->
 		
-		<view v-if="false" class="page relactive">
+		<view v-if="true" class="page relactive">
 			<uni-nav-bar backgroundColor="#3BC688" color="#fff" statusBar title="巡查详情" :leftWidth="20" left-icon="left"
 				@clickLeft="back" fixed></uni-nav-bar>
 
