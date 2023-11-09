@@ -76,6 +76,10 @@
 	font-size: 50rpx;
 }
 
+.ml10{
+	margin-left: 10rpx;
+}
+
 .ml6{
 	margin-left: 6rpx;
 }
@@ -94,6 +98,10 @@
 
 .ml100{
 	margin-left: 100rpx;
+}
+
+.mr20{
+	margin-right: 20rpx;
 }
 
 .mb22{
