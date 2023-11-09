@@ -1,22 +1,22 @@
 <template>
-	
+
 	<view class="">
 
 		<!-- <Skeleton v-if="true"></Skeleton> -->
-		<view v-if="true"  class="page relactive">
-			
-		
+		<view v-if="true" class="page relactive">
+
+
 			<uni-nav-bar backgroundColor="#3BC688" color="#fff" statusBar title="首页" fixed></uni-nav-bar>
-		
+
 			<view class="w100 " style="position: fixed; top:-4rpx; z-index:0; left:0; right:0;">
 				<image style="height:630rpx;" class="w100" src="/static/index/homeBg.png"></image>
 			</view>
-		
-		
+
+
 			<view class="px22 relactive " style="z-index: 1; ">
 				<view class="navtop"></view>
-		
-		
+
+
 				<view class="" style="margin-top: 44rpx;"></view>
 				<view class="relactive">
 					<view class="absolute flex flex-end  pr40" style="bottom: 20rpx; z-index:2; left:0; right:0;">
@@ -25,7 +25,7 @@
 					</view>
 					<u-swiper height="254" :list="list1" @change="change"></u-swiper>
 				</view>
-		
+
 				<view class="bgWhite  py40 px40 br16 mt24">
 					<view class="flex align-center">
 						<image class="br110 mr26" src="/static/logo.png" style="height:110rpx; width:110rpx;" mode="">
@@ -38,7 +38,7 @@
 									<text>生产主体</text>
 									<view class=" ml14"
 										style="width:212rpx; height:48rpx;text-align: center; background: linear-gradient(180deg, #E1FFF2 0%, #FFFFFF 100%);">
-										<text>总巡查<text class=" font36 mx14" style="color:#29C17E;">0</text>(次)</text>
+										<text>总巡查<text class=" font36 mx14" style="color:#29C17E;">{{count}}</text>(次)</text>
 									</view>
 								</view>
 							</view>
@@ -47,10 +47,10 @@
 							<image class="" style="width:32rpx; height:32rpx; margin-right:10rpx;" src="/static/index/add.png" mode=""></image>
 							<text style="color:#1F9A64;">添加巡查</text>
 						</view> -->
-		
+
 					</view>
-		
-		
+
+
 					<!-- <view class="flex mt40 flex-between">
 						<view class="flex flex-column align-center flex-center" style="width:272rpx; height:130rpx; background: linear-gradient(180deg, #E1FFF2 0%, #FFFFFF 100%);">
 							<text>总巡查(件)</text>
@@ -63,14 +63,14 @@
 						</view>
 					</view> -->
 				</view>
-		
-				<ProductCard @ProductCardClick="toPatrol" v-for="item in 2" :key="item"></ProductCard>
+
+				<ProductCard @ProductCardClick="toPatrol(item.id)" :productData="item" v-for="item in dataList" :key="item.id"></ProductCard>
 			</view>
 			<u-loadmore class="mt20" :height="100" fomkjnt-size="28" :status="status" :loading-text="loadingText"
 				:loadmore-text="loadmoreText" :nomore-text="nomoreText" />
 		</view>
 	</view>
-	
+
 </template>
 
 <script>
@@ -83,27 +83,40 @@
 		},
 		data() {
 			return {
-				list1: [
-					'https://cdn.uviewui.com/uview/swiper/swiper1.png',
-					'https://cdn.uviewui.com/uview/swiper/swiper2.png',
-					'https://cdn.uviewui.com/uview/swiper/swiper3.png',
-				],
+				list1: [],
+				dataList: [],
 				swiperIndex: 1,
 				limit: 8,
 				page: 1,
 				status: 'loadmore',
 				loadingText: '努力加载中',
 				loadmoreText: '轻轻上拉',
-				nomoreText: '没有更多了'
+				nomoreText: '没有更多了',
+				count: 0
 			}
 		},
+		onLoad() {
+
+		},
+		created() {
+			this.init()
+		},
 		methods: {
+			init() {
+				this.$http({
+					url: '/Data/home'
+				}).then(res => {
+					this.list1 = res.data.banner.map(item => item.img)
+					this.count = res.data.count
+					this.dataList = res.data.list
+				})
+			},
 			change(e) {
 				this.swiperIndex = e.current
 			},
-			toPatrol() {
+			toPatrol(id) {
 				uni.navigateTo({
-					url: '/productPage/pages/patrolDetail/patrolDetail'
+					url: '/productPage/pages/patrolDetail/patrolDetail?id='+id
 				})
 			},
 
