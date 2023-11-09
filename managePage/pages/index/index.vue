@@ -76,8 +76,10 @@
 				switch(this.current){
 					case 0 : 
 					this.$refs.Home.loadMore()
+					break;
 					case 1:
 					this.$refs.ranking.loadMore()
+					break;
 				}
 			}
 			

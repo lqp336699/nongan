@@ -6,15 +6,15 @@
 			<uni-nav-bar statusBar title="生产主体" fixed></uni-nav-bar>
 			<!-- <scroll-view scroll-y="true" class="pb60 border-box bd" bd> -->
 			
-			<view class="">
-				<u-search placeholder="搜索" v-model="keyword"></u-search>
+			<view class="px22 mt20">
+				<u-search @search="search" :searchIconSize="44" :height="64" :action-style="{color:'#fff', padding:'18rpx 28rpx', borderRadius:'36rpx',background:'#1F9A64'}" placeholder="搜索" v-model="keyword"></u-search>
 			</view>
 			<view class="px22 ">
 				<!-- <view v-if="recodeList.length == 0" class="py100 flex flex-center align-center">
 						<text>暂无数据</text>
 					</view> -->
 				<!-- <view v-if="recodeList.length > 0" class="pb40   border-box"> -->
-				<product-item v-for="item in 5" :key="item"></product-item>
+				<product-item v-for="item in recodeList" :productData="item" :key="item.id"></product-item>
 				<!-- </view> -->
 			</view>
 			<view style="height:50rpx;"></view>
@@ -56,6 +56,10 @@
 		},
 		
 		methods: {
+			search(){
+				console.log("mmmmmmmmm")
+				this.getData()
+			},
 			getMore(){
 				if(this.status == 'nomore'){
 					return 
@@ -68,7 +72,8 @@
 					url: '/Data/patrol_index',
 					data:{
 						page: this.page,
-						limit: this.limit
+						limit: this.limit,
+						keyword:this.keyword
 					}
 				}).then(res => {
 					
@@ -77,7 +82,7 @@
 					}else{
 						this.status = 'loadmore'
 					}
-					this.recodeList =res.data.list
+					this.recodeList = res.data.list
 					
 				})
 			},
