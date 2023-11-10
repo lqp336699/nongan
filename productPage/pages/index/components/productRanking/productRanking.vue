@@ -69,12 +69,12 @@
 			<view class="bgWhite flex  flex-column align-center flex1 " style="width: 750rpx; margin-top:620rpx;">
 
 				<view class="w100" :style="{borderBottom: index == list.length-1 ?'none' :  '1rpx solid #E9E9E9'}"
-					v-for="(item,index) in list" :key="index">
+					v-for="(item) in list" :key="item.id">
 					<view class="flex py30 flex-between align-center border-box"
 						style="padding-left: 16rpx;padding-right: 36rpx;">
 						<view class="flex align-center">
-							<image v-if="index <= imgList.length - 1" style="width: 80rpx;height: 80rpx;"
-								:src="imgList[index]" mode=""></image>
+							<image v-if="item.ranking <= imgList.length - 1" style="width: 80rpx;height: 80rpx;"
+								:src="imgList[item.ranking - 1]" mode=""></image>
 							<view class="flex flex-center align-center" style="width: 80rpx;height: 80rpx;" v-else>
 								<text>{{item.ranking}}</text>
 							</view>
