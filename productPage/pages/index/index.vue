@@ -5,8 +5,8 @@
 		<view class="">
 			<home class="navBarMenu" ref="Home" v-if="current==0"></home>
 			<ranking class="navBar" ref="ranking" v-if="current==1"></ranking>
-			<Events class="navBar" v-if="current==2"></Events>
-			<policy class="navBar" v-if="current==3"></policy>
+			<Events class="navBar" ref="Mevents" v-if="current==2"></Events>
+			<policy class="navBar" ref="policy" v-if="current==3"></policy>
 		</view>
 
 
@@ -71,6 +71,12 @@
 					break;
 				case 1:
 					this.$refs.ranking.loadMore()
+					break;
+				case 2:
+					this.$refs.Mevents.loadMore()
+					break;
+				case 3:
+					this.$refs.policy.loadMore()
 					break;
 			}
 		
