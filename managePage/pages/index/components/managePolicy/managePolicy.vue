@@ -4,23 +4,23 @@
 		<!-- <Skeleton v-if="true"></Skeleton> -->
 		<view v-if="true" class="px24 page">
 			<!-- hot -->
-			<uni-nav-bar statusBar title="政策动态" color="#222" :border="false" :leftWidth="0" fixed></uni-nav-bar>
+			<uni-nav-bar :height="44" statusBar title="政策动态"  color="#222" :border="false" :leftWidth="0" fixed></uni-nav-bar>
 			<view class=" flex flex-between mt20">
 
-				<navigator :url="`/pages/id=${item.id}`" v-for="(item,index) in hotList" :key="index"
+				<view @click="listItemClick(item)" v-for="(item,index) in hotList" :key="index"
 					class=" br10 pb20 bgWhite overH  border-box" style="width:336rpx; ">
-					<image style="height: 226rpx;" :src="item.img"></image>
+					<image style="height: 226rpx; width: 100%;" :src="item.img"></image>
 					<view class="pd14  relactive">
 						<image src="@/static/product/hot.png" mode="" class="absolute"
 							style="width:70rpx; height:32rpx;  top:20rpx;"></image>
-						<p :class="['line2over', item.is_hot == 1 ? 'indent2': '', 'font30',  'font700']"
+						<p :class="['line2over', item.is_hots == 1 ? 'indent2': '', 'font30',  'font700']"
 							style="width:284rpx; padding:0;">{{item.title}}</p>
 					</view>
 
 					<view class=" px14">
 						<text class="font24	 col5">{{item.hits}}阅读</text>
 					</view>
-				</navigator>
+				</view>
 
 			</view>
 

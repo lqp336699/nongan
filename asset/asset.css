@@ -15,8 +15,18 @@ html {
 .mt36{
 	margin-top: 36rpx;
 }
+.py56{
+	padding-top: 56rpx;
+	padding-bottom: 56rpx;
+}
+.ml110{
+	margin-left: 110rpx;
+}
 .mt50{
 	margin-top: 50rpx;
+}
+.mt100{
+	margin-top: 100rpx;
 }
 .mr38{
 	margin-right: 38rpx;

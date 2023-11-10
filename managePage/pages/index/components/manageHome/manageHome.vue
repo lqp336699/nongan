@@ -3,7 +3,7 @@
 		<Skeleton v-if="skeleton"></Skeleton>
 		<view v-if="!skeleton" class="page  relactive ">
 
-			<uni-nav-bar backgroundColor="#3BC688" color="#fff" statusBar title="首页" fixed></uni-nav-bar>
+			<uni-nav-bar :height="44" backgroundColor="#3BC688" color="#fff" statusBar title="首页" fixed></uni-nav-bar>
 
 			<view class="w100 " style="position: fixed; top:-4rpx; z-index:0; left:0; right:0;">
 				<image style="height:630rpx;" class="w100" src="/static/index/homeBg.png"></image>
@@ -58,7 +58,7 @@
 					</view>
 				</view>
 
-				<ProductCard @ProductCardClick="ProductCardClick" :productData="item" v-for="item in productData" :key="item.id"></ProductCard>
+				<ProductCard @ProductCardClick="ProductCardClick(item)" :productData="item" v-for="item in productData" :key="item.id"></ProductCard>
 
 
 			</view>
@@ -110,15 +110,15 @@
 			
 		},
 		
-		loadMore(){
-			if(this.status == "nomore"){
-				return
-			}
-			this.status = "loading"
-			this.page ++
-			this.getMore()
-		},
 		methods: {
+			loadMore(){
+				if(this.status == "nomore"){
+					return
+				}
+				this.status = "loading"
+				this.page ++
+				this.getMore()
+			},
 			change(e) {
 				this.swiperIndex = e.current
 			},
@@ -172,9 +172,9 @@
 			},
 			
 			
-			ProductCardClick(){
+			ProductCardClick(item){
 				uni.navigateTo({
-					url: '/managePage/pages/patrolDetail/patrolDetail'
+					url: '/managePage/pages/patrolDetail/patrolDetail?id='+item.id
 				})
 			}
 			

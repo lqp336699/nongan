@@ -47,6 +47,11 @@
 					<text class="font28 ml10">分</text>
 				</view>
 				<view class="mr22">
+					<view class="px8 py4 border-box br4" style="background-color: #E6FFF4;">
+						<text class="font24" style="color:#1F9A64;">{{productData.main_type_name}}</text>
+					</view>
+				</view>
+				<!-- <view class="mr22">
 					<view class="px8 py4 border-box br4" style="background-color: #E6F7FF;">
 						<text class="font24" style="color:#1590E2;">养殖大户</text>
 					</view>
@@ -60,7 +65,7 @@
 					<view class="px8 py4 border-box br4" style="background-color: #FFF0E6;">
 						<text class="font24" style="color:#EE7B2E;">家庭农场</text>
 					</view>
-				</view>
+				</view> -->
 				<!-- 	<view class="mr22">
 					<view class="px8 py4 border-box br4" style="background-color: #E6F7FF;">
 						<text class="font24" style="color:#1590E2;">养殖大户</text>
@@ -71,7 +76,7 @@
 			</view>
 
 			<view class="flex align-center mt30">
-				<image style="width:15rpx; height:22rpx;" class="mr14" src="../static/form/left.png" mode=""></image>
+				<image style="width:15rpx; height:22rpx;" class="mr14" src="../static/form/address.png" mode=""></image>
 				<view class="flex align-center">
 					<text>江西省遂宁市射洪市 {{productData.county_name}} {{productData.village_name}}</text>
 				</view>

@@ -112,7 +112,7 @@
 		methods:{
 			ProductCardClick() {
 				uni.navigateTo({
-					url: '/productPage/pages/patrolDetail/patrolDetail'
+					url: '/managePage/pages/patrolDetail/patrolDetail?id='+this.productData.id
 				})
 			}
 		}

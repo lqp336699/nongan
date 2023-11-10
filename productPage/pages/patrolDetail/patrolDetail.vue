@@ -57,7 +57,7 @@
 								<text class="font24" style="color:#1590E2;">养殖大户</text>
 							</view>
 						</view>
-						<view class="mr22">
+						<!-- <view class="mr22">
 							<view class="px8 py4 border-box br4" style="background-color: #E6FFF4;">
 								<text class="font24" style="color:#1F9A64;">养殖业</text>
 							</view>
@@ -66,7 +66,7 @@
 							<view class="px8 py4 border-box br4" style="background-color: #FFF0E6;">
 								<text class="font24" style="color:#EE7B2E;">家庭农场</text>
 							</view>
-						</view>
+						</view> -->
 
 
 					</view>
