@@ -64,7 +64,7 @@
 					</view> -->
 				</view>
 
-				<ProductCard @ProductCardClick="toPatrol(item.id)" :productData="item" v-for="item in dataList" :key="item.id"></ProductCard>
+				<ProductCard @ProductCardClick="toPatrol(item)" :productData="item" v-for="item in dataList" :key="item.id"></ProductCard>
 			</view>
 			<u-loadmore class="mt20" :height="100" font-size="28" :status="status" :loading-text="loadingText"
 				:loadmore-text="loadmoreText" :nomore-text="nomoreText" />
@@ -134,9 +134,9 @@
 			change(e) {
 				this.swiperIndex = e.current
 			},
-			toPatrol(id) {
+			toPatrol(item) {
 				uni.navigateTo({
-					url: '/productPage/pages/patrolDetail/patrolDetail?id='+id
+					url: '/productPage/pages/patrolDetail/patrolDetail?id='+item.id
 				})
 			},
 

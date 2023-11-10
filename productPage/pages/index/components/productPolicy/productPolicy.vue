@@ -113,7 +113,7 @@
 				tabCurrent: 0,
 				limit: 8,
 				page: 1,
-				cate_id: '0',
+				cate_id: 0,
 				NewCateList: [],
 				status: 'loadmore',
 				loadingText: '努力加载中',
