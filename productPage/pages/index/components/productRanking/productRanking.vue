@@ -1,7 +1,7 @@
 <template>
 	<view class="">
-		<!-- <Skeleton v-if="true"></Skeleton> -->
-		<view v-if="true" class="overH  flex flex-column page">
+		<Skeleton v-if="skeleton"></Skeleton>
+		<view v-if="!skeleton" class="overH  flex flex-column page">
 			<!-- 导航栏 -->
 			<uni-nav-bar status-bar style="position: fixed;z-index: 10;" :leftWidth="0" :border="false" color="#fff"
 				title="排行" fixed="true" backgroundColor="rgba(0,0,0,0)"></uni-nav-bar>
@@ -86,11 +86,11 @@
 					</view>
 				</view>
 			</view>
-			
-			
+
+
 		</view>
-		
-		
+
+
 		<u-loadmore class="" :height="100" font-size="28" :status="status" :loading-text="loadingText"
 			:loadmore-text="loadmoreText" :nomore-text="nomoreText" />
 
@@ -128,14 +128,16 @@
 				list: [],
 				limit: 8,
 				page: 1,
+				skeleton: true,
 				status: 'loadmore',
 				loadingText: '努力加载中',
 				loadmoreText: '轻轻上拉',
 				nomoreText: '没有更多了'
 			};
 		},
-		created() {
-			this.init()
+		async created() {
+			await this.init()
+			this.skeleton = false
 		},
 		methods: {
 			loadMore() {
@@ -157,23 +159,26 @@
 			},
 
 			init() {
-				this.$http({
-					url: '/Data/ranking',
-					data: {
-						type: this.rankType,
-						time: this.rankStatus,
-						page: this.page,
-						limit: this.limit
-					}
-				}).then(res => {
-					console.log(res);
-					if (res.data.list.length < this.limit) {
-						this.status = 'nomore'
-					} else {
-						this.status = 'loadmore'
-					}
-					this.list = res.data.list
+				return new Promise(resolve => {
+					this.$http({
+						url: '/Data/ranking',
+						data: {
+							type: this.rankType,
+							time: this.rankStatus,
+							page: this.page,
+							limit: this.limit
+						}
+					}).then(res => {
+						if (res.data.list.length < this.limit) {
+							this.status = 'nomore'
+						} else {
+							this.status = 'loadmore'
+						}
+						this.list = res.data.list
+						resolve('rrrr')
+					})
 				})
+
 			},
 			actived(rankType) {
 				this.rankType = rankType

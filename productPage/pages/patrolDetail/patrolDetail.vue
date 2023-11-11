@@ -142,7 +142,6 @@
 			};
 		},
 		onLoad(option) {
-			console.log(option.id);
 			this.id = option.id
 			this.gitInfo()
 		},
@@ -157,7 +156,6 @@
 						id: this.id
 					}
 				}).then(res => {
-					console.log(res, 'asddddddasd');
 					this.patrolInfo = res.data
 				})
 			},

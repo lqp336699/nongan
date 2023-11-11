@@ -2,8 +2,8 @@
 
 	<view class="">
 
-		<!-- <Skeleton v-if="true"></Skeleton> -->
-		<view v-if="true" class="page relactive">
+		<Skeleton v-if="skeleton"></Skeleton>
+		<view v-if="!skeleton" class="page relactive">
 
 
 			<uni-nav-bar backgroundColor="#3BC688" color="#fff" statusBar title="首页" fixed></uni-nav-bar>
@@ -88,6 +88,7 @@
 				swiperIndex: 1,
 				limit: 8,
 				page: 1,
+				skeleton: true,
 				status: 'loadmore',
 				loadingText: '努力加载中',
 				loadmoreText: '轻轻上拉',
@@ -98,8 +99,9 @@
 		onLoad() {
 
 		},
-		created() {
-			this.init()
+		async created() {
+			await this.init()
+			this.skeleton = false
 		},
 		methods: {
 			loadMore(){
@@ -118,18 +120,22 @@
 				})
 			},
 			init() {
-				this.$http({
-					url: '/Data/home'
-				}).then(res => {
-					this.list1 = res.data.banner.map(item => item.img)
-					this.count = res.data.count
-					this.dataList = res.data.list
-					if(res.data.list.length < this.limit){
-						this.status = 'nomore'
-					}else{
-						this.status = 'loadmore'
-					}
+				return new Promise(resolve => {
+					this.$http({
+						url: '/Data/home'
+					}).then(res => {
+						this.list1 = res.data.banner.map(item => item.img)
+						this.count = res.data.count
+						this.dataList = res.data.list
+						if(res.data.list.length < this.limit){
+							this.status = 'nomore'
+						}else{
+							this.status = 'loadmore'
+						}
+						resolve('hhh')
+					})
 				})
+				
 			},
 			change(e) {
 				this.swiperIndex = e.current

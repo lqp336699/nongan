@@ -132,7 +132,6 @@
 		},
 		methods: {
 			setFormData(formData) {
-				console.log(formData);
 				this.formData = {
 					...formData,
 					type: 2

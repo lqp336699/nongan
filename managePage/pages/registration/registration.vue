@@ -8,12 +8,12 @@
 		
 		
 	
-		<view class=" mt60 flex align-center" style="height:110rpx;box-shadow: 0rpx 0rpx 6rpx 2rpx rgba(41,193,126,0.1);">
+		<view class="br10 mt60 flex align-center" style="height:110rpx;border: 2rpx solid #ccc;box-shadow: 0rpx 0rpx 6rpx 2rpx rgba(41,193,126,0.1);">
 			<u-input class="" v-model="form.mobile" placeholder="请输入手机号" height="110rpx" :border="false" />
 		</view>
 		
 		
-		<view class=" mt24 flex align-center" style="height:110rpx;box-shadow: 0rpx 0rpx 6rpx 2rpx rgba(41,193,126,0.1);">
+		<view class="br10 mt24 flex align-center" style="height:110rpx;border: 2rpx solid #ccc;box-shadow: 0rpx 0rpx 6rpx 2rpx rgba(41,193,126,0.1);">
 			<u-input class="" v-model="form.random" placeholder="请输入唯一码" height="110rpx" :border="false" />
 		</view>
 		

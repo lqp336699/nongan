@@ -1,8 +1,8 @@
 <template>
 
 	<view class="">
-		<!-- <Skeleton v-if="true"></Skeleton> -->
-		<view v-if="true" class="px24 page">
+		<Skeleton v-if="skeleton"></Skeleton>
+		<view v-if="!skeleton" class="px24 page">
 			<!-- hot -->
 			<uni-nav-bar statusBar title="政策动态" color="#222" :border="false" :leftWidth="0" fixed></uni-nav-bar>
 			<view class=" flex flex-between mt20">
@@ -76,45 +76,14 @@
 					name: '待评价',
 					count: 5
 				}],
-				hotList: [{
-						title: "新闻标题新闻标闻标题新闻标题新闻",
-						hits: "54",
-						img: "https://cdn.uviewui.com/uview/swiper/swiper1.png",
-						time: "2022-07-01",
-						is_hot: true
-					},
-					{
-						title: "新闻标题新闻标闻标题新闻标题新闻",
-						hits: "54",
-						img: "https://cdn.uviewui.com/uview/swiper/swiper1.png",
-						time: "2022-07-01",
-						is_hot: true
-					}
-				],
-				list: [{
-						title: "新闻标题新闻标闻标题新闻标题新闻",
-						hits: "54",
-						img: "https://cdn.uviewui.com/uview/swiper/swiper1.png",
-						time: "2022-07-01"
-					},
-					{
-						title: "新闻标题新闻标闻标题新闻标题新闻",
-						hits: "54",
-						img: "https://cdn.uviewui.com/uview/swiper/swiper1.png",
-						time: "2022-07-01"
-					},
-					{
-						title: "新闻标题新闻标闻标题新闻标题新闻",
-						hits: "54",
-						img: "https://cdn.uviewui.com/uview/swiper/swiper1.png",
-						time: "2022-07-01"
-					},
-				],
+				hotList: [],
+				list: [],
 				tabCurrent: 0,
 				limit: 8,
 				page: 1,
 				cate_id: 0,
 				NewCateList: [],
+				skeleton: true,
 				status: 'loadmore',
 				loadingText: '努力加载中',
 				loadmoreText: '轻轻上拉',
@@ -131,7 +100,8 @@
 		},
 		async created() {
 			await this.getNewCate()
-			this.gitData()
+			await this.gitData()
+			this.skeleton = false
 		},
 		methods: {
 			getNewsList() {
@@ -177,24 +147,26 @@
 			},
 
 			gitData() {
-				this.status = 'loading'
-				this.list = []
-				this.$http({
-					url: '/Data/newsList',
-					data: {
-						cate_id: this.NewCateList[0].id
-					}
-				}).then(res => {
-					console.log(res)
-					this.hotList = res.data.hots
-					if (res.data.list.length < this.limit) {
-						this.status = "nomore"
-					} else {
-						this.status = "loadmore"
-					}
-					this.list = res.data.list
-
+				return new Promise(resolve => {
+					this.status = 'loading'
+					this.list = []
+					this.$http({
+						url: '/Data/newsList',
+						data: {
+							cate_id: this.NewCateList[0].id
+						}
+					}).then(res => {
+						this.hotList = res.data.hots
+						if (res.data.list.length < this.limit) {
+							this.status = "nomore"
+						} else {
+							this.status = "loadmore"
+						}
+						this.list = res.data.list
+						resolve('aaaaaaa')
+					})
 				})
+
 			},
 			getNewCate() {
 				return new Promise(resolve => {
@@ -207,7 +179,7 @@
 						}
 					}).then(res => {
 						this.NewCateList = res.data
-						resolve()
+						resolve('sssss')
 					})
 				})
 			},

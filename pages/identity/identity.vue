@@ -6,11 +6,11 @@
 			</view>
 		</view>
 		
-		<view @click="selectIdentity(1)" :class="['flex, mt60, flex-center, align-center, br10', identity ==1 ? 'identityActive' : '' ]" style="height:110rpx;border:0; box-shadow: 0rpx 0rpx 6rpx 2rpx rgba(41,193,126,0.1);">
+		<view @click="selectIdentity(1)" :class="['flex, mt60, flex-center, align-center, br10', identity ==1 ? 'identityActive' : '' ]" style="height:110rpx;border:0;border: 2rpx solid #ccc; box-shadow: 0rpx 0rpx 6rpx 2rpx rgba(41,193,126,0.1);">
 			<text>监督人员</text>
 		</view>
 		
-		<view @click="selectIdentity(2)" :class="['flex, mt24, flex-center, align-center, br10', identity == 2 ? 'identityActive' : '' ]" style="height:110rpx;border:0; box-shadow: 0rpx 0rpx 6rpx 2rpx rgba(41,193,126,0.1);">
+		<view @click="selectIdentity(2)" :class="['flex, mt24, flex-center, align-center, br10', identity == 2 ? 'identityActive' : '' ]" style="height:110rpx;border:0;border: 2rpx solid #ccc; box-shadow: 0rpx 0rpx 6rpx 2rpx rgba(41,193,126,0.1);">
 			<text>生产主体</text>
 		</view>
 		
