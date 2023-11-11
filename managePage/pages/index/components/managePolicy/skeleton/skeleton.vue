@@ -31,7 +31,7 @@
                     <view class="uni-navbar__header-btns nav-bar--uni-navbar__header-btns uni-navbar__header-btns-left nav-bar--uni-navbar__header-btns-left data-v-6bda1a90 nav-bar--data-v-6bda1a90" data-event-opts="tap,onClickLeft,$event" style="width:60px;"></view>
                     <view class="uni-navbar__header-container nav-bar--uni-navbar__header-container data-v-6bda1a90 nav-bar--data-v-6bda1a90" data-event-opts="tap,onClickTitle,$event">
                       <view class="uni-navbar__header-container-inner nav-bar--uni-navbar__header-container-inner data-v-6bda1a90 nav-bar--data-v-6bda1a90">
-                        <text class="uni-nav-bar-text nav-bar--uni-nav-bar-text uni-ellipsis-1 nav-bar--uni-ellipsis-1 data-v-6bda1a90 nav-bar--data-v-6bda1a90 sk-transparent sk-text-14-2857-328 sk-text" style="color:#333;">首页</text>
+                        <text class="uni-nav-bar-text nav-bar--uni-nav-bar-text uni-ellipsis-1 nav-bar--uni-ellipsis-1 data-v-6bda1a90 nav-bar--data-v-6bda1a90 " style="color:#333;">政策动态</text>
                       </view>
                     </view>
                     <view class="uni-navbar__header-btns nav-bar--uni-navbar__header-btns uni-navbar__header-btns-right nav-bar--uni-navbar__header-btns-right data-v-6bda1a90 nav-bar--data-v-6bda1a90" data-event-opts="tap,onClickRight,$event" style="width:60px;"></view>
