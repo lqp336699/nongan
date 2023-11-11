@@ -27,8 +27,11 @@
 			<view class="bgWhite  mt36">
 				<u-tabs :list="NewCateList" :current="tabCurrent" :scrollable="true"
 					:activeStyle="{ color: '#1F9A64', transform: 'scale(1.05)'  }"
-					:inactiveStyle="{ color: '#222222', transform: 'scale(1)' }" lineColor="#1F9A64"
-					@click="tabclick"></u-tabs>
+					:inactiveStyle="{ color: '#222222', transform: 'scale(1)' }" lineColor="#1F9A64" @click="tabclick">
+					<view class="flex flex-center align-center" slot="right" style="width: 72rpx;height: 84rpx;" @tap="$u.toast('插槽被点击')">
+						<image style="width: 20rpx;height: 11rpx;" src="/static/product/open.png" mode=""></image>
+					</view>
+				</u-tabs>
 			</view>
 
 
