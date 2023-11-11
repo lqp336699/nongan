@@ -11,11 +11,7 @@
 				</view>
 			</view>
 
-
-			<!-- <from-list :formIsValidate.sync="formIsValidate1" ref="formList2" :formList="formList2"
-				@setFormData="setFormData" key="b"></from-list> -->
-				
-				<!-- // {"code":1,"msg":"success","data":[{"id":1,"title":"是否看好种植业","option":[{"id":2,"title":"是","score":50,"check":"false"},{"id":4,"title":"否","score":0,"check":"false"}]},{"id":3,"title":"是否种植过花","option":[{"id":5,"title":"是","score":50,"check":"false"},{"id":6,"title":"否","score":0,"check":"false"}]}]}// -->
+			
 				<view v-for="item in formList2" :key="item.id">
 					<view :class="['flex','bigRedio' ,'px30' , 'flex-between', 'align-center', item.class ? item.class : '']"
 						 :key="item.id || item.placeholder" >
@@ -60,7 +56,6 @@
 							height="224"></u--textarea>
 					</u-form-item>
 				</view>
-				{{JSON.stringify(fileList)}}
 				<view class="">
 					<up-image :fileList.sync="fileList"></up-image>
 				</view>

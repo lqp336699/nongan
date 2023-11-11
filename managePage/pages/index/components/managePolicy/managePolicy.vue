@@ -12,7 +12,7 @@
 					<image style="height: 226rpx; width: 100%;" :src="item.img"></image>
 					<view class="pd14  relactive">
 						<image src="@/static/product/hot.png" mode="" class="absolute"
-							style="width:70rpx; height:32rpx;  top:20rpx;"></image>
+							style="width:70rpx; height:34rpx;  top:20rpx;"></image>
 						<p :class="['line2over', item.is_hots == 1 ? 'indent2': '', 'font30',  'font700']"
 							style="width:284rpx; padding:0;">{{item.title}}</p>
 					</view>

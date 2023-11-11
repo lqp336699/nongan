@@ -12,7 +12,6 @@
 				<image style="height:710rpx;" class="w100" src="/static/index/homeBg.png"></image>
 			</view>
 
-			aa
 
 
 			<view class="relactive mt40 px24 border-box">
