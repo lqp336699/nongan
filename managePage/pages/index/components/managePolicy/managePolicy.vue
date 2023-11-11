@@ -1,8 +1,8 @@
 <template>
 
 	<view class="">
-		<!-- <Skeleton v-if="true"></Skeleton> -->
-		<view v-if="true" class="px24 page">
+		<Skeleton v-if="skeleton"></Skeleton>
+		<view v-if="!skeleton" class="px24 page">
 			<!-- hot -->
 			<uni-nav-bar :height="44" statusBar title="政策动态"  color="#222" :border="false" :leftWidth="0" fixed></uni-nav-bar>
 			<view class=" flex flex-between mt20">
@@ -12,7 +12,7 @@
 					<image style="height: 226rpx; width: 100%;" :src="item.img"></image>
 					<view class="pd14  relactive">
 						<image src="@/static/product/hot.png" mode="" class="absolute"
-							style="width:70rpx; height:32rpx;  top:20rpx;"></image>
+							style="width:70rpx; height:34rpx;  top:20rpx;"></image>
 						<p :class="['line2over', item.is_hots == 1 ? 'indent2': '', 'font30',  'font700']"
 							style="width:284rpx; padding:0;">{{item.title}}</p>
 					</view>
@@ -118,12 +118,15 @@
 				loadmoreText: '轻轻上拉',
 				nomoreText: '没有更多了',
 				NewCateList: [],
-				cate_id: '0'
+				cate_id: '0',
+				skeleton:true
 			}
 		},
+		
 		async created() {
 			await this.getNewCate()
-			this.getData()
+			await this.getData()
+			this.skeleton = false
 		},
 		
 		watch:{
@@ -136,22 +139,26 @@
 		},
 		methods: {
 			getData() {
-				this.status = 'loading'
-				this.list = []
-				this.$http({
-					url: '/Data/newsList',
-					data: {
-						cate_id: this.NewCateList[0].id
-					}
-				}).then(res => {
-					this.hotList = res.data.hots
-					if(res.data.list.length < this.limit){
-						this.status = "nomore"
-					}else{
-						this.status = "loadmore"
-					}
-					this.list = res.data.list
+				return new Promise(resolve=>{
+					this.status = 'loading'
+					this.list = []
+					this.$http({
+						url: '/Data/newsList',
+						data: {
+							cate_id: this.NewCateList[0].id
+						}
+					}).then(res => {
+						this.hotList = res.data.hots
+						if(res.data.list.length < this.limit){
+							this.status = "nomore"
+						}else{
+							this.status = "loadmore"
+						}
+						this.list = res.data.list
+						resolve('jjjj')
+					})
 				})
+				
 			},
 
 			getNewsList() {
