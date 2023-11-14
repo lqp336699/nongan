@@ -1,5 +1,4 @@
 <template>
-
 	<view class="">
 		<Skeleton v-if="skeleton"></Skeleton>
 		<view v-if="!skeleton" class="px24 page">
@@ -24,11 +23,22 @@
 
 			</view>
 
-			<view class="bgWhite  mt36">
+			<view class="bgWhite  mt36 relactive">
 				<u-tabs :list="NewCateList" :current="tabCurrent" :scrollable="true"
 					:activeStyle="{ color: '#1F9A64', transform: 'scale(1.05)'  }"
-					:inactiveStyle="{ color: '#222222', transform: 'scale(1)' }" lineColor="#1F9A64"
-					@click="tabclick"></u-tabs>
+					:inactiveStyle="{ color: '#222222', transform: 'scale(1)' }" lineColor="#1F9A64" @click="tabclick">
+					<view class="flex flex-center align-center" slot="right" style="width: 72rpx;height: 84rpx;"
+						@click="change()">
+						<image style="width: 20rpx;height: 11rpx;" :src="show ? '/static/product/close.png' : '/static/product/open.png' " mode=""></image>
+					</view>
+				</u-tabs>
+				<modal :show='show'>
+					<view class="flex flex-wrap px24 py30 border-box" >
+						<view :class="['itemList',cate_id == item.id ? 'actived': 'default']" @click="activeChange(item.id,index)" v-for="(item,index) in NewCateList" :key="index">
+							{{item.name}}
+						</view>
+					</view>
+				</modal>
 			</view>
 
 
@@ -61,21 +71,29 @@
 </template>
 
 <script>
+	import Modal from './modal.vue'
 	import Skeleton from './skeleton/skeleton.vue'
 	export default {
 		components: {
-			Skeleton
+			Skeleton,
+			Modal
+		},
+		props:{
+			show:{
+				type:Boolean,
+				default:false
+			}
 		},
 		data() {
 			return {
-				newsCate: [{
-					name: '待收货'
-				}, {
-					name: '待付款'
-				}, {
-					name: '待评价',
-					count: 5
-				}],
+				// newsCate: [{
+				// 	name: '待收货'
+				// }, {
+				// 	name: '待付款'
+				// }, {
+				// 	name: '待评价',
+				// 	count: 5
+				// }],
 				hotList: [],
 				list: [],
 				tabCurrent: 0,
@@ -100,7 +118,7 @@
 		},
 		async created() {
 			await this.getNewCate()
-			await this.gitData()
+			await this.getData()
 			this.skeleton = false
 		},
 		methods: {
@@ -146,7 +164,7 @@
 				})
 			},
 
-			gitData() {
+			getData() {
 				return new Promise(resolve => {
 					this.status = 'loading'
 					this.list = []
@@ -190,6 +208,14 @@
 				uni.navigateTo({
 					url: '/pages/newDetail/newDetail?id=' + item.id
 				})
+			},
+			change() {
+				this.$emit('update:show',!this.show)
+			},
+			activeChange(item,index){
+				this.tabCurrent = index
+				this.cate_id = item
+				this.change()
 			}
 		}
 	}
@@ -202,5 +228,28 @@
 
 	/deep/ uni-navbar__header-container data-v-6bda1a90 {
 		justify-content: left !important;
+	}
+
+	/deep/ u-slide-down-enter-active {
+		top: 700rpx !important;
+	}
+	
+	.itemList{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		box-sizing: border-box;
+		border-radius: 40rpx;
+		font-size: 30rpx;
+		padding: 20rpx 52rpx;
+		margin-right: 14rpx;
+		margin-bottom: 20rpx;
+	}
+	
+	.actived{
+		border: 2rpx solid #1F9A64;
+	}
+	.default{
+		border: 2rpx solid #C7C7C7;
 	}
 </style>

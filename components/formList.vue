@@ -18,7 +18,7 @@
 			<u-form :model="form" ref="uForm" error-type="toast" label-width="180" :rules="rules"
 				:label-style="{color:'#555'}">
 
-				<view class="bgWhite   br20 mb10" v-for="item in formList" :key="item.prop">
+				<view class="bgWhite  br20 mb10" v-for="item in formList" :key="item.prop">
 
 					<view v-if="item.type=='input'"
 						:class="['flex',  'flex-between,px30', 'align-center', item.class ? item.class : '']"
@@ -215,11 +215,10 @@
 					let requireSuccess = true
 					
 					this.requireForm.forEach(item=>{
-						if(newValCopy[item] == ""){
+						if(newValCopy[item] == "" || !newValCopy[item]){
 							 requireSuccess = false
 						}
 					})
-					
 					this.$emit('update:formIsValidate',requireSuccess)
 					
 					// 替换redio的name字段为value
@@ -260,7 +259,6 @@
 							})
 						}
 					})
-					console.log(newValCopy,"oooooooooooo")
 					this.$emit('setFormData', newValCopy) //页面接收newValCopy
 				},
 				deep: true

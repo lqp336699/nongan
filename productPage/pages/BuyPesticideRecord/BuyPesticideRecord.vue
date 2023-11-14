@@ -1,8 +1,9 @@
 <template>
 	<!-- 农药购买及出入库记录 -->
 	<view class="page px22 flex flex-column flex-between border-box pb60">
-		<form-list :formIsValidate.sync="formIsValidate" ref="formList" :formList="formList" @setFormData="setFormData"></form-list>
-		
+		<form-list :formIsValidate.sync="formIsValidate" ref="formList" :formList="formList"
+			@setFormData="setFormData"></form-list>
+
 
 		<view @click="submit" class="flex mt94 flex-center align-center br83"
 			:style="{background: formIsValidate ? '#1F9A64' : '#ECFFF7', height:'90rpx'}">
@@ -19,7 +20,7 @@
 		},
 		data() {
 			return {
-				formIsValidate:false,
+				formIsValidate: false,
 				formList: [{ //日期
 					type: 'date',
 					placeholder: '请选择',
@@ -142,7 +143,7 @@
 					if (res instanceof Array) {
 						return
 					}
-					
+
 					this.$http({
 						url: '/Data/add_stock_log',
 						data: this.formData,
@@ -150,9 +151,12 @@
 					}).then(response => {
 						uni.showToast({
 							title: "添加成功",
-							icon:"success",
-							mask:true
+							icon: "success",
+							mask: true
 						})
+						setTimeout(() => {
+							uni.navigateBack({})
+						}, 1000)
 					})
 
 				})

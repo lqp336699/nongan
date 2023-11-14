@@ -72,7 +72,7 @@
 					</view>
 
 					<view class="flex align-center mt30">
-						<image style="width:16rpx; height:23rpx;" class="mr14" src="/static/form/left.png" mode="">
+						<image style="width:16rpx; height:23rpx;" class="mr14" src="/static/form/address.png" mode="">
 						</image>
 						<view class="flex align-center">
 							<text>江西省遂宁市射洪市 {{patrolInfo.county_name || ''}} {{patrolInfo.village_name || ''}}</text>

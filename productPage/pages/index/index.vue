@@ -1,16 +1,16 @@
 <template>
+	<page-meta :page-style="'overflow:'+(show?'hidden':'visible')"></page-meta>
 	<view class="page">
-
 
 		<view class="">
 			<home class="navBarMenu" ref="Home" v-if="current==0"></home>
 			<ranking class="navBar" ref="ranking" v-if="current==1"></ranking>
 			<Events class="navBar" v-if="current==2"></Events>
-			<policy class="navBar" ref="policy" v-if="current==3"></policy>
+			<policy class="navBar" :show.sync="show" ref="policy" v-if="current==3"></policy>
 		</view>
 
 
-		<u-tabbar :value="current" @change="name => current = name" :fixed="true" :placeholder="true"
+		<u-tabbar zIndex="200" :value="current" @change="name => current = name" :fixed="true" :placeholder="true"
 			:safeAreaInsetBottom="true" activeColor="#1F9A64">
 			<u-tabbar-item text="巡查监督">
 				<image style="height:56rpx; width:56rpx;" class="u-page__item__slot-icon" slot="active-icon"
@@ -62,6 +62,7 @@
 		data() {
 			return {
 				current: 0,
+				show: false
 			}
 		},
 		onReachBottom() {
@@ -76,17 +77,17 @@
 					this.$refs.policy.loadMore()
 					break;
 			}
-		
+
 		},
 		watch: {
 			current: {
 				handler(newVal) {
-					
+					this.show = false
 				}
 			}
 		},
 		methods: {
-
+			
 		}
 	}
 </script>
@@ -100,9 +101,9 @@
 		font-size: 18px;
 		/* #endif */
 	}
-	
-	
-	.navBarMenu /deep/ .uni-nav-bar-text{
+
+
+	.navBarMenu /deep/ .uni-nav-bar-text {
 		font-size: 36rpx !important;
 	}
 
