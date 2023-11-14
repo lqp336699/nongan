@@ -134,9 +134,13 @@
 					}).then(response => {
 						uni.showToast({
 							title: "添加成功",
-							icon:"success",
-							mask:true
+							icon: "success",
+							mask: true
 						})
+						setTimeout(() => {
+							uni.navigateBack({})
+						}, 1000)
+
 					})
 				})
 			}

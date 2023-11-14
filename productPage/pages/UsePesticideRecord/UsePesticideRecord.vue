@@ -1,10 +1,12 @@
 <template>
 	<!-- 农药使用记录 -->
 	<view class="page px22 flex flex-column flex-between border-box pb60">
-		<form-list :formIsValidate.sync="formIsValidate" ref="formList" :formList="formList" @setFormData="setFormData"></form-list>
+		<form-list :formIsValidate.sync="formIsValidate" ref="formList" :formList="formList"
+			@setFormData="setFormData"></form-list>
 
 
-		<view @click="submit" class="flex mt94 flex-center align-center br83" :style="{background: formIsValidate ? '#1F9A64' : '#ECFFF7', height:'90rpx'}">
+		<view @click="submit" class="flex mt94 flex-center align-center br83"
+			:style="{background: formIsValidate ? '#1F9A64' : '#ECFFF7', height:'90rpx'}">
 			<text :style="{color:formIsValidate ? '#fff' : '#1F9A64'}">提交</text>
 		</view>
 	</view>
@@ -18,7 +20,7 @@
 		},
 		data() {
 			return {
-				formIsValidate:false,
+				formIsValidate: false,
 				formList: [{ //地块名称
 					type: 'input',
 					placeholder: '请输入名称',
@@ -58,7 +60,7 @@
 					value: '',
 					prop: 'time',
 					label: '日期',
-					class:"mt30"
+					class: "mt30"
 				}, { //农药名称
 					type: 'input',
 					placeholder: '请输入名称',
@@ -136,7 +138,10 @@
 		},
 		methods: {
 			setFormData(formData) {
-				this.formData = {...formData,type:3}
+				this.formData = {
+					...formData,
+					type: 3
+				}
 			},
 			submit() {
 				this.$refs.formList.formValidate((res) => {
@@ -150,9 +155,12 @@
 					}).then(response => {
 						uni.showToast({
 							title: "添加成功",
-							icon:"success",
-							mask:true
+							icon: "success",
+							mask: true
 						})
+						setTimeout(() => {
+							uni.navigateBack({})
+						}, 1000)
 					})
 				})
 			}

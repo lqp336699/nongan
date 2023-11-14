@@ -1,7 +1,8 @@
 <template>
 	<!-- 生产农事记录 -->
 	<view class="page px22 flex flex-column flex-between border-box pb60">
-		<form-list :formIsValidate.sync="formIsValidate" ref="formList" :formList="formList" @setFormData="setFormData"></form-list>
+		<form-list :formIsValidate.sync="formIsValidate" ref="formList" :formList="formList"
+			@setFormData="setFormData"></form-list>
 
 
 		<view @click="submit" class="flex mt94 flex-center align-center br83"
@@ -19,7 +20,7 @@
 		},
 		data() {
 			return {
-				formIsValidate:false,
+				formIsValidate: false,
 				formList: [{ //地块名称
 					type: 'input',
 					placeholder: '请输入名称',
@@ -85,25 +86,31 @@
 		},
 		methods: {
 			setFormData(formData) {
-				this.formData = {...formData,type:4}
+				this.formData = {
+					...formData,
+					type: 4
+				}
 			},
 			submit() {
 				this.$refs.formList.formValidate((res) => {
 					if (res instanceof Array) {
 						return
 					}
-					
-					
+
+
 					this.$http({
-						url:"/Data/add_product_log",
-						data:this.formData,
-						loading:true
-					}).then(res=>{
+						url: "/Data/add_product_log",
+						data: this.formData,
+						loading: true
+					}).then(res => {
 						uni.showToast({
 							title: "添加成功",
-							icon:"success",
-							mask:true
+							icon: "success",
+							mask: true
 						})
+						setTimeout(() => {
+							uni.navigateBack({})
+						}, 1000)
 					})
 
 				})
