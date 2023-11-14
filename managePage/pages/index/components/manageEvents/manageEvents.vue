@@ -1,24 +1,30 @@
 <template>
+	
+	
+	
 	<view class="relactive">
+		<Skeleton v-if="skeleton"></Skeleton>
 		<uni-nav-bar statusBar title="生产主体" :height="44" fixed></uni-nav-bar>
+		<view class="relactive overH" v-if="!skeleton">
+			<view class=" px22 py18"	:style="{position:'fixed', background:'#F7F7F7',right:0,left:0}">
+				<u-search @search="search" @custom="search" :searchIconSize="44" :height="64"
+					:action-style="{color:'#fff', padding:'18rpx 28rpx', borderRadius:'36rpx',background:'#1F9A64'}"
+					placeholder="搜索" v-model="keyword"></u-search>
+			</view>
+			
+			<view v-if="true" class="page overH mt100 ">
+				<view class="px22 ">
+					<product-item v-for="item in recodeList" :productData="item" :key="item.id"></product-item>
+				</view>
+				<view style="height:50rpx;"></view>
+				<view>
+					<u-loadmore fontSize="28" iconSize="28" :status="status" :loading-text="loadingText" :loadmore-text="loadmoreText"
+						:nomore-text="nomoreText" />
+				</view>
+			
+			</view>
+		</view>
 		
-		<view class=" px22 py18"	:style="{position:'fixed', background:'#F7F7F7', top:searchTop, left:0, right:0}">
-			<u-search @search="search" @custom="search" :searchIconSize="44" :height="64"
-				:action-style="{color:'#fff', padding:'18rpx 28rpx', borderRadius:'36rpx',background:'#1F9A64'}"
-				placeholder="搜索" v-model="keyword"></u-search>
-		</view>
-
-		<view v-if="true" class="page overH mt100 ">
-			<view class="px22 ">
-				<product-item v-for="item in recodeList" :productData="item" :key="item.id"></product-item>
-			</view>
-			<view style="height:50rpx;"></view>
-			<view>
-				<u-loadmore fontSize="28" :status="status" :loading-text="loadingText" :loadmore-text="loadmoreText"
-					:nomore-text="nomoreText" />
-			</view>
-
-		</view>
 	</view>
 
 </template>
@@ -41,15 +47,17 @@
 				page: 1,
 				keyword: '',
 				recodeList: [],
+				skeleton:true
 			}
 		},
-		created() {
-			this.getData()
+		async created() {
+			await this.getData()
+			this.skeleton = false
 		},
 		computed:{
 			searchTop:{
 				get(){
-					return 'calc(var(--window-bottom) + 44px)'
+					return 'calc(var(--window-bottom) + 44)'
 				}
 			}
 		},
@@ -58,7 +66,7 @@
 				console.log("mmmmmmmmm")
 				this.getData()
 			},
-			getMore() {
+			loadMore() {
 				if (this.status == 'nomore') {
 					return
 				}
@@ -85,24 +93,28 @@
 				})
 			},
 			getData() {
-				this.status = "loading"
-				this.$http({
-					url: '/Data/patrol_index',
-					data: {
-						page: this.page,
-						limit: this.limit,
-						keyword: this.keyword
-					}
-				}).then(res => {
-
-					if (res.data.list.length < this.limit) {
-						this.status = 'nomore'
-					} else {
-						this.status = 'loadmore'
-					}
-					this.recodeList = res.data.list
-
+				return new Promise(resolve=>{
+					this.status = "loading"
+					this.$http({
+						url: '/Data/patrol_index',
+						data: {
+							page: this.page,
+							limit: this.limit,
+							keyword: this.keyword
+						}
+					}).then(res => {
+					
+						if (res.data.list.length < this.limit) {
+							this.status = 'nomore'
+						} else {
+							this.status = 'loadmore'
+						}
+						this.recodeList = res.data.list
+						resolve('ll')
+					
+					})
 				})
+				
 			}
 		}
 	}

@@ -1,10 +1,10 @@
 <template>
-	<view class="relactive ">
+	<view class="relactive border-box">
 		<!-- <Skeleton v-if="true"></Skeleton> -->
 		<view v-if="true" class="overH  flex flex-column page ">
 			<!-- 导航栏 -->
 			<uni-nav-bar status-bar :height="44" style="position: fixed;z-index: 10;" :leftWidth="0" :border="false" color="#fff"
-				title="排行" fixed="true" :backgroundColor="rankType ==1 ? '#FF454E' : '#3C3C3C'"></uni-nav-bar>
+				title="排行" fixed="true" backgroundColor="rgba(0,0,0,0)"></uni-nav-bar>
 			<image class="absolute" style="width: 100%; height: 568rpx; z-index:0;"
 				:src="rankType == 1 ?'/static/rank/red.png' : '/static/rank/black.png'" mode=""></image>
 			<!-- 导航栏 -->
@@ -15,14 +15,16 @@
 			<view class="absolute w100 overH" style="width:750rpx; z-index:1;">
 
 				<view class="br68 ml36 border-box bgWhite  flex flex-between align-center "
-					style=" background-color: rgba(255,255,255,0.3);  width:324rpx; margin-top:340rpx;">
+					style=" background-color: rgba(255,255,255,0.3); width: 324rpx;   margin-top:340rpx;">
 					<view
-						:class="['flex','border-box','align-center','px54,py14','flex-center', 'br68',rankType==1 ?'active1':'colf']"
+						:class="['flex','border-box','align-center','flex-center', 'br68',rankType==1 ?'active1':'colf']"
+						style="width:160rpx;height:56rpx;"
 						@click="actived(1)">
 						<text>红榜</text>
 					</view>
 					<view
-						:class="['flex', 'border-box','align-center','px54,py14,flex-center', 'br68',rankType==2 ?'active2':'colf']"
+						:class="['flex', 'border-box','align-center','flex-center', 'br68',rankType==2 ?'active2':'colf']"
+						style="width:160rpx;height:56rpx;"
 						@click="actived(2)">
 						<text>黑榜</text>
 					</view>
@@ -84,7 +86,7 @@
 
 				</view>
 				<view class="my26">
-					<u-loadmore class="mt50" :height="100" font-size="28" :status="status" :loading-text="loadingText"
+					<u-loadmore class="mt50" iconSize="28" :height="100" font-size="28" :status="status" :loading-text="loadingText"
 						:loadmore-text="loadmoreText" :nomore-text="nomoreText" />
 				</view>
 			</view>
@@ -155,6 +157,11 @@
 						limit: this.limit
 					}
 				}).then(res => {
+					if (res.data.list.length < this.limit) {
+						this.status = 'nomore'
+					} else {
+						this.status = 'loadmore'
+					}
 					this.list = this.list.push(...res.data.list)
 				})
 			},

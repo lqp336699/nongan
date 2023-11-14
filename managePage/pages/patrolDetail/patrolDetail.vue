@@ -2,9 +2,9 @@
 
 	<view class=" ">
 
-		<!-- <Skeleton v-if="true"></Skeleton> -->
+		<Skeleton v-if="skeleton"></Skeleton>
 
-		<view v-if="true" class="page relactive">
+		<view v-if="!skeleton" class="page relactive">
 			<uni-nav-bar backgroundColor="#3BC688" color="#fff" statusBar title="巡查详情" :leftWidth="20" left-icon="left"
 				@clickLeft="back" fixed></uni-nav-bar>
 
@@ -134,26 +134,32 @@
 		data() {
 			return {
 				productData: {},
-				id: ''
+				id: '',
+				skeleton:true
 			};
 		},
-		onLoad(options) {
+		async onLoad(options) {
 			this.id = options.id || ''
-			this.getData()
+			await this.getData()
+			this.skeleton=false
 		},
 		methods: {
 			back() {
 				uni.navigateBack()
 			},
-			getData() {
-				this.$http({
-					url: '/Data/patrol_detail',
-					data: {
-						id: this.id
-					}
-				}).then(res => {
-					this.productData = res.data
+			 getData() {
+				return new Promise(resolve=>{
+					this.$http({
+						url: '/Data/patrol_detail',
+						data: {
+							id: this.id
+						},
+					}).then(res => {
+						this.productData = res.data
+						resolve("nnnn")
+					})
 				})
+				
 			},
 			getImg(){
 				return this.productData.img.split(',')

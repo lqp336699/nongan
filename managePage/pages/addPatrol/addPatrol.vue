@@ -371,17 +371,20 @@
 					url:"/Data/post_patrol",
 					data:{
 						...form
-					}
+					},
+					loading:true
 				}).then(res=>{
 					uni.showToast({
 						title:res.msg
 					})
+					setTimeout(()=>{
+						uni.navigateBack()
+					},1000)
 				})
 			},
 			
 			// search页面传来的数据
 			getList(data){
-			    console.log(data,'B页面传递的数据')
 				let prop = ''
 				this.formList.forEach((item,index)=>{
 					if(item.type=='search'){

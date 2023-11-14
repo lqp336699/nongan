@@ -57,17 +57,29 @@
 			Ranking,
 			Events,
 			Policy
-
-			// Home:()=>import('./components/manageHome/manageHome.vue'),
-			// Ranking:()=>import('./components/manageRanking/manageRanking.vue'),
-			// Events:()=>import('./components/manageEvents/manageEvents.vue'),
-			// Policy:()=>import('./components/managePolicy/managePolicy.vue'),
 		},
 
 		data() {
 			return {
 				current: 0,
 
+			}
+		},
+		
+		onShow(){
+			switch (this.current) {
+				case 0:
+					this.$refs.Home.init()
+					break;
+				case 1:
+					this.$refs.ranking.getData()
+					break;
+				case 2:
+					this.$refs.Events.getData()
+					break;
+				case 3:
+					this.$refs.policy.getData()
+					break;
 			}
 		},
 		computed: {
@@ -83,6 +95,12 @@
 					break;
 				case 1:
 					this.$refs.ranking.loadMore()
+					break;
+				case 2:
+					this.$refs.Events.loadMore()
+					break;
+				case 3:
+					this.$refs.policy.loadMore()
 					break;
 			}
 

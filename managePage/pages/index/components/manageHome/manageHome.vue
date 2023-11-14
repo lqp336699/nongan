@@ -62,7 +62,7 @@
 
 
 			</view>
-			<u-loadmore class="mt50" :height="100" font-size="28" :status="status" :loading-text="loadingText"
+			<u-loadmore class="mt50" iconSize="28" :height="100" font-size="28" :status="status" :loading-text="loadingText"
 				:loadmore-text="loadmoreText" :nomore-text="nomoreText" />
 		</view>
 		
@@ -105,10 +105,7 @@
 		created(){
 			this.init()
 		},
-		onLoad(){
-			new Promise.all()
-			
-		},
+	
 		
 		methods: {
 			loadMore(){

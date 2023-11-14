@@ -4,7 +4,7 @@
 		<Skeleton v-if="skeleton"></Skeleton>
 		<view v-if="!skeleton" class="px24 page">
 			<!-- hot -->
-			<uni-nav-bar :height="44" statusBar title="政策动态"  color="#222" :border="false" :leftWidth="0" fixed></uni-nav-bar>
+			<uni-nav-bar :height="44" statusBar title="政策动态"  color="#222" :border="false"  fixed></uni-nav-bar>
 			<view class=" flex flex-between mt20">
 
 				<view @click="listItemClick(item)" v-for="(item,index) in hotList" :key="index"
@@ -54,7 +54,7 @@
 				</view>
 			</view>
 
-			<u-loadmore class="" :height="100" font-size="28" :status="status" :loading-text="loadingText"
+			<u-loadmore class="" iconSize="28" :height="100" font-size="28" :status="status" :loading-text="loadingText"
 				:loadmore-text="loadmoreText" :nomore-text="nomoreText" />
 		</view>
 	</view>

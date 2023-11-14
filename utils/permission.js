@@ -26,11 +26,13 @@ export default async function() {
 						console.log("拦截白名单，默认跳转")
 						if(identity== 1){
 							//如果身份是管理重定向管理员首页
+							console.log("667776")
 							uni.redirectTo({
 								url: '/managePage/pages/index/index'
 							})
 							return false
 						}else if(identity== 2){
+							console.log("66644446")
 							uni.redirectTo({
 								url: '/productPage/pages/index/index'
 							})
@@ -50,6 +52,8 @@ export default async function() {
 							},1000)
 							
 							return false
+						}else{
+							return e
 						}
 					}
 					
