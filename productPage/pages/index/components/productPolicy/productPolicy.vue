@@ -1,10 +1,11 @@
 <template>
-	<view class="" style="overflow: hidden;">
+	<view class="">
 		<Skeleton v-if="skeleton"></Skeleton>
-		<view v-if="!skeleton" class="px24 page">
+		<view v-if="!skeleton" class="px24 ">
 			<!-- hot -->
 			<uni-nav-bar statusBar title="政策动态" color="#222" :border="false" :leftWidth="0" fixed></uni-nav-bar>
 			<view class=" flex flex-between mt20">
+
 				<view v-for="(item,index) in hotList" :key="index" @click="listItemClick(item)"
 					class=" br10 pb20 bgWhite overH  border-box" style="width:336rpx; ">
 					<image style="height: 226rpx;width: 100%;" :src="item.img"></image>
@@ -22,12 +23,12 @@
 
 			</view>
 
-			<view class="bgWhite  mt36 relactive">
+			<view class="bgWhite  mt36 relactive" v-if="NewCateList.length>0">
 				<u-tabs :list="NewCateList" :current="tabCurrent" :scrollable="true"
 					:activeStyle="{ color: '#1F9A64', transform: 'scale(1.05)'  }"
 					:inactiveStyle="{ color: '#222222', transform: 'scale(1)' }" lineColor="#1F9A64" @click="tabclick">
 					<view class="flex flex-center align-center" slot="right" style="width: 72rpx;height: 84rpx;"
-						@click="change()">
+						@click="change">
 						<image style="width: 20rpx;height: 11rpx;" :src="show ? '/static/product/close.png' : '/static/product/open.png' " mode=""></image>
 					</view>
 				</u-tabs>
@@ -130,7 +131,7 @@
 					data: {
 						page: this.page,
 						limit: this.limit,
-						cate_id: this.cate_id
+						cate_id: this.cate_id || ''
 					}
 				}).then(res => {
 					if (res.data.list.length < this.limit) {
@@ -151,7 +152,7 @@
 					data: {
 						page: this.page,
 						limit: this.limit,
-						cate_id: this.cate_id
+						cate_id: this.cate_id || ''
 					}
 				}).then(res => {
 					if (res.data.list.length < this.limit) {
@@ -166,11 +167,15 @@
 			getData() {
 				return new Promise(resolve => {
 					this.status = 'loading'
+					let cate_id = ''
+					if(this.NewCateList.length>0){
+						cate_id=this.NewCateList[0].id
+					}
 					this.list = []
 					this.$http({
 						url: '/Data/newsList',
 						data: {
-							cate_id: this.NewCateList[0].id
+							cate_id: cate_id
 						}
 					}).then(res => {
 						this.hotList = res.data.hots
@@ -181,6 +186,8 @@
 						}
 						this.list = res.data.list
 						resolve('aaaaaaa')
+					}).catch(err=>{
+						console.log(err,"pppppppppppp")
 					})
 				})
 
@@ -192,11 +199,11 @@
 						data: {
 							page: this.page,
 							limit: this.limit,
-							cate_id: this.cate_id
+							cate_id: this.cate_id ||''
 						}
 					}).then(res => {
 						this.NewCateList = res.data
-						resolve('sssss')
+						resolve("hhhhh")
 					})
 				})
 			},

@@ -121,6 +121,10 @@
 	padding-top: 38rpx;
 }
 
+.pb16{
+	padding-bottom: 16rpx;
+}
+
 .pb42{
 	padding-bottom: 42rpx;
 }
@@ -139,6 +143,10 @@
 
 .mb15{
 	margin-bottom: 15rpx;
+}
+
+.mb16{
+	margin-bottom: 16rpx;
 }
 
 .mb30{

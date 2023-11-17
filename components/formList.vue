@@ -241,7 +241,7 @@
 					
 					
 					dateLists.forEach(item=>{
-						let date =  newValCopy[item['prop']].replace('年','-').replace('月','-').replace('日','')
+						let date =  newValCopy[item['prop']].replace('年','/').replace('月','/').replace('日','')
 						let time = new Date(date).getTime()/1000
 						
 						 newValCopy[item['prop']] = time

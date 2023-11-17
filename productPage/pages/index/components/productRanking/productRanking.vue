@@ -34,18 +34,18 @@
 
 
 
-						<view class=" w100 flex  mt50 flex-center  bgWhite"
+						<view class=" w100 flex mt50 flex-center  bgWhite"
 							style="height: 110rpx; border-radius: 32rpx 32rpx 0 0;">
-							<view class="flex flex-around  mt32 font28"
+							<view class="flex flex-around  font28"
 								style="width: 706rpx;border-bottom: 1px solid #E8E8E8;">
-								<view :class="[rankStatus==1 ? 'activeStatus':'']" @click="activedStatus(1)">
-									月度
+								<view class="flex flex-center align-end " style="width: 33%;" @click="activedStatus(1)">
+									<text :class="['pb16',rankStatus==1 ? 'activeStatus':'']">月度</text>
 								</view>
-								<view :class="[rankStatus==2 ? 'activeStatus':'']" @click="activedStatus(2)">
-									季度
+								<view class="flex flex-center align-end " style="width: 33%;" @click="activedStatus(2)">
+									<text :class="['pb16',rankStatus==2 ? 'activeStatus':'']">季度</text>
 								</view>
-								<view :class="[rankStatus==3 ? 'activeStatus':'']" @click="activedStatus(3)">
-									年度
+								<view class="flex flex-center align-end " style="width: 33%;" @click="activedStatus(3)">
+									<text :class="['pb16',rankStatus==3 ? 'activeStatus':'']">年度</text>
 								</view>
 							</view>
 						</view>
@@ -154,7 +154,7 @@
 						limit: this.limit
 					}
 				}).then(res => {
-					this.list = this.list.push(...res.data.list)
+					this.list.push(...res.data.list)
 				})
 			},
 
