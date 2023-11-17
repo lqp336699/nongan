@@ -14,11 +14,11 @@
 						:src="rankType == 1 ?'/static/rank/red.png' : '/static/rank/black.png'" mode=""></image>
 
 
-					<view class="absolute w100" style="z-index: 2;">
+					<view class="absolute w100 " style="z-index: 2;">
 
 						<view class="flex  w100">
 							<view class="br68 ml36 border-box bgWhite  flex flex-between align-center "
-								style=" background-color: rgba(255,255,255,0.3);  width:324rpx; margin-top:340rpx;">
+								style=" background-color: rgba(255,255,255,0.3); margin-top:340rpx;">
 								<view
 									:class="['flex','border-box','align-center','px54,py14','flex-center', 'br68',rankType==1 ?'active1':'colf']"
 									@click="actived(1)">
