@@ -4,10 +4,10 @@
 
 
 		<view class="">
-			<home ref="Home" v-if="current==0"></home>
-			<ranking ref="ranking" class="ranking" v-if="current==1"></ranking>
-			<Events ref="Events" v-if="current==2"></Events>
-			<policy ref="policy" v-if="current==3"></policy>
+			<home class="navBarMenu" ref="Home" v-if="current==0"></home>
+			<ranking class="navBar ranking" ref="ranking"  v-if="current==1"></ranking>
+			<Events class="navBar" ref="Events" v-if="current==2"></Events>
+			<policy class="navBar" ref="policy" :show='show' v-if="current==3"></policy>
 		</view>
 
 
@@ -62,7 +62,7 @@
 		data() {
 			return {
 				current: 0,
-
+				show:false,
 			}
 		},
 		
@@ -108,7 +108,7 @@
 		watch: {
 			current: {
 				handler(newVal) {
-
+					this.show= false
 				}
 			}
 		},
@@ -119,7 +119,24 @@
 </script>
 
 <style scoped lang="scss">
-	.ranking /deep/ .uni-nav-bar-text {
+	// .ranking /deep/ .uni-nav-bar-text {
+	// 	/* #ifdef APP-PLUS */
+	// 	font-size: 36rpx !important;
+	// 	/* #endif */
+	// 	/* #ifndef APP-PLUS */
+	// 	font-size: 18px;
+	// 	/* #endif */
+	// }
+
+	
+
+	/deep/ .u-count-down__text {
+
+		color: #409F5FFF !important;
+		font-size: 22rpx !important;
+	}
+	
+	.navBar /deep/ .uni-nav-bar-text {
 		/* #ifdef APP-PLUS */
 		font-size: 36rpx !important;
 		/* #endif */
@@ -127,14 +144,13 @@
 		font-size: 18px;
 		/* #endif */
 	}
-
-	.ranking /deep/ .uni-navbar__header-container-inner {
-		justify-content: left !important;
+	
+	
+	.navBarMenu /deep/ .uni-nav-bar-text {
+		font-size: 36rpx !important;
 	}
-
-	/deep/ .u-count-down__text {
-
-		color: #409F5FFF !important;
-		font-size: 22rpx !important;
+	
+	.navBar /deep/ .uni-navbar__header-container-inner {
+		justify-content: left !important;
 	}
 </style>

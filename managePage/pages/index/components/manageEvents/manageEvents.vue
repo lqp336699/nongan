@@ -2,10 +2,10 @@
 	
 	
 	
-	<view class="relactive">
+	<view >
 		<Skeleton v-if="skeleton"></Skeleton>
-		<uni-nav-bar statusBar title="生产主体" :height="44" fixed></uni-nav-bar>
 		<view class="relactive overH" v-if="!skeleton">
+			<uni-nav-bar statusBar title="生产主体" :height="44" :leftWidth="0" fixed></uni-nav-bar>
 			<view class=" px22 py18"	:style="{position:'fixed', background:'#F7F7F7',right:0,left:0}">
 				<u-search @search="search" @custom="search" :searchIconSize="44" :height="64"
 					:action-style="{color:'#fff', padding:'18rpx 28rpx', borderRadius:'36rpx',background:'#1F9A64'}"

@@ -27,9 +27,7 @@ export default {
 		const setting = uni.getSystemInfoSync()
 		const query = uni.createSelectorQuery().in(this)
 		this.$nextTick(() => {
-			query
-				.select("#modal")
-				.boundingClientRect((data) => {
+			query.select("#modal").boundingClientRect((data) => {
 					let height = setting.windowHeight - data.bottom + setting.safeAreaInsets.bottom
 					that.height = height
 					that.top = setting.windowHeight - height
