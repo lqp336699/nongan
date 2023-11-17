@@ -1,11 +1,10 @@
 <template>
-	<view class="">
+	<view class="" style="overflow: hidden;">
 		<Skeleton v-if="skeleton"></Skeleton>
 		<view v-if="!skeleton" class="px24 page">
 			<!-- hot -->
 			<uni-nav-bar statusBar title="政策动态" color="#222" :border="false" :leftWidth="0" fixed></uni-nav-bar>
 			<view class=" flex flex-between mt20">
-
 				<view v-for="(item,index) in hotList" :key="index" @click="listItemClick(item)"
 					class=" br10 pb20 bgWhite overH  border-box" style="width:336rpx; ">
 					<image style="height: 226rpx;width: 100%;" :src="item.img"></image>

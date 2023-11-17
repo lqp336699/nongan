@@ -4,7 +4,7 @@ module.exports = {
 	    "disableHostCheck" : true,
 	    "proxy" : {
 	        "/api" : {
-	            "target" : "http://36.134.191.59/api", 
+	            "target" : "https://nongan.app65.cn/api", 
 	            "changeOrigin" : true,
 	            "pathRewrite" : {
 	                "^/api" : ""

@@ -1,6 +1,6 @@
 // let baseUrl = '/'
 // let baseUrl = 'http://192.168.101.162:1021/'
-let baseUrl = 'http://36.134.191.59:88/api'
+let baseUrl = 'https://nongan.app65.cn/api'
 // uni.baseUrl =   + baseUrl
 // let baseUrl = 'http://192.168.101.61:13019/'
 const http = {

@@ -71,7 +71,7 @@
 						console.log(JSON.stringify(chooseImageRes.tempFilePaths));
 						chooseImageRes.tempFilePaths.forEach((item,index)=>{
 							uni.uploadFile({
-								url: 'http://36.134.191.59:88/api/ajax/upload',
+								url: 'https://nongan.app65.cn/api/ajax/upload',
 								filePath: tempFilePaths[index],
 								name: 'file',
 								formData: {
@@ -80,7 +80,7 @@
 								success: (uploadFileRes) => {
 									console.log(uploadFileRes,"llllll")
 									let file = JSON.parse(uploadFileRes.data).data.file
-									file.url = "http://36.134.191.59:88" + file.url
+									file.url = "https://nongan.app65.cn" + file.url
 									let arr = that.fileList.concat([file])
 									that.$emit('update:fileList', arr)
 									that.loading = false
