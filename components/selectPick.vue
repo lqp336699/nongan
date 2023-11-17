@@ -13,7 +13,6 @@
 					
 					<picker-view :indicator-style="indicatorStyle" :value="value" @change="bindChange"
 						@pickstart="bindStart" @pickend="bindPickend" class="picker-view">
-						
 						<picker-view-column v-for="(selectListItem,index) in selectList" :key="index">
 							<view class="item" v-for="(item,index2) in selectListItem" :key="index2">{{item.label}}
 							</view>
@@ -49,10 +48,14 @@
 			}
 		},
 		data() {
+			let value = []
+			this.selectList.forEach(item=>{
+				value.push(0)
+			})
 			return {
 				indicatorStyle: `height: 50px;`,
-				value: uni.getStorageSync('selectValue') || [0,0],
-				// val:[],
+				// value: uni.getStorageSync('selectValue') || [0,0],
+				value:value,
 				formVal: [],
 				loading:false
 			};

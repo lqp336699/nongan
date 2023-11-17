@@ -11,7 +11,6 @@
 				</view>
 			</view>
 
-			
 				<view v-for="item in formList2" :key="item.id">
 					<view :class="['flex','bigRedio' ,'px30' , 'flex-between', 'align-center', item.class ? item.class : '']"
 						 :key="item.id || item.placeholder" >
@@ -31,9 +30,6 @@
 						</u-form-item>
 					</view>
 				</view>
-				
-				
-				
 				
 		</view>
 		<view class="mt30">

@@ -63,10 +63,10 @@
 					</view>
 				</view>
 			</view>
-
-		</view>
-		<u-loadmore class="" :height="100" font-size="28" :status="status" :loading-text="loadingText"
+	<u-loadmore class="" :height="100" font-size="28" :status="status" :loading-text="loadingText"
 			:loadmore-text="loadmoreText" :nomore-text="nomoreText" />
+		</view>
+	
 	</view>
 </template>
 

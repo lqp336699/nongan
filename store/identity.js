@@ -25,8 +25,7 @@ const identity = {
 				}).then(res=>{
 					
 					commit('CHANGE_IDENTITY', res.data.identity)
-					  
-					  resolve(res.data.identity)
+					resolve(res.data.identity)
 				})
 			})
 		},
