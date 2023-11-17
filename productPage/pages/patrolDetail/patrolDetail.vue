@@ -104,7 +104,7 @@
 					</view>
 				</view> -->
 
-				<view class="mt20 px30 py40 border-box bgWhite flex flex-column flex-between ">
+				<view class="mt20 px30 py40 br16 border-box bgWhite flex flex-column flex-between ">
 					<view class="font32 col2 fontw700">
 						<text>检查内容</text>
 					</view>

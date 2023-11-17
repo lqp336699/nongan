@@ -24,6 +24,11 @@
 				formList: [{ //日期
 					type: 'date',
 					placeholder: '请选择',
+					rule: [{
+						required: true,
+						message: '请选择日期',
+						trigger: ['change']
+					}],
 					value: '',
 					prop: 'time',
 					label: '日期',

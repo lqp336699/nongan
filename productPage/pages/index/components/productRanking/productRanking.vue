@@ -154,7 +154,7 @@
 						limit: this.limit
 					}
 				}).then(res => {
-					this.list = this.list.push(...res.data.list)
+					this.list.push(...res.data.list)
 				})
 			},
 

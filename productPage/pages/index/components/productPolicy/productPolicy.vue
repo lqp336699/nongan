@@ -1,5 +1,5 @@
 <template>
-	<view class="">
+	<view class="overH">
 		<Skeleton v-if="skeleton"></Skeleton>
 		<view v-if="!skeleton" class="px24 page">
 			<!-- hot -->
