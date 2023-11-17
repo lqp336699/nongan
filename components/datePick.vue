@@ -97,8 +97,7 @@
 			}
 		},
 		mounted() {
-			console.log("ppppppppppppppppp")
-			this.getDate()
+			// this.getDate()
 			this.getCountDays()
 		},
 		methods: {
