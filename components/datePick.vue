@@ -38,17 +38,41 @@
 	export default {
 		name: "formPopup",
 		data() {
+			let date = new Date()
+			let years = []
+			let year = date.getFullYear()
+			let months = []
+			let month = date.getMonth() + 1
+			let days = []
+			let day = date.getDate()
+			for (let i = 1990; i <= date.getFullYear(); i++) {
+				years.push(i)
+			}
+			for (let i = 1; i <= 12; i++) {
+				months.push(i)
+			}
+			for (let i = 1; i <= 31; i++) {
+				days.push(i)
+			}
+			// this.years = years
+			// this.days = days
+			// this.months = months
+			// this.value = [9999, month - 1, day - 1]
+			// this.year = year
+			// this.month = month
+			// this.day = day
+			
 			return {
-				years: [],
+				years: years,
 				goodCate: [],
-				year: 1990,
-				months: [],
+				year: year,
+				months: months,
 				month: '',
-				days: [],
+				days: days,
 				dateTimeFormat: "",
-				day: "",
-				value: [0,0,0],
-				dateTime: [999, 1, 1],
+				day: day,
+				value: [999,month-1,day-1],
+				dateTime: [999,month-1,day-1],
 				indicatorStyle: `height: 100rpx;`
 			};
 		},
@@ -73,7 +97,7 @@
 			}
 		},
 		mounted() {
-		
+			console.log("ppppppppppppppppp")
 			this.getDate()
 			this.getCountDays()
 		},
@@ -108,31 +132,10 @@
 				/* 返回当月的天数 */
 				return curDate.getDate();
 			},
-			getDate() {
-				let date = new Date()
-				let years = []
-				let year = date.getFullYear()
-				let months = []
-				let month = date.getMonth() + 1
-				let days = []
-				let day = date.getDate()
-				for (let i = 1990; i <= date.getFullYear(); i++) {
-					years.push(i)
-				}
-				for (let i = 1; i <= 12; i++) {
-					months.push(i)
-				}
-				for (let i = 1; i <= 31; i++) {
-					days.push(i)
-				}
-				this.years = years
-				this.days = days
-				this.months = months
-				this.value = [9999, month - 1, day - 1]
-				this.year = this.years[0]
-				this.month = this.months[0]
-				this.day = this.days[0]
-			},
+			// getDate() {
+				
+				
+			// },
 			close() {
 				this.$emit("close")
 			}
