@@ -93,11 +93,11 @@
 				
 		</view>
 
-		<view class="bgWhite flex flex-between align-center br58" style="color:#1F9A64;   position: fixed; bottom:110rpx; left:24rpx; right:24rpx; border:2rpx solid #29C17E; padding:40rpx ;">
+		<!-- <view class="bgWhite flex flex-between align-center br58" style="color:#1F9A64;   position: fixed; bottom:110rpx; left:24rpx; right:24rpx; border:2rpx solid #29C17E; padding:40rpx ;">
 			<text>{{user_ranking}}</text>
 			<text>射洪宴康农业有限公司</text>
 			<text>{{user_average}}</text>
-		</view>
+		</view> -->
 		
 
 	</view>
