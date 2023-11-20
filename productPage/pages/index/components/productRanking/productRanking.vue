@@ -66,7 +66,7 @@
 			</view>
 
 
-			<view class="bgWhite  flex  flex-column align-center flex1 " style="width: 750rpx; margin-top:620rpx;">
+			<view class="bgWhite  flex  flex-column align-center flex1 pb100" style="width: 750rpx; margin-top:620rpx;">
 
 				<view class="w100" :style="{borderBottom: index == list.length-1 ?'none' :  '1rpx solid #E9E9E9'}"
 					v-for="(item) in list" :key="item.id">
@@ -94,7 +94,7 @@
 		</view>
 		<view class="bgWhite flex flex-between align-center br58 userRanking" :style="{bottom: userBottom}">
 			<text>{{user_ranking}}</text>
-			<text>射洪宴康农业有限公司</text>
+			<text>{{main_name}}</text>
 			<text>{{user_average}}</text>
 		</view>
 
@@ -135,6 +135,7 @@
 				user_ranking: 0,
 				skeleton: true,
 				status: 'loadmore',
+				main_name:'',
 				loadingText: '努力加载中',
 				loadmoreText: '轻轻上拉',
 				nomoreText: '没有更多了',
@@ -174,6 +175,7 @@
 						this.list = data
 						this.user_average = res.data.user_average
 						this.user_ranking = res.data.user_ranking
+						this.main_name = res.data.main_name
 						resolve("bb")
 					})
 				})
