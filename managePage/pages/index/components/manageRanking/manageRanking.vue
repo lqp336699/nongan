@@ -86,19 +86,18 @@
 					</view>
 				</view>
 			</view>
-			
-			
-<!-- <u-loadmore class="" :height="100" font-size="28" :status="status" :loading-text="loadingText"
-			:loadmore-text="loadmoreText" :nomore-text="nomoreText" /> -->
-				
-		</view>
 
-		<!-- <view class="bgWhite flex flex-between align-center br58" style="color:#1F9A64;   position: fixed; bottom:110rpx; left:24rpx; right:24rpx; border:2rpx solid #29C17E; padding:40rpx ;">
+
+			<!-- <u-loadmore class="" :height="100" font-size="28" :status="status" :loading-text="loadingText"
+			:loadmore-text="loadmoreText" :nomore-text="nomoreText" /> -->
+
+		</view>
+		<!-- <view class="bgWhite flex flex-between align-center br58 userRanking" :style="{bottom: userBottom}">
 			<text>{{user_ranking}}</text>
 			<text>射洪宴康农业有限公司</text>
 			<text>{{user_average}}</text>
 		</view> -->
-		
+
 
 	</view>
 
@@ -132,22 +131,23 @@
 					'/static/rank/No3.png'
 				],
 				list: [],
-				user_average:0,
-				user_ranking:0,
+				user_average: 0,
+				user_ranking: 0,
 				skeleton: true,
 				status: 'loadmore',
 				loadingText: '努力加载中',
 				loadmoreText: '轻轻上拉',
-				nomoreText: '没有更多了'
+				nomoreText: '没有更多了',
 			};
 		},
 		async created() {
 			await this.init()
 			this.skeleton = false
 		},
+	
 		methods: {
-			
 
+	
 			init() {
 				return new Promise(resolve => {
 					this.$http({
@@ -158,11 +158,11 @@
 						}
 					}).then(res => {
 						let data = res.data.list
-						data.sort((item1,item2)=>{
+						data.sort((item1, item2) => {
 							return item1.ranking - item2.ranking
 						})
 						this.list = data
-						this.user_average =res.data.user_average
+						this.user_average = res.data.user_average
 						this.user_ranking = res.data.user_ranking
 						resolve("bb")
 					})
@@ -193,5 +193,14 @@
 	.activeStatus {
 		border-bottom: 1px solid #1F9A64;
 		color: #1F9A64;
+	}
+
+	.userRanking {
+		color: #1F9A64;
+		position: fixed;
+		left: 24rpx;
+		right: 24rpx;
+		border: 2rpx solid #29C17E;
+		padding: 40rpx
 	}
 </style>
