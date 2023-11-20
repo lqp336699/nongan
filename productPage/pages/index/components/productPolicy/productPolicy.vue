@@ -29,12 +29,14 @@
 					:inactiveStyle="{ color: '#222222', transform: 'scale(1)' }" lineColor="#1F9A64" @click="tabclick">
 					<view class="flex flex-center align-center" slot="right" style="width: 72rpx;height: 84rpx;"
 						@click="change">
-						<image style="width: 20rpx;height: 11rpx;" :src="show ? '/static/product/close.png' : '/static/product/open.png' " mode=""></image>
+						<image style="width: 20rpx;height: 11rpx;"
+							:src="show ? '/static/product/close.png' : '/static/product/open.png' " mode=""></image>
 					</view>
 				</u-tabs>
 				<modal :show='show'>
-					<view class="flex flex-wrap px24 py30 border-box" >
-						<view :class="['itemList',cate_id == item.id ? 'actived': 'default']" @click="activeChange(item.id,index)" v-for="(item,index) in NewCateList" :key="index">
+					<view class="flex flex-wrap px24 py30 border-box">
+						<view :class="['itemList',cate_id == item.id ? 'actived': 'default']"
+							@click="activeChange(item.id,index)" v-for="(item,index) in NewCateList" :key="index">
 							{{item.name}}
 						</view>
 					</view>
@@ -64,9 +66,9 @@
 				</view>
 			</view>
 
+			<u-loadmore class="" :height="100" font-size="28" :status="status" :loading-text="loadingText"
+				:loadmore-text="loadmoreText" :nomore-text="nomoreText" />
 		</view>
-		<u-loadmore class="" :height="100" font-size="28" :status="status" :loading-text="loadingText"
-			:loadmore-text="loadmoreText" :nomore-text="nomoreText" />
 	</view>
 </template>
 
@@ -78,10 +80,10 @@
 			Skeleton,
 			Modal
 		},
-		props:{
-			show:{
-				type:Boolean,
-				default:false
+		props: {
+			show: {
+				type: Boolean,
+				default: false
 			}
 		},
 		data() {
@@ -168,8 +170,8 @@
 				return new Promise(resolve => {
 					this.status = 'loading'
 					let cate_id = ''
-					if(this.NewCateList.length>0){
-						cate_id=this.NewCateList[0].id
+					if (this.NewCateList.length > 0) {
+						cate_id = this.NewCateList[0].id
 					}
 					this.list = []
 					this.$http({
@@ -186,8 +188,8 @@
 						}
 						this.list = res.data.list
 						resolve('aaaaaaa')
-					}).catch(err=>{
-						console.log(err,"pppppppppppp")
+					}).catch(err => {
+						console.log(err, "pppppppppppp")
 					})
 				})
 
@@ -199,7 +201,7 @@
 						data: {
 							page: this.page,
 							limit: this.limit,
-							cate_id: this.cate_id ||''
+							cate_id: this.cate_id || ''
 						}
 					}).then(res => {
 						this.NewCateList = res.data
@@ -216,9 +218,9 @@
 				})
 			},
 			change() {
-				this.$emit('update:show',!this.show)
+				this.$emit('update:show', !this.show)
 			},
-			activeChange(item,index){
+			activeChange(item, index) {
 				this.tabCurrent = index
 				this.cate_id = item
 				this.change()
@@ -239,8 +241,8 @@
 	/deep/ u-slide-down-enter-active {
 		top: 700rpx !important;
 	}
-	
-	.itemList{
+
+	.itemList {
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -251,11 +253,12 @@
 		margin-right: 14rpx;
 		margin-bottom: 20rpx;
 	}
-	
-	.actived{
+
+	.actived {
 		border: 2rpx solid #1F9A64;
 	}
-	.default{
+
+	.default {
 		border: 2rpx solid #C7C7C7;
 	}
 </style>

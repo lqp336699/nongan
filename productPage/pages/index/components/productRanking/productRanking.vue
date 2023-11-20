@@ -1,7 +1,7 @@
 <template>
 	<view class="">
 		<Skeleton v-if="skeleton"></Skeleton>
-		<view v-if="!skeleton" class="overH  flex flex-column page">
+		<view v-if="!skeleton" class="overH  flex  flex-column page">
 			<!-- 导航栏 -->
 			<uni-nav-bar status-bar style="position: fixed;z-index: 10;" :leftWidth="0" :border="false" color="#fff"
 				title="排行" fixed="true" backgroundColor="rgba(0,0,0,0)"></uni-nav-bar>
@@ -88,11 +88,11 @@
 			</view>
 
 
+			<u-loadmore class="" :height="100" font-size="28" :status="status" :loading-text="loadingText"
+				:loadmore-text="loadmoreText" :nomore-text="nomoreText" />
 		</view>
 
 
-		<u-loadmore class="" :height="100" font-size="28" :status="status" :loading-text="loadingText"
-			:loadmore-text="loadmoreText" :nomore-text="nomoreText" />
 
 	</view>
 
