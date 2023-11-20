@@ -60,7 +60,7 @@
 
 				<ProductCard @ProductCardClick="ProductCardClick(item)" :productData="item" v-for="item in productData" :key="item.id"></ProductCard>
 
-
+	
 			</view>
 			<u-loadmore class="mt50" iconSize="28" :height="100" font-size="28" :status="status" :loading-text="loadingText"
 				:loadmore-text="loadmoreText" :nomore-text="nomoreText" />
