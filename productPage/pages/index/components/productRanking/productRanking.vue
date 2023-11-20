@@ -1,7 +1,7 @@
 <template>
 	<view class="">
 		<Skeleton v-if="skeleton"></Skeleton>
-		<view v-if="!skeleton" class="overH  flex flex-column page">
+		<view v-if="!skeleton" class="overH  flex  flex-column page">
 			<!-- 导航栏 -->
 			<uni-nav-bar status-bar style="position: fixed;z-index: 10;" :leftWidth="0" :border="false" color="#fff"
 				title="排行" fixed="true" backgroundColor="rgba(0,0,0,0)"></uni-nav-bar>
@@ -66,7 +66,8 @@
 			</view>
 
 
-			<view class="bgWhite  flex  flex-column align-center flex1 pb100" style="width: 750rpx; margin-top:620rpx;">
+
+			<view class="bgWhite  flex  flex-column align-center flex1 pb125" style="width: 750rpx; margin-top:620rpx;">
 
 				<view class="w100" :style="{borderBottom: index == list.length-1 ?'none' :  '1rpx solid #E9E9E9'}"
 					v-for="(item) in list" :key="item.id">
@@ -86,6 +87,7 @@
 					</view>
 				</view>
 			</view>
+
 
 
 			<!-- <u-loadmore class="" :height="100" font-size="28" :status="status" :loading-text="loadingText"
@@ -154,7 +156,6 @@
 			 getSafeArea() {
 				uni.getSystemInfo({}).then(res=>{
 					let bottom = res.screenHeight - res.safeArea.bottom
-					console.log(110 + bottom, "iiiiiiiiiiiiii")
 					this.userBottom = (55+ bottom)+'px'
 				});
 				

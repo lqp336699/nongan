@@ -71,7 +71,7 @@
 					this.$refs.Home.loadMore()
 					break;
 				case 1:
-					this.$refs.ranking.loadMore()
+					// this.$refs.ranking.loadMore()
 					break;
 				case 3:
 					this.$refs.policy.loadMore()
