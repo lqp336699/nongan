@@ -14,7 +14,7 @@
 						:src="rankType == 1 ?'/static/rank/red.png' : '/static/rank/black.png'" mode=""></image>
 
 
-					<view class="absolute w100 " style="z-index: 2;">
+					<view class="absolute w100" style="z-index: 2;">
 
 						<view class="flex  w100">
 							<view class="br68 ml36 border-box bgWhite  flex flex-between align-center "
@@ -36,7 +36,7 @@
 
 						<view class=" w100 flex mt50 flex-center  bgWhite"
 							style="height: 110rpx; border-radius: 32rpx 32rpx 0 0;">
-							<view class="flex flex-around  font28"
+							<view class="flex flex-center  font28"
 								style="width: 706rpx;border-bottom: 1px solid #E8E8E8;">
 								<view class="flex flex-center align-end " style="width: 33%;" @click="activedStatus(1)">
 									<text :class="['pb16',rankStatus==1 ? 'activeStatus':'']">月度</text>
@@ -66,32 +66,38 @@
 			</view>
 
 
-			<view class="bgWhite flex  flex-column align-center flex1 " style="width: 750rpx; margin-top:620rpx;">
+			<view class="bgWhite  flex  flex-column align-center flex1 " style="width: 750rpx; margin-top:620rpx;">
 
 				<view class="w100" :style="{borderBottom: index == list.length-1 ?'none' :  '1rpx solid #E9E9E9'}"
 					v-for="(item) in list" :key="item.id">
 					<view class="flex py30 flex-between align-center border-box"
 						style="padding-left: 16rpx;padding-right: 36rpx;">
 						<view class="flex align-center">
-							<image v-if="item.ranking <= imgList.length - 1" style="width: 80rpx;height: 80rpx;"
-								:src="imgList[item.ranking - 1]" mode=""></image>
+							<image v-if="item.ranking <= imgList.length" style="width: 80rpx;height: 80rpx;"
+								:src="imgList[item.ranking-1 ]" mode=""></image>
 							<view class="flex flex-center align-center" style="width: 80rpx;height: 80rpx;" v-else>
 								<text>{{item.ranking}}</text>
 							</view>
 							<text class="ml50 col2">{{item.main_name || ''}}</text>
 						</view>
 						<view class="font32 col2">
-							<text>{{item.average || ''}}</text>
+							<text>{{item.average}}</text>
 						</view>
 					</view>
 				</view>
 			</view>
 
 
-			<u-loadmore class="" :height="100" font-size="28" :status="status" :loading-text="loadingText"
-				:loadmore-text="loadmoreText" :nomore-text="nomoreText" />
-		</view>
 
+			<!-- <u-loadmore class="" :height="100" font-size="28" :status="status" :loading-text="loadingText"
+			:loadmore-text="loadmoreText" :nomore-text="nomoreText" /> -->
+
+		</view>
+		<view class="bgWhite flex flex-between align-center br58 userRanking" :style="{bottom: userBottom}">
+			<text>{{user_ranking}}</text>
+			<text>射洪宴康农业有限公司</text>
+			<text>{{user_average}}</text>
+		</view>
 
 
 	</view>
@@ -126,38 +132,32 @@
 					'/static/rank/No3.png'
 				],
 				list: [],
-				limit: 8,
-				page: 1,
+				user_average: 0,
+				user_ranking: 0,
 				skeleton: true,
 				status: 'loadmore',
 				loadingText: '努力加载中',
 				loadmoreText: '轻轻上拉',
-				nomoreText: '没有更多了'
+				nomoreText: '没有更多了',
+				userBottom:0
 			};
 		},
 		async created() {
 			await this.init()
 			this.skeleton = false
+			this.getSafeArea()
 		},
+	
 		methods: {
-			loadMore() {
-				if (this.status == 'nomore') {
-					return
-				}
-				this.page++
-				this.$http({
-					url: '/Data/ranking',
-					data: {
-						type: this.rankType,
-						time: this.rankStatus,
-						page: this.page,
-						limit: this.limit
-					}
-				}).then(res => {
-					this.list.push(...res.data.list)
-				})
-			},
 
+			/* 获取底部安全区域 */
+			 getSafeArea() {
+				uni.getSystemInfo({}).then(res=>{
+					let bottom = res.screenHeight - res.safeArea.bottom
+					this.userBottom = (55+ bottom)+'px'
+				});
+				
+			},
 			init() {
 				return new Promise(resolve => {
 					this.$http({
@@ -165,17 +165,16 @@
 						data: {
 							type: this.rankType,
 							time: this.rankStatus,
-							page: this.page,
-							limit: this.limit
 						}
 					}).then(res => {
-						if (res.data.list.length < this.limit) {
-							this.status = 'nomore'
-						} else {
-							this.status = 'loadmore'
-						}
-						this.list = res.data.list
-						resolve('rrrr')
+						let data = res.data.list
+						data.sort((item1, item2) => {
+							return item1.ranking - item2.ranking
+						})
+						this.list = data
+						this.user_average = res.data.user_average
+						this.user_ranking = res.data.user_ranking
+						resolve("bb")
 					})
 				})
 
@@ -204,5 +203,14 @@
 	.activeStatus {
 		border-bottom: 1px solid #1F9A64;
 		color: #1F9A64;
+	}
+
+	.userRanking {
+		color: #1F9A64;
+		position: fixed;
+		left: 24rpx;
+		right: 24rpx;
+		border: 2rpx solid #29C17E;
+		padding: 40rpx
 	}
 </style>
