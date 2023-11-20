@@ -66,7 +66,7 @@
 			</view>
 
 
-			<view class="bgWhite  flex  flex-column align-center flex1 " style="width: 750rpx; margin-top:620rpx;">
+			<view class="bgWhite  flex  flex-column align-center flex1 pb125" style="width: 750rpx; margin-top:620rpx;">
 
 				<view class="w100" :style="{borderBottom: index == list.length-1 ?'none' :  '1rpx solid #E9E9E9'}"
 					v-for="(item) in list" :key="item.id">
