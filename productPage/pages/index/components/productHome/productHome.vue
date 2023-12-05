@@ -28,17 +28,17 @@
 
 				<view class="bgWhite  py40 px40 br16 mt24">
 					<view class="flex align-center">
-						<image class="br110 mr26" src="/static/logo.png" style="height:110rpx; width:110rpx;" mode="">
+						<image class="br110 mr26" :src="userInfo.wxPhotoURL || ''" style="height:110rpx; width:110rpx;" mode="">
 						</image>
 						<view class="flex ">
 							<view class="flex flex-column flex-around">
-								<text class="font800 font36">射洪宴康农业有限公司</text>
+								<text class="font800 font36">{{userInfo.truename || ''}}</text>
 								<!-- <text>市级管理人员</text> -->
 								<view class="flex align-center mt16">
-									<text>生产主体</text>
+									<text>{{userInfo.work || ''}}</text>
 									<view class=" ml14"
 										style="width:212rpx; height:48rpx;text-align: center; background: linear-gradient(180deg, #E1FFF2 0%, #FFFFFF 100%);">
-										<text>总巡查<text class=" font36 mx14" style="color:#29C17E;">{{count}}</text>(次)</text>
+										<text>被巡查<text class=" font36 mx14" style="color:#29C17E;">{{count}}</text>(次)</text>
 									</view>
 								</view>
 							</view>
@@ -93,7 +93,8 @@
 				loadingText: '努力加载中',
 				loadmoreText: '轻轻上拉',
 				nomoreText: '没有更多了',
-				count: 0
+				count: 0,
+				userInfo: {}
 			}
 		},
 		onLoad() {
@@ -116,6 +117,7 @@
 						limit:this.limit
 					}
 				}).then(res=>{
+					
 					this.list = this.list.push(...res.data.list) 
 				})
 			},
@@ -127,6 +129,7 @@
 						this.list1 = res.data.banner.map(item => item.img)
 						this.count = res.data.count
 						this.dataList = res.data.list
+						this.userInfo = res.data.user_info
 						if(res.data.list.length < this.limit){
 							this.status = 'nomore'
 						}else{

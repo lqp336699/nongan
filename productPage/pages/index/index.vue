@@ -18,7 +18,7 @@
 				<image style="height:56rpx; width:56rpx;" class="u-page__item__slot-icon" slot="inactive-icon"
 					src="/static/index/jiandu.png"></image>
 			</u-tabbar-item>
-			<u-tabbar-item text="红黑榜">
+			<u-tabbar-item text="积分榜">
 				<image style="height:56rpx; width:56rpx;" class="u-page__item__slot-icon" slot="active-icon"
 					src="/static/index/paihangActive.png"></image>
 				<image style="height:56rpx; width:56rpx;" class="u-page__item__slot-icon" slot="inactive-icon"

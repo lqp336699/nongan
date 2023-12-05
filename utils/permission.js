@@ -20,18 +20,18 @@ export default async function() {
 				const url = e.url.split('?')[0]
 				let identity = await store.dispatch('identity/getIdentity')
 				//如果有token
-				if(token){
+				if (token) {
 					//发送请求获取用户身份
 					if (whiteList.includes(url)) {
 						console.log("拦截白名单，默认跳转")
-						if(identity== 1){
+						if (identity == 1) {
 							//如果身份是管理重定向管理员首页
 							console.log("667776")
 							uni.redirectTo({
 								url: '/managePage/pages/index/index'
 							})
 							return false
-						}else if(identity== 2){
+						} else if (identity == 2) {
 							console.log("66644446")
 							uni.redirectTo({
 								url: '/productPage/pages/index/index'
@@ -39,26 +39,24 @@ export default async function() {
 							return false
 						}
 						return e
-					}else{
-						if(![1,2].includes(identity)){
+					} else {
+						if (![1, 2].includes(identity)) {
 							uni.showToast({
-								title:"身份不足,跳转身份选择页面",
-								icon:"none"
+								title: "身份不足,跳转身份选择页面",
+								icon: "none"
 							})
-							setTimeout(()=>{
+							setTimeout(() => {
 								uni.redirectTo({
 									url: '/pages/identity/identity'
 								})
-							},1000)
-							
+							}, 1000)
+
 							return false
-						}else{
+						} else {
 							return e
 						}
 					}
-					
-				
-				}else{
+				} else {
 					console.log("拦截未登录，跳转欢迎页面")
 					uni.redirectTo({
 						url: '/pages/welcome/welcome'
