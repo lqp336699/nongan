@@ -65,14 +65,7 @@
 						"enablePullDownRefresh": false
 					}
 
-				}, {
-					"path": "pages/xuncha/xuncha",
-					"style": {
-						"navigationBarTitleText": "巡查记录",
-						"enablePullDownRefresh": false
-					}
-
-				}, {
+				},  {
 					"path": "pages/user/user",
 					"style": {
 						"navigationBarTitleText": "用户信息",
@@ -154,6 +147,13 @@
 						"enablePullDownRefresh": false,
 						"navigationStyle": "custom"
 					}
+				},{
+					"path": "pages/xuncha/xuncha",
+					"style": {
+						"navigationBarTitleText": "巡查记录",
+						"enablePullDownRefresh": false
+					}
+
 				}
 			]
 		}

@@ -28,19 +28,12 @@
 
 				<view class="bgWhite  py40 px40 br16 mt24">
 					<view class="flex align-center">
-<<<<<<< HEAD
 						<!-- <image class="br110 mr26" src="/static/logo.png" style="height:110rpx; width:110rpx;" mode="">
 						</image> -->
 						<view class="flex " @click="goUser">
 							<view class="flex flex-column flex-around" >
 								<text class="font800 font36">{{user_info.main_name}}</text>
-=======
-						<image class="br110 mr26" :src="userInfo.wxPhotoURL || ''" style="height:110rpx; width:110rpx;" mode="">
-						</image>
-						<view class="flex ">
-							<view class="flex flex-column flex-around">
-								<text class="font800 font36">{{userInfo.truename || ''}}</text>
->>>>>>> 8c3f90e723ed190635c22470c48d4da8d309bc66
+
 								<!-- <text>市级管理人员</text> -->
 								<view class="flex align-center mt16">
 									<text>{{userInfo.work || ''}}</text>

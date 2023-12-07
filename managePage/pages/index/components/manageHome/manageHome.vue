@@ -50,7 +50,7 @@
 							<text>总巡查(件)</text>
 							<text class="mt20 font36 " style="color:#29C17E;">{{homeData.count}}</text>
 						</view>
-						<view @click="goXuncha" class="flex flex-column align-center flex-center"
+						<view class="flex flex-column align-center flex-center"
 							style="width:272rpx; height:130rpx;background: linear-gradient(180deg, #EBF3FF 0%, #FFFFFF 100%);">
 							<text>本月巡查(件)</text>
 							<text class="mt20 font36 " style="color:#17A5E3;">{{homeData.month_count || 0}}</text>
