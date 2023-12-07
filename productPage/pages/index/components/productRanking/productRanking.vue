@@ -52,10 +52,8 @@
 
 						<view class="px26 bgWhite border-box align-center flex flex-between w100 col5"
 							style="height:80rpx;">
-							<view class="py16 flex align-center">
-								<text>排名</text>
-								<text class="ml100">主体名称</text>
-							</view>
+							<text>排名</text>
+							<text>主体名称</text>
 							<text>评分</text>
 						</view>
 
@@ -79,7 +77,7 @@
 							<view class="flex flex-center align-center" style="width: 80rpx;height: 80rpx;" v-else>
 								<text>{{item.ranking}}</text>
 							</view>
-							<text class="ml50 col2">{{item.main_name || ''}}</text>
+							<text class="ml100 col2">{{item.main_name || ''}}</text>
 						</view>
 						<view class="font32 col2">
 							<text>{{item.average}}</text>
@@ -137,11 +135,11 @@
 				user_ranking: 0,
 				skeleton: true,
 				status: 'loadmore',
-				main_name:'',
+				main_name: '',
 				loadingText: '努力加载中',
 				loadmoreText: '轻轻上拉',
 				nomoreText: '没有更多了',
-				userBottom:0
+				userBottom: 0
 			};
 		},
 		async created() {
@@ -149,16 +147,16 @@
 			this.skeleton = false
 			this.getSafeArea()
 		},
-	
+
 		methods: {
 
 			/* 获取底部安全区域 */
-			 getSafeArea() {
-				uni.getSystemInfo({}).then(res=>{
+			getSafeArea() {
+				uni.getSystemInfo({}).then(res => {
 					let bottom = res.screenHeight - res.safeArea.bottom
-					this.userBottom = (55+ bottom)+'px'
+					this.userBottom = (55 + bottom) + 'px'
 				});
-				
+
 			},
 			init() {
 				return new Promise(resolve => {

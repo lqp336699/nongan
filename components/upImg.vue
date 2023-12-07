@@ -1,6 +1,7 @@
 <template>
 	<view>
-		<view v-if="fileList.length==0" class="flex flex-center bds align-center " :style="{height:ImgStyle.boxHeight} ">
+		<view v-if="fileList.length==0" class="flex flex-center bds align-center "
+			:style="{height:ImgStyle.boxHeight} ">
 			<view class="flex flex-column align-center" @click="addImg">
 				<image src="@/static/product/addImg.png" style="height:60rpx; width:66rpx;" mode="">
 				</image>
@@ -12,20 +13,21 @@
 		<view class="  flex flex-wrap " v-if="fileList.length>0">
 			<!-- index == 0 ? '' : 'ml20' -->
 			<view :class="[]" style="position: relative;" v-for="(item,index) in fileList" :key="item.id+index">
-			
+
 				<image @click="removeImg(index)" class="" src="@/static/product/del.png"
 					style=" width:50rpx; height:60rpx; position:absolute; right:0; top:0; z-index: 2;"></image>
 				<image :src="item.url" mode="" style="width:216rpx; height:218rpx;"></image>
-				
+
 				<!-- <u-album :urls="urls2"></u-album> -->
 			</view>
 			<view :class="['bds',  'flex', 'flex-center', 'align-center']" @click="chooseImg"
 				style="width:216rpx; height:218rpx;">
-				<image @load="load"  src="@/static/product/addImg.png" style="height:60rpx; width:66rpx;" mode="">
+				<image @load="load" src="@/static/product/addImg.png" style="height:60rpx; width:66rpx;" mode="">
 				</image>
 			</view>
 		</view>
-		<u-loading-page bgColor="rgba(0,0,0,0.5)" color="#fff" fontSize="30" iconSize ="40" :loading="loading" loadingText="正在上传图片"></u-loading-page>
+		<u-loading-page bgColor="rgba(0,0,0,0.5)" color="#fff" fontSize="30" iconSize="40" :loading="loading"
+			loadingText="正在上传图片"></u-loading-page>
 	</view>
 </template>
 
@@ -37,24 +39,24 @@
 				type: Array,
 				default: []
 			},
-			ImgStyle:{
+			ImgStyle: {
 				type: Object,
-				default:()=>{
+				default: () => {
 					return {
-					boxHeight:'218rpx'
-				}
+						boxHeight: '218rpx'
+					}
 				}
 			}
 		},
 		data() {
 			return {
-				loading:false
+				loading: false
 			};
 		},
-		watch:{
-			'fileList':{
-				handler(newVal,oldVal){
-					
+		watch: {
+			'fileList': {
+				handler(newVal, oldVal) {
+
 				}
 			}
 		},
@@ -69,7 +71,7 @@
 						that.loading = true
 						const tempFilePaths = chooseImageRes.tempFilePaths;
 						console.log(JSON.stringify(chooseImageRes.tempFilePaths));
-						chooseImageRes.tempFilePaths.forEach((item,index)=>{
+						chooseImageRes.tempFilePaths.forEach((item, index) => {
 							uni.uploadFile({
 								url: 'https://nongan.app65.cn/api/ajax/upload',
 								filePath: tempFilePaths[index],
@@ -78,15 +80,15 @@
 									'file': tempFilePaths[index]
 								},
 								success: (uploadFileRes) => {
-									console.log(uploadFileRes,"llllll")
+									console.log(uploadFileRes, "llllll")
 									let file = JSON.parse(uploadFileRes.data).data.file
 									file.url = "https://nongan.app65.cn" + file.url
 									let arr = that.fileList.concat([file])
 									that.$emit('update:fileList', arr)
 									that.loading = false
 								},
-								error:(err)=>{
-									console.log(err,"ooooooooooo")
+								error: (err) => {
+									console.log(err, "ooooooooooo")
 								}
 							});
 						})
@@ -98,7 +100,7 @@
 				arr.splice(index, 1)
 				this.$emit('update:fileList', arr)
 			},
-			
+
 
 			addImg() {
 				this.chooseImg()

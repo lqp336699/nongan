@@ -6,7 +6,7 @@
 			<uni-nav-bar status-bar fixed :leftWidth="0" :border="false" color="#000" title="生产记事"
 				backgroundColor="#fff"></uni-nav-bar>
 			<!-- 导航栏 -->
-		
+
 			<view class="mx24 flex flex-column">
 				<view class="mt20 pl24 pr30 bgWhite flex flex-between align-center br10" style="height: 110rpx;"
 					v-for="(item,index) in eventList" :key="index" @click="changeEvent(eventList[index])">
@@ -25,18 +25,18 @@
 
 <script>
 	import Skeleton from './skeleton/skeleton.vue'
-	
+
 	export default {
 		components: {
 			Skeleton
 		},
-		
+
 		data() {
 			return {
 				eventList: [{
-					title: '产品收货、销售记录',
-					src: '/static/productRecord/market.png',
-					path: '/productPage/pages/productMarketRecord/productMarketRecord'
+					title: '生产农事记录',
+					src: '/static/productRecord/yieldFarm.png',
+					path: '/productPage/pages/yieldFarmRecord/yieldFarmRecord'
 				}, {
 					title: '肥料购买及出入库记录',
 					src: '/static/productRecord/manure.png',
@@ -54,19 +54,19 @@
 					src: '/static/productRecord/usePesticide.png',
 					path: '/productPage/pages/UsePesticideRecord/UsePesticideRecord'
 				}, {
-					title: '生产农事记录',
-					src: '/static/productRecord/yieldFarm.png',
-					path: '/productPage/pages/yieldFarmRecord/yieldFarmRecord'
+					title: '产品收货、销售记录',
+					src: '/static/productRecord/market.png',
+					path: '/productPage/pages/productMarketRecord/productMarketRecord'
 				}, ]
 			}
 		},
 		methods: {
-			changeEvent(item){
+			changeEvent(item) {
 				uni.navigateTo({
 					url: item.path
 				})
 			},
-			
+
 		}
 	}
 </script>

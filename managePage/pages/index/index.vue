@@ -1,11 +1,10 @@
 <template>
 	<view class="page">
-
-
+		<page-meta :page-style="'overflow:'+(show?'hidden':'visible')"></page-meta>
 
 		<view class="">
 			<home class="navBarMenu" ref="Home" v-if="current==0"></home>
-			<ranking class="navBar ranking" ref="ranking"  v-if="current==1"></ranking>
+			<ranking class="navBar ranking" ref="ranking" v-if="current==1"></ranking>
 			<Events class="navBar" ref="Events" v-if="current==2"></Events>
 			<policy class="navBar" ref="policy" :show='show' v-if="current==3"></policy>
 		</view>
@@ -20,7 +19,7 @@
 				<image style="height:56rpx; width:56rpx;" class="u-page__item__slot-icon" slot="inactive-icon"
 					src="/static/index/jiandu.png"></image>
 			</u-tabbar-item>
-			<u-tabbar-item text="红黑榜">
+			<u-tabbar-item text="积分榜">
 				<image style="height:56rpx; width:56rpx;" class="u-page__item__slot-icon" slot="active-icon"
 					src="/static/index/paihangActive.png"></image>
 				<image style="height:56rpx; width:56rpx;" class="u-page__item__slot-icon" slot="inactive-icon"
@@ -62,11 +61,11 @@
 		data() {
 			return {
 				current: 0,
-				show:false,
+				show: false,
 			}
 		},
-		
-		onShow(){
+
+		onShow() {
 			switch (this.current) {
 				case 0:
 					this.$refs.Home.init()
@@ -108,7 +107,7 @@
 		watch: {
 			current: {
 				handler(newVal) {
-					this.show= false
+					this.show = false
 				}
 			}
 		},
@@ -128,14 +127,14 @@
 	// 	/* #endif */
 	// }
 
-	
+
 
 	/deep/ .u-count-down__text {
 
 		color: #409F5FFF !important;
 		font-size: 22rpx !important;
 	}
-	
+
 	.navBar /deep/ .uni-nav-bar-text {
 		/* #ifdef APP-PLUS */
 		font-size: 36rpx !important;
@@ -144,12 +143,12 @@
 		font-size: 18px;
 		/* #endif */
 	}
-	
-	
+
+
 	.navBarMenu /deep/ .uni-nav-bar-text {
 		font-size: 36rpx !important;
 	}
-	
+
 	.navBar /deep/ .uni-navbar__header-container-inner {
 		justify-content: left !important;
 	}

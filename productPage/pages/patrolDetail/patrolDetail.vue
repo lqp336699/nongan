@@ -16,7 +16,7 @@
 			<view class="relactive mt40 px24 border-box">
 				<view class="colf">
 					<view class="">
-						<text class="font44">{{patrolInfo.total_score || ''}}</text>
+						<text class="font44">{{patrolInfo.total_score || 0}}</text>
 						<text class="ml10">分</text>
 					</view>
 					<view class="pt20 pdb30 ">

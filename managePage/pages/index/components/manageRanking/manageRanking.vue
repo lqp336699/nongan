@@ -52,10 +52,8 @@
 
 						<view class="px26 bgWhite border-box align-center flex flex-between w100 col5"
 							style="height:80rpx;">
-							<view class="py16 flex align-center">
-								<text>排名</text>
-								<text class="ml100">主体名称</text>
-							</view>
+							<text>排名</text>
+							<text>主体名称</text>
 							<text>评分</text>
 						</view>
 
@@ -78,7 +76,7 @@
 							<view class="flex flex-center align-center" style="width: 80rpx;height: 80rpx;" v-else>
 								<text>{{item.ranking}}</text>
 							</view>
-							<text class="ml50 col2">{{item.main_name || ''}}</text>
+							<text class="ml100 col2">{{item.main_name || ''}}</text>
 						</view>
 						<view class="font32 col2">
 							<text>{{item.average}}</text>
@@ -144,10 +142,10 @@
 			await this.init()
 			this.skeleton = false
 		},
-	
+
 		methods: {
 
-	
+
 			init() {
 				return new Promise(resolve => {
 					this.$http({

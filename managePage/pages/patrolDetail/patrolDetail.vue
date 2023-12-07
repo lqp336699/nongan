@@ -17,7 +17,7 @@
 			<view class="relactive mt40 px24 border-box">
 				<view class="colf">
 					<view class="">
-						<text class="font44">{{productData.total_score}}</text>分
+						<text class="font44">{{productData.total_score || 0}}</text>分
 					</view>
 					<view class="pt20 pdb30 ">
 						<text>巡查时间：{{$u.timeFormat(productData.create_time, 'yyyy.mm.dd hh:MM')}}</text>
