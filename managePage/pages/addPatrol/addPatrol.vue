@@ -258,7 +258,6 @@
 			},
 			checkboxChange(e){
 				this.checkedValue = e.detail.value
-				console.log(this.checkedValue,"hhhhhhhhhh")
 			},
 			setVillage() {
 				this.village_name = this.villageList[this.value[0]].name

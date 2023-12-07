@@ -36,27 +36,32 @@
 				eventList: [{
 					title: '生产农事记录',
 					src: '/static/productRecord/yieldFarm.png',
-					path: `/productPage/pages/addRecord/addRecord?type=${4}&title=${'生产农事记录'}`
+					path: `/productPage/pages/recordList/recordList?type=${4}&title=${'生产农事记录'}`
 				}, {
 					title: '肥料购买及出入库记录',
 					src: '/static/productRecord/manure.png',
-					path: '/productPage/pages/BuyManureRecord/BuyManureRecord'
+					// path: '/productPage/pages/BuyManureRecord/BuyManureRecord '
+					path: `/productPage/pages/recordList2/recordList2?type=${1}&title=${'肥料购买及出入库记录'}`
 				}, {
 					title: '肥料使用记录',
 					src: '/static/productRecord/useManure.png',
-					path: '/productPage/pages/UseManureRecord/UseManureRecord'
+					// path: '/productPage/pages/UseManureRecord/UseManureRecord'
+					path: `/productPage/pages/recordList/recordList?type=2&title=${'肥料使用记录'}`
 				}, {
 					title: '农药购买及出入库记录',
 					src: '/static/productRecord/pesticide.png',
-					path: '/productPage/pages/BuyPesticideRecord/BuyPesticideRecord'
+					// path: '/productPage/pages/BuyPesticideRecord/BuyPesticideRecord'
+					path: `/productPage/pages/recordList2/recordList2?type=2&title=${'农药购买及出入库记录'}`
 				}, {
 					title: '农药使用记录',
 					src: '/static/productRecord/usePesticide.png',
-					path: '/productPage/pages/UsePesticideRecord/UsePesticideRecord'
+					// path: '/productPage/pages/UsePesticideRecord/UsePesticideRecord'
+					path: `/productPage/pages/recordList/recordList?type=3&title=${'农药使用记录'}`
 				}, {
 					title: '产品收货、销售记录',
 					src: '/static/productRecord/market.png',
-					path: '/productPage/pages/productMarketRecord/productMarketRecord'
+					// path: '/productPage/pages/productMarketRecord/productMarketRecord'
+					path: `/productPage/pages/recordList/recordList?type=${1}&title=${'产品收货、销售记录'}`
 				}, ]
 			}
 		},

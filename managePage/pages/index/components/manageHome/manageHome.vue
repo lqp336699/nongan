@@ -21,14 +21,12 @@
 		<!-- 导航栏 -->
 		<view class="px22 ">
 
-
-
 			<view class="">
 				<view class="absolute flex flex-end  pr40" style="bottom: 20rpx; z-index:2; left:0; right:0;">
 					<text class="py4 px8 colf br18" style="background: rgba(0,0,0,0.5); ">{{swiperIndex+1}}/
 						<text class="font20">{{bannerList.length}}</text></text>
 				</view>
-				<u-swiper height="254" :list="bannerList" @change="change" @click="click"></u-swiper>
+				<u-swiper height="125" :list="bannerList" @change="change" @click="click"></u-swiper>
 			</view>
 
 			<view class="bgWhite  py40 px40 br16 mt24">
@@ -69,7 +67,7 @@
 
 
 		</view>
-		<u-loadmore class="mt50" iconSize="28" :height="100" font-size="28" :status="status" :loading-text="loadingText"
+		<u-loadmore class="mt50" iconSize="14" :height="50" font-size="14" :status="status" :loading-text="loadingText"
 			:loadmore-text="loadmoreText" :nomore-text="nomoreText" />
 	</view>
 

@@ -126,21 +126,7 @@
 							</u-radio-group>
 						</u-form-item>
 					</view>
-
-				<!-- 	<view :class="['flex',  'flex-between', 'align-center,px30', item.class ? item.class : '']"
-						v-if="item.type=='textImage'" :key="item.prop || item.placeholder">
-						<u-form-item class="flex1 " :labelWidth="item.labelWidth || 190"
-							:required="item.hasOwnProperty('rule')" :prop="item.prop" :label="item.label">
-
-							<u-input border="false" input-align="right" placeholder-style="text-align:right"
-								:placeholder="item.placeholder" v-model="form[item.prop]" />
-
-						</u-form-item>
-					</view> -->
-
-
 				</view>
-
 			</u-form>
 		</view>
 
@@ -173,30 +159,12 @@
 			}
 		},
 		data() {
-			let form = {}
-			let rules = {}
-			let requireForm = []
-			this.formList.forEach(item => {
-				if (!form[item.prop]) {
-					this.$set(form, item.prop, item.value)
-				}
-				
-				if(item.rule){
-					requireForm.push(item.prop)
-				}
-
-				if (item.rule) {
-					this.$set(rules, item.prop, item.rule)
-				}
-			})
 			return {
-				form: form,
+				form: {},
 				dateProp: "",
-				rules: {
-					...rules
-				},
+				rules:{},
 				selectForm:[],
-				requireForm:requireForm,
+				requireForm:[],
 				popupType: false,
 				selectProp: "",
 				selectTitle: ""
@@ -208,6 +176,30 @@
 			}
 		},
 		watch: {
+			'formList':{
+				handler(newVal){
+					newVal.forEach(item => {
+						if (!this.form[item.prop]) {
+							this.$set(this.form, item.prop, item.value)
+						}else{
+							this.form[item.prop]=item.value
+							
+							
+						}
+						
+						
+						
+						if(item.rule && !this.requireForm.includes(item.prop)){
+							this.requireForm.push(item.prop)
+							
+						}
+					
+						if (item.rule && !this.rules[item.prop]) {
+							this.$set(this.rules, item.prop, item.rule)
+						}
+					})
+				}
+			},
 			'form': {
 				handler: function(newVal) {
 					// 拷贝newVal

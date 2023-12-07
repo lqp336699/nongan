@@ -23,7 +23,7 @@
 						<text class="py4 px8 colf br18" style="background: rgba(0,0,0,0.5); ">{{swiperIndex+1}}/
 							<text class="font20">{{list1.length}}</text></text>
 					</view>
-					<u-swiper height="254" :list="list1" @change="change"></u-swiper>
+					<u-swiper height="150" :list="list1" @change="change"></u-swiper>
 				</view>
 
 				<view class="bgWhite  py40 px40 br16 mt24">
@@ -50,7 +50,7 @@
 
 				<ProductCard @ProductCardClick="toPatrol(item)" :productData="item" v-for="item in dataList" :key="item.id"></ProductCard>
 			</view>
-			<u-loadmore class="mt20" :height="100" font-size="28" :status="status" :loading-text="loadingText"
+			<u-loadmore class="mt20" :height="50" font-size="14" :status="status" :loading-text="loadingText"
 				:loadmore-text="loadmoreText" :nomore-text="nomoreText" />
 		</view>
 	</view>
