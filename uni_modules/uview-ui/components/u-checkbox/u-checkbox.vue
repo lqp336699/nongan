@@ -25,7 +25,7 @@
 		    :style="{
 				color: elDisabled ? elInactiveColor : elLabelColor,
 				fontSize: elLabelSize,
-				lineHeight: elLabelSize
+				lineHeight:'23px'
 			}"
 		>{{label}}</text>
 	</view>

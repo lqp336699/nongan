@@ -27,9 +27,9 @@
 
 				<view class="bgWhite  py40 px40 br16 mt24">
 					<view class="flex flex-between align-center">
-						<view class="flex">
-							<image class="br110 mr26" :src="userInfo.wxPhotoURL || ''" style="height:110rpx; width:110rpx;"
-								mode=""></image>
+						<view class="flex " @click="goUser">
+						<!-- 	<image class="br110 mr26" :src="userInfo.wxPhotoURL || ''" style="height:110rpx; width:110rpx;"
+								mode=""></image> -->
 							<view class="flex flex-column flex-around">
 								<text class="font800 font36">{{userInfo.truename || ''}}</text>
 								<text>{{userInfo.work || ''}}</text>
@@ -50,10 +50,10 @@
 							<text>总巡查(件)</text>
 							<text class="mt20 font36 " style="color:#29C17E;">{{homeData.count}}</text>
 						</view>
-						<view class="flex flex-column align-center flex-center"
+						<view @click="goXuncha" class="flex flex-column align-center flex-center"
 							style="width:272rpx; height:130rpx;background: linear-gradient(180deg, #EBF3FF 0%, #FFFFFF 100%);">
 							<text>本月巡查(件)</text>
-							<text class="mt20 font36 " style="color:#17A5E3;">{{homeData.month_count}}</text>
+							<text class="mt20 font36 " style="color:#17A5E3;">{{homeData.month_count || 0}}</text>
 						</view>
 					</view>
 				</view>
@@ -135,16 +135,25 @@
 						limit:this.limit
 					}
 				}).then(res => {
-					// this.homeData = res.data
-					// this.bannerList = res.data.banner.map(item => item.img)
-					// this.count = res.data.count
-					// this.userInfo = res.data.user_info
+					
 					if(res.data.list.length < this.limit){
 						this.status = 'nomore'
 					}else{
 						this.status = 'loadmore'
 					}
 					this.productData =this.productData.push(...res.data.list) 
+				})
+			},
+			goUser(){
+				console.log("jhjhjhjhjh")
+				uni.navigateTo({
+					url:"/managePage/pages/user/user"
+				})
+			},
+			goXuncha(){
+				console.log("kkkk")
+				uni.navigateTo({
+					url:"/managePage/pages/xuncha/xuncha"
 				})
 			},
 			init() {

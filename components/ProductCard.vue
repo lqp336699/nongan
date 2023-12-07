@@ -82,12 +82,12 @@
 				</view>
 			</view>
 
-			<view class="br10 mt32 px20 py30 flex flex-column " style="background-color: #F5FFFB;">
+			<view v-if="getImg()[0]" class="br10 mt32 px20 py30 flex flex-column " style="background-color: #F5FFFB;">
 				<view class="flex align-center mb15">
 					<text>{{productData.desc}}</text>
 				</view>
-				<view class=" flex flex-wrap">
-					<view class=" flex flex-center align-center mt6 " v-for="(item,index) in getImg()" :key="item" style="width:33.3%">
+				<view class=" flex flex-wrap" >
+					<view class=" flex flex-center align-center mt6 "  v-for="(item,index) in getImg()" :key="item" style="width:33.3%">
 						<image style="height:192rpx; width:192rpx;" class="br16" :src="item" mode="">
 						</image>
 					</view>

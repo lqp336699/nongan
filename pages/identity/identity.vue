@@ -34,7 +34,6 @@
 				this.identity = identity
 			},
 			 submitIdentity(){
-				
 				if(this.identity == 1){
 					// 管理人员
 					uni.navigateTo({

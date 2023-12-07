@@ -14,6 +14,9 @@
 </template>
 
 <script>
+	import {
+		mapState
+	} from 'vuex'
 	export default {
 		data() {
 			return {
@@ -26,22 +29,14 @@
 			}
 		},
 		onLoad(options) {
-			if (options && options.address) {
-				let arr = options.address.split(',')
-				if (arr.length > 0) {
-					if (arr[0]) {
-						this.form.county_id = arr[0]
-					}
-
-					if (arr[1]) {
-						this.form.village_id = arr[1]
-					}
-				}
-			}
-
-
+			this.form.county_id = this.userInfo.county_id
+			this.form.village_id = options.village_id
 			this.getName()
-
+		},
+		computed: {
+			...mapState({
+				userInfo: (state) => state.identity.userInfo
+			})
 		},
 		methods: {
 
@@ -68,7 +63,7 @@
 				let prevPage = pages[pages.length - 2]
 
 				// 3. 给上一页面实例绑定getValue()方法和参数（注意是$vm）
-				prevPage.$vm.getList(active)
+				prevPage.$vm.setUid(active)
 				uni.navigateBack({
 					delta: 1 // 返回的页面数
 				})

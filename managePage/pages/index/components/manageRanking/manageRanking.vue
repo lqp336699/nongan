@@ -3,20 +3,20 @@
 		<Skeleton v-if="skeleton"></Skeleton>
 		<view v-if="!skeleton" class="overH  flex flex-column page">
 			<!-- 导航栏 -->
-			<uni-nav-bar status-bar style="position: fixed;z-index: 10;" :leftWidth="0" :border="false" color="#fff"
-				title="排行" fixed="true" backgroundColor="rgba(0,0,0,0)"></uni-nav-bar>
+			<uni-nav-bar status-bar  :leftWidth="0" :border="false" color="#000"
+				title="积分榜" fixed  backgroundColor="rgba(255,255,255,1)"></uni-nav-bar>
 			<!-- 导航栏 -->
 
 
-			<view class=" " style="height: 620rpx; position: fixed; width: 100%; z-index:1; ">
+			<view class=" " style="height: 620rpx;  width: 100%; ">
 				<view class="relactive " style="height: 620rpx;">
-					<image class="absolute" style="width: 100%; height: 568rpx; z-index:1;"
-						:src="rankType == 1 ?'/static/rank/red.png' : '/static/rank/black.png'" mode=""></image>
+					<!-- <image  style="width: 100%; height: 568rpx; "
+						:src="rankType == 1 ?'/static/rank/red.png' : '/static/rank/black.png'" mode=""></image> -->
 
 
-					<view class="absolute w100" style="z-index: 2;">
+					<view class=" w100" >
 
-						<view class="flex  w100">
+						<!-- <view class="flex  w100">
 							<view class="br68 ml36 border-box bgWhite  flex flex-between align-center "
 								style=" background-color: rgba(255,255,255,0.3); margin-top:340rpx;">
 								<view
@@ -30,7 +30,7 @@
 									<text>黑榜</text>
 								</view>
 							</view>
-						</view>
+						</view> -->
 
 
 

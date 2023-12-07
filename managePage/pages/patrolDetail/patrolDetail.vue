@@ -80,7 +80,7 @@
 				</view>
 
 
-				<view class="br10 px24 py36 border-box" style="background: #F5FFFB;">
+				<view class="br10 px24 py36 border-box" v-if="getImg()[0]" style="background: #F5FFFB;">
 					<view class="mb20 ml6">
 						<text>{{productData.desc}}</text>
 					</view>
@@ -110,9 +110,9 @@
 
 					<view class="flex flex-between align-center py30  border-box" v-for="(item,index) in productData.patrol_subject"
 						:key="item.id">
-						<text>{{item.title}}</text>
-						<view class="" style="color: #1F9A64;">
-							+
+						<text style="width: 500rpx;">{{item.title}}</text>
+						<view class="" style="color: red;">
+							-
 							<text>{{item.score}}分</text>
 						</view>
 					</view>
@@ -162,6 +162,7 @@
 				
 			},
 			getImg(){
+				console.log(this.productData.img.split(',')[0],"ggggggggg")
 				return this.productData.img.split(',')
 			}
 		}

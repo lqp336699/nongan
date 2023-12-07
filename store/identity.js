@@ -3,42 +3,53 @@ import Request from '@/utils/request.js'
 
 const identity = {
 	state: {
-		identity: uni.getStorageInfoSync('identity') || 0 //0游客，1监督人员    2生产主体
+		userInfo: uni.getStorageSync('userInfo') || {},
+		main_type_list:uni.getStorageSync('main_type_list') || []
 	},
 	mutations: {
-		CHANGE_IDENTITY(state, identity) {
-			state.identity = identity
-			uni.setStorageSync('identity', identity);
-		}
+		
+		SET_USER_INFO(state, data) {
+			state.userInfo = data
+			uni.setStorageSync('userInfo',data)
+			uni.setStorageSync('token', data.openid);
+			uni.showToast({
+				title: "注册成功"
+			})
+		},
 	},
 	getters: {
-	  identity: (state) => (id) => {
-	    return state.identity
-	  }
+		identity: (state) => (id) => {
+			return state.identity
+		}
 	},
 	actions: {
-		getIdentity({ commit }) {
+		
+		// getMainTypeList({
+		// 	commit
+		// }){
+		// 	Request.http({
+		// 		url: '/wechat/userinfo'
+		// 	}).then(res => {
+		// 		commit('SET_USERINFO', res.data)
+		// 		commit('CHANGE_IDENTITY', res.data.identity)
+		// 		resolve(res.data.identity)
+		// 	})
+		// },
+		getIdentity({
+			commit
+		}) {
 			return new Promise((resolve, reject) => {
-				
+
 				Request.http({
-					url:'/wechat/userinfo'
-				}).then(res=>{
-					
+					url: '/wechat/userinfo'
+				}).then(res => {
+					commit('SET_USERINFO', res.data)
 					commit('CHANGE_IDENTITY', res.data.identity)
 					resolve(res.data.identity)
 				})
 			})
-		},
-		setIdentity({commit},identity) {
-			return new Promise((resolve, reject) => {
-				commit('CHANGE_IDENTITY', identity)
-				uni.showToast({
-					title:"注册成功"
-				})
-				resolve('pp')
-			})
-		},
-		
+		}
+
 	},
 	getters: {
 

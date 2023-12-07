@@ -5,11 +5,11 @@
 				<view class="flex align-center ">
 					<text class="mr22">管理人员:</text>
 					<view class="flex ">
-						<image style="width:80rpx; height:80rpx;" class="br110 mr22 " src="@/static/logo.png" mode=""></image>
+						<!-- <image style="width:80rpx; height:80rpx;" class="br110 mr22 " src="@/static/logo.png" mode=""></image> -->
 						
 						<view class="flex flex-column flex-around">
 							<text>{{productData.contacts}}</text>
-							<text>{{productData.work_name}}</text>
+							<!-- <text>{{productData.work_name}}</text> -->
 						</view>
 						
 					</view>

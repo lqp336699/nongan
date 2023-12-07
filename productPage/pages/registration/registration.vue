@@ -8,7 +8,7 @@
 
 		<view class="br10 mt60 flex align-center"
 			style="height:110rpx;border: 2rpx solid #ccc;box-shadow: 0rpx 0rpx 6rpx 2rpx rgba(41,193,126,0.1);">
-			<u-input class="" v-model="form.mobile" placeholder="请输入手机号" height="110rpx" :border="false" />
+			<u-input class="" type="number" v-model="form.mobile" placeholder="请输入手机号" height="110rpx" :border="false" />
 		</view>
 
 
@@ -63,11 +63,11 @@
 					url: "/Data/auth",
 					data: {
 						...this.form
-					}
+					},
+					loading:true
 				}).then(async res => {
 					if (res.code == 1) {
-						await this.$store.dispatch('identity/setIdentity', this.form.identity)
-
+						this.$store.commit('identity/SET_USER_INFO',res.data)
 						setTimeout(() => {
 							uni.redirectTo({
 								url: '/productPage/pages/index/index'
