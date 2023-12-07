@@ -36,7 +36,7 @@
 				eventList: [{
 					title: '生产农事记录',
 					src: '/static/productRecord/yieldFarm.png',
-					path: '/productPage/pages/yieldFarmRecord/yieldFarmRecord'
+					path: `/productPage/pages/addRecord/addRecord?type=${4}&title=${'生产农事记录'}`
 				}, {
 					title: '肥料购买及出入库记录',
 					src: '/static/productRecord/manure.png',

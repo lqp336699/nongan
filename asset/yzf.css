@@ -2,6 +2,9 @@
 	font-size: 64rpx;
 }
 
+.fixed{
+	position: fixed;
+}
 
 .col409{
 	color: #409F5F;
