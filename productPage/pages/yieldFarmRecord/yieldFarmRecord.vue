@@ -1,13 +1,20 @@
 <template>
-	<!-- 生产农事记录 -->
-	<view class="page px22 flex flex-column flex-between border-box pb60">
-		<form-list :formIsValidate.sync="formIsValidate" ref="formList" :formList="formList"
-			@setFormData="setFormData"></form-list>
-
-
-		<view @click="submit" class="flex mt94 flex-center align-center br83"
-			:style="{background: formIsValidate ? '#1F9A64' : '#ECFFF7', height:'90rpx'}">
-			<text :style="{color:formIsValidate ? '#fff' : '#1F9A64'}">提交</text>
+	<view class="page">
+		<!-- 导航栏 -->
+		<uni-nav-bar backgroundColor="#F7F7F7" color="#222" left-icon="left" leftWidth="50rpx" :border="false"
+			@clickLeft="back" statusBar title="生产农事记录" fixed></uni-nav-bar>
+		<!-- 导航栏 -->
+		
+		<!-- 生产农事记录 -->
+		<view class="px22 flex flex-column flex-between border-box pb60">
+			<form-list :formIsValidate.sync="formIsValidate" ref="formList" :formList="formList"
+				@setFormData="setFormData"></form-list>
+		
+		
+			<view @click="submit" class="flex mt94 flex-center align-center br83"
+				:style="{background: formIsValidate ? '#1F9A64' : '#ECFFF7', height:'90rpx'}">
+				<text :style="{color:formIsValidate ? '#fff' : '#1F9A64'}">提交</text>
+			</view>
 		</view>
 	</view>
 </template>
@@ -89,6 +96,9 @@
 				formData: {}
 			}
 		},
+		onLoad(options) {
+			console.log(options.id,'optionsoptionsoptionsoptions')
+		},
 		methods: {
 			setFormData(formData) {
 				this.formData = {
@@ -101,7 +111,6 @@
 					if (res instanceof Array) {
 						return
 					}
-
 
 					this.$http({
 						url: "/Data/add_product_log",
@@ -119,12 +128,22 @@
 					})
 
 				})
+			},
+			back(){
+				uni.navigateBack({})
 			}
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
+	/deep/ .uni-navbar__header-container-inner {
+		justify-content: left !important;
+	}
+	
+	/deep/ .uni-nav-bar-text {
+		font-size: 36rpx !important;
+	}
 	::v-deep .u-input {
 		background-color: #fff !important;
 	}
