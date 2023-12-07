@@ -1,7 +1,4 @@
 <template>
-	
-	
-	
 	<view >
 		<Skeleton v-if="skeleton"></Skeleton>
 		<view class="relactive overH" v-if="!skeleton">
@@ -63,55 +60,48 @@
 		},
 		methods: {
 			search() {
-				console.log("mmmmmmmmm")
 				this.getData()
 			},
 			loadMore() {
 				if (this.status == 'nomore') {
 					return
 				}
-
-
 				this.page++
-
 				this.$http({
-					url: '/Data/patrol_index',
+					url: '/Data/product',
 					data: {
 						page: this.page,
 						limit: this.limit,
 						keyword: this.keyword
-					}
+					},
+					
 				}).then(res => {
-
-					if (res.data.list.length < this.limit) {
+					if (res.data.length < this.limit) {
 						this.status = 'nomore'
 					} else {
 						this.status = 'loadmore'
 					}
-					this.recodeList = res.data.list
-
+					this.recodeList.push(res.data)
 				})
 			},
 			getData() {
 				return new Promise(resolve=>{
 					this.status = "loading"
 					this.$http({
-						url: '/Data/patrol_index',
+						url: '/Data/product',
 						data: {
-							page: this.page,
+							page: 1,
 							limit: this.limit,
 							keyword: this.keyword
 						}
 					}).then(res => {
-					
-						if (res.data.list.length < this.limit) {
+						if (res.data.length < this.limit) {
 							this.status = 'nomore'
 						} else {
 							this.status = 'loadmore'
 						}
-						this.recodeList = res.data.list
+						this.recodeList = res.data
 						resolve('ll')
-					
 					})
 				})
 				

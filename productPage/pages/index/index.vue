@@ -65,15 +65,38 @@
 				show: false
 			}
 		},
+		// onLoad() {
+		// 	switch (this.current) {
+		// 		case 0:
+		// 			this.$refs.Home.init()
+		// 			break;
+		// 		case 1:
+		// 			this.$refs.page = 1
+		// 			this.$refs.ranking.getData()
+		// 			break;
+		// 		case 2:
+		// 			this.$refs.page = 1
+		// 			this.$refs.Events.getData()
+		// 			break;
+		// 		case 3:
+		// 			this.$refs.page = 1
+		// 			this.$refs.policy.getData()
+		// 			break;
+		// 	}
+		// },
+		
 		onReachBottom() {
 			switch (this.current) {
 				case 0:
+					// this.$refs.page = 1
 					this.$refs.Home.loadMore()
 					break;
 				case 1:
+					this.$refs.page = 1
 					// this.$refs.ranking.loadMore()
 					break;
 				case 3:
+					this.$refs.page = 1
 					this.$refs.policy.loadMore()
 					break;
 			}
@@ -87,7 +110,7 @@
 			}
 		},
 		methods: {
-			
+
 		}
 	}
 </script>

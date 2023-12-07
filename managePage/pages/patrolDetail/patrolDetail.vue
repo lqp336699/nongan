@@ -92,15 +92,6 @@
 					</view>
 				</view>
 
-				<!-- <view class="br16 px30 border-box bgWhite flex flex-column flex-between">
-					<view class="flex flex-between align-center py30" v-for="(item,index) in 3" :key="index">
-						<text>合格证开具主体</text>
-						<view class="" style="color: #1F9A64;">
-							+
-							<text>20分</text>
-						</view>
-					</view>
-				</view> -->
 
 				<view class="mt20 px30 py40 border-box bgWhite flex flex-column flex-between ">
 					<view class="font32 col2 fontw700">

@@ -9,8 +9,6 @@
 			<policy class="navBar" ref="policy" :show='show' v-if="current==3"></policy>
 		</view>
 
-
-
 		<u-tabbar :value="current" @change="name => current = name" :fixed="true" :placeholder="true"
 			:safeAreaInsetBottom="true" activeColor="#1F9A64">
 			<u-tabbar-item text="巡查监督">
@@ -70,13 +68,24 @@
 				case 0:
 					this.$refs.Home.init()
 					break;
+			}
+		},
+
+		onLoad() {
+			switch (this.current) {
+				case 0:
+					this.$refs.Home.init()
+					break;
 				case 1:
+					this.$refs.page = 1
 					this.$refs.ranking.getData()
 					break;
 				case 2:
+					this.$refs.page = 1
 					this.$refs.Events.getData()
 					break;
 				case 3:
+					this.$refs.page = 1
 					this.$refs.policy.getData()
 					break;
 			}

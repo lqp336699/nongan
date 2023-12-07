@@ -44,25 +44,8 @@
 								</view>
 							</view>
 						</view>
-						<!-- <view class="flex px16 border-box py16 align-center flex-center br36" style="height:72rpx; width:192rpx; border:2rpx solid #1F9A64;">
-							<image class="" style="width:32rpx; height:32rpx; margin-right:10rpx;" src="/static/index/add.png" mode=""></image>
-							<text style="color:#1F9A64;">添加巡查</text>
-						</view> -->
-
 					</view>
 
-
-					<!-- <view class="flex mt40 flex-between">
-						<view class="flex flex-column align-center flex-center" style="width:272rpx; height:130rpx; background: linear-gradient(180deg, #E1FFF2 0%, #FFFFFF 100%);">
-							<text>总巡查(件)</text>
-							<text class="mt20 font36 " style="color:#29C17E;">15</text>
-						</view>
-						
-						<view class="flex flex-column align-center flex-center" style="width:272rpx; height:130rpx;background: linear-gradient(180deg, #EBF3FF 0%, #FFFFFF 100%);">
-							<text>本月巡查(件)</text>
-							<text class="mt20 font36 " style="color:#17A5E3;">15</text>
-						</view>
-					</view> -->
 				</view>
 
 				<ProductCard @ProductCardClick="toPatrol(item)" :productData="item" v-for="item in dataList" :key="item.id"></ProductCard>
@@ -96,7 +79,6 @@
 				nomoreText: '没有更多了',
 				count: 0,
 				user_info:{}
-
 			}
 		},
 		onLoad() {
